@@ -13,9 +13,12 @@ export const query = graphql`
             companyName
             startDate
             endDate
+            url
             location
             techStack
             title
+            tagLine
+            jobPoints
         }
     }
   }

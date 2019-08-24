@@ -40,9 +40,15 @@ export default {
             of: [{ type: 'string' }]
         },
         {
-            name: 'description',
-            title: 'Description',
-            type: 'string'
+            name: 'tagLine',
+            title: 'Tag Line',
+            type: 'text'
+        },
+        {
+            name: 'jobPoints',
+            title: 'Job Points',
+            type: 'array',
+            of: [{ type: 'text' }]
         },
     ],
     orderings: [

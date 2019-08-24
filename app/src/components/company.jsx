@@ -2,33 +2,39 @@ import React from "react"
 import styled from "styled-components";
 
 const Company = styled.section`
-    padding-bottom: 100px;
+    padding-bottom: 4em;
+    border-bottom: 1px solid deeppink;
+    margin-bottom: 2em;
 `;
 
 const Header = styled.header`
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr 1fr;
+    line-height: 1.6em;
+    font-size: 18px;
+    letter-spacing: -0.14px
+    margin-bottom: 2em;
 `
 
 export default ({ data }) =>
     <Company>
         <Header>
             <div>{data.companyName}</div>
-            <div>URL</div>
+            <div><a href={data.url}>{data.url}</a></div>
             <div>{data.title}</div>
             <div>{data.startDate} - {data.endDate}</div>
         </Header>
 
-        <div>{data.location}</div>
+        <p>{data.location}</p>
 
-        <div>{data.techStack.map((e) => <span>{e} |</span>)}</div>
+        <ul>{data.techStack.map((e) => <li>{e}</li>)}</ul>
 
-        <div>chunk</div>
+        <p>{data.tagLine}</p>
 
-        <div>
-            sadsadjklsajdlas
-        </div>
+        <ul>
+            {data.jobPoints.map((e) => <li>{e}</li>)}
+        </ul>
 
     </Company>
 
