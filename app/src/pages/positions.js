@@ -14,7 +14,8 @@ export const query = graphql`
             startDate
             endDate
             location
-            techStack 
+            techStack
+            title
         }
     }
   }

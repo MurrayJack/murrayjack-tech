@@ -16,11 +16,13 @@ export default ({ data }) =>
         <Header>
             <div>{data.companyName}</div>
             <div>URL</div>
-            <div>TITLE</div>
+            <div>{data.title}</div>
             <div>{data.startDate} - {data.endDate}</div>
         </Header>
 
         <div>{data.location}</div>
+
+        <div>{data.techStack.map((e) => <span>{e} |</span>)}</div>
 
         <div>chunk</div>
 
