@@ -5,10 +5,11 @@
   "description": "",
   "main": "package.json",
   "author": "Murray Jack <murrayjack@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
-    "test": "sanity check"
+    "test": "sanity check",
+    "deploy": "sanity deploy && sanity graphql deploy"
   },
   "keywords": [
     "sanity"
