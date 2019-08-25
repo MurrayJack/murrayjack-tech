@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "./container";
 import styled from "styled-components";
-import { H2, P } from "./Styles";
 
 const Wrapper = styled.div`
     display: grid;

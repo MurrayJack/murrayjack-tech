@@ -53,14 +53,6 @@ const Wrapper = styled.div`
     }
 `;
 
-const SectionList = styled.ul`
-    
-`;
-
-const SectionItem = styled.li`
-    
-`;
-
 const Header = ({ siteTitle }) => (
     <HeaderStyled>
         <Section>
