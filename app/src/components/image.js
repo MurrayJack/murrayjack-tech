@@ -7,12 +7,13 @@ const Wrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   width: 300px;
+  
 `;
 
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      placeholderImage: file(relativePath: { eq: "me1.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
