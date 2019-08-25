@@ -15,11 +15,13 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-    height: 30px;
+    height: 40px;
     border-radius: 3px;
     border: none;
     width: 100%;
     text-indent: 10px;
+    font-size: 16px;
+    color: #2f3c4f
 `
 
 const TextArea = styled.textarea`
@@ -28,9 +30,23 @@ const TextArea = styled.textarea`
     border: none;
     width: 100%;
     text-indent: 10px;
+    color: #2f3c4f
 `
 
 const Button = styled.button`
+    background-color: #2f3c4f;
+    border: 0;
+    height: 40px;
+    color: white;
+    width: 120px;
+    font-size: 16px;
+    border-radius: 3px;
+`
+
+const List = styled.ul`
+    >li {
+        margin-bottom: 10px;
+    }
 `
 
 export default () =>
@@ -42,7 +58,7 @@ export default () =>
     >
         <Wrapper>
             <form name="contact" method="POST" data-netlify="true">
-                <ul>
+                <List>
                     <li>
                         <Label for="name" >Name</Label>
                         <Input id="name" type="text" name="name" />
@@ -58,10 +74,10 @@ export default () =>
                     <li>
                         <Button type="submit">Send</Button>
                     </li>
-                </ul>
+                </List>
             </form>
             <div>
-                linked in
+               
             </div>
         </Wrapper>
     </Container>
