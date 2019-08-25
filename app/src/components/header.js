@@ -1,13 +1,6 @@
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
 import Scrollspy from 'react-scrollspy'
-
-const Section = styled.section`
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.45rem 0;
-`;
 
 const HeaderStyled = styled.header`
   background-color: #2f3c4f;
@@ -17,22 +10,28 @@ const HeaderStyled = styled.header`
   text-transform: uppercase;
 `;
 
+const Section = styled.section`
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1.45rem 20px;
+
+    @media (min-width: 960px) {
+        max-width: 960px;
+        padding: 1.45rem 0;
+    }
+`;
+
 const H1 = styled.h1`
     color: #47a0b7;
     font-size: 20px;
+    text-align: center;
+
+    @media (min-width: 960px) {
+       text-align: left;
+    }
 `;
 
 const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
     li {
         display: inline-block;
         color: white;
@@ -42,16 +41,35 @@ const Wrapper = styled.div`
     a {
         color: white;
         text-decoration: none;
+        transition: all linear 0.25s;
     }
 
     li.is-current {
-        font-weight: bold;
-        
         a {
+            font-weight: bold;
             color: #47a0b7;
         }
     }
+
+    li:hover {
+        a {
+            font-weight: bold;
+            color: #47a0b7;
+        }
+    }
+
+    @media (min-width: 960px) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
 `;
+
+const ScrollSpy = styled(Scrollspy)`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+`
 
 const Header = ({ siteTitle }) => (
     <HeaderStyled>
@@ -60,22 +78,14 @@ const Header = ({ siteTitle }) => (
                 <H1>
                     {siteTitle}
                 </H1>
-                <Scrollspy offset={-101} items={ ['aboutme1', 'experience1', 'contact1'] } currentClassName="is-current">
+                <ScrollSpy offset={-101} items={ ['aboutme1', 'experience1', 'contact1'] } currentClassName="is-current">
                     <li><a href="#aboutme">About Me</a></li>
                     <li><a href="#experience">Work Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
-                </Scrollspy>
+                </ScrollSpy>
             </Wrapper>
         </Section>
     </HeaderStyled>
 )
-
-Header.propTypes = {
-    siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-    siteTitle: ``,
-}
 
 export default Header

@@ -5,9 +5,11 @@ import Image from "../components/image";
 import { useStaticQuery, graphql } from "gatsby";
 
 const MyDetailsList = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    margin-top: 40px;
+
+    @media (min-width: 960px) {
+        margin-top:0;
+    }
 `
 
 const MyDetailsListItem = styled.li`
@@ -18,16 +20,28 @@ const MyDetailsListItem = styled.li`
     margin-bottom: 20px;
     font-weight: bold;
 
-    > span {
+    >span {
         display: inline-block;
-        width: 160px;
-        font-weight: normal
+        font-weight: normal;
+        margin-right: 5px;
+
+        &:after {
+            content: ':'
+        }
+    }
+
+    @media (min-width: 960px) { 
+        > span {
+            width: 160px;
+        }   
     }
 `
 
 const Grid = styled.section`
-    display: grid;
-    grid-template-columns: 50% 50%;
+    @media (min-width: 960px) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
 `
 
 const aboutMe = () => {

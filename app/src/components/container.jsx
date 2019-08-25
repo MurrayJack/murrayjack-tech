@@ -8,10 +8,16 @@ const Wrapper = styled.div`
 `
 
 const Article = styled.article`
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1.45rem 0;
-    padding-bottom: 150px;
+    padding: 1.45rem 20px;
+    text-align: center;
+
+    @media (min-width: 960px) {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.45rem 0;
+        text-align: left;
+        padding-bottom: 150px;
+    }
 `
 
 const IDOffset = styled.div`
