@@ -1,7 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
-import Container from "./container";
+
+const Section = styled.section`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.45rem 0;
+`;
 
 const HeaderStyled = styled.header`
   background-color: #2f3c4f;
@@ -9,12 +14,12 @@ const HeaderStyled = styled.header`
   top:0;
   z-index: 1;
   text-transform: uppercase;
-`
+`;
 
 const H1 = styled.h1`
     color: #47a0b7;
     font-size: 20px;
-`
+`;
 
 const Wrapper = styled.div`
     display: grid;
@@ -26,17 +31,17 @@ const SectionList = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
-`
+`;
 
 const SectionItem = styled.li`
     display: inline-block;
     color: white;
     padding-left: 20px;
-`
+`;
 
 const Header = ({ siteTitle }) => (
     <HeaderStyled>
-        <Container>
+        <Section>
             <Wrapper>
                 <H1>
                     {siteTitle}
@@ -47,7 +52,7 @@ const Header = ({ siteTitle }) => (
                     <SectionItem>Contact</SectionItem>
                 </SectionList>
             </Wrapper>
-        </Container>
+        </Section>
     </HeaderStyled>
 )
 

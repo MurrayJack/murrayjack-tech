@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   width: 300px;
-  margin-bottom: 100px;
 `;
 
 const Image = () => {

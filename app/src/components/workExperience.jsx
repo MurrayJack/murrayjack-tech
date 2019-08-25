@@ -3,12 +3,6 @@ import styled from "styled-components";
 import Container from "./container";
 import { useStaticQuery, graphql } from "gatsby"
 import Company from "./company";
-import { H2, P } from "./Styles";
-
-const AboutMe = styled.article`
-    background-color: #d8dbdb;
-    color: #364859;
-`
 
 const Grid = styled.section`
     display: grid;
@@ -39,16 +33,16 @@ const WorkExperience = () => {
     `)
 
     return (
-        <AboutMe>
-            <Container>
-                <H2>Work Experience</H2>
+        <Container
+            Color="#364859"
+            BGColor="#d8dbdb"
+            Header="Work Experience"
+            Info={data.sanityPersonalDetails.workBlurb}
+        >
 
-                <P>{data.sanityPersonalDetails.workBlurb}</P>
-                <div>
-                    {data.allSanityJobposition.nodes.map((e) => <Company data={e} />)}
-                </div>
-            </Container>
-        </AboutMe>)
+            {data.allSanityJobposition.nodes.map((e) => <Company data={e} />)}
+
+        </Container>)
 }
 
 export default WorkExperience

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Container from "./container";
 import Image from "../components/image";
 import { useStaticQuery, graphql } from "gatsby";
-import { H2, P } from "./Styles";
 
 const MyDetailsList = styled.ul`
     list-style: none;
@@ -45,9 +44,12 @@ const aboutMe = () => {
     `)
 
     return (
-        <Container Color="white" BGColor="#47a0b7">
-            <H2>About me</H2>
-            <P>{data.sanityPersonalDetails.personalBlurb}</P>
+        <Container
+            Color="white"
+            BGColor="#47a0b7"
+            Header="About Me"
+            Info={data.sanityPersonalDetails.personalBlurb}
+        >
             <Grid>
                 <div>
                     <Image />
