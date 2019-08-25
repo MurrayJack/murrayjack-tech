@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.Color};
+  background-color: ${(props) => props.BGColor};
+  color: ${(props) => props.Color};
 `
 
 const Container = styled.div`
@@ -11,8 +12,8 @@ const Container = styled.div`
   padding: 1.45rem 0;
 `
 
-export default ({ children, Color }) =>
-  <Wrapper Color={Color}>
+export default ({ children, BGColor, Color }) =>
+  <Wrapper BGColor={BGColor} Color={Color}>
     <Container>
       {children}
     </Container>
