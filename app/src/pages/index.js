@@ -1,25 +1,22 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AboutMe from "../components/aboutMe"
 import WorkExperience from "../components/workExperience"
-import Conect from "../components/contact"
+import Connect from "../components/contact"
 import Footer from "../components/footer";
 
-const IndexPage = () => (
+export default () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Murray Jack" description="Murray Jack Resume" />
 
     <AboutMe />
 
     <WorkExperience />
 
-    <Conect />
+    <Connect />
 
     <Footer />
 
   </Layout>
-)
-
-export default IndexPage
+);

@@ -64,15 +64,15 @@ export default () =>
 
                 <List>
                     <li>
-                        <Label for="name" >Name</Label>
+                        <Label htmlFor="name" >Name</Label>
                         <Input placeholder="Your Name" id="name" type="text" name="name" />
                     </li>
                     <li>
-                        <Label for="email">Email</Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input placeholder="me@example.com" id="email" type="email" name="email" />
                     </li>
                     <li>
-                        <Label for="message">Message</Label>
+                        <Label htmlFor="message">Message</Label>
                         <TextArea id="message" name="message"></TextArea>
                     </li>
                     <li>

@@ -35,7 +35,7 @@ const WorkExperience = () => {
             Info={data.sanityPersonalDetails.workBlurb}
         >
 
-            {data.allSanityJobposition.nodes.map((e) => <Company data={e} />)}
+            {data.allSanityJobposition.nodes.map((e, i) => <Company key={i} data={e} />)}
 
         </Container>)
 }

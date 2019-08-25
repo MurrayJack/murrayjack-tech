@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
         title: `Murray Jack`,
-        description: ``,
-        author: `@gatsbyjs`,
+        description: `Murray Jack Resume`,
+        author: `@murrayjack`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
                 background_color: `#2f3c4f`,
                 theme_color: `#2f3c4f`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                icon: `src/images/icon.png`, // This path is relative to the root of the site.
             },
         },
         {
@@ -41,6 +41,6 @@ module.exports = {
         }
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+        `gatsby-plugin-offline`,
     ],
 }

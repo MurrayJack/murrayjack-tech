@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "me1.png" }) {
+      placeholderImage: file(relativePath: { eq: "murrayjack.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid

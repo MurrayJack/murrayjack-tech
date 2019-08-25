@@ -85,12 +85,12 @@ export default ({ data }) =>
                 <p>{data.tagLine}</p>
 
                 <JobPoints>
-                    {data.jobPoints.map((e) => <li>{e}</li>)}
+                    {data.jobPoints.map((e, i) => <li key={i}>{e}</li>)}
                 </JobPoints>
             </div>
             <div>
                 <h3>Key Skills</h3>
-                <SkillList>{data.techStack.map((e) => <SkillItem>{e}</SkillItem>)}</SkillList>
+                <SkillList>{data.techStack.map((e, i) => <SkillItem key={i}>{e}</SkillItem>)}</SkillList>
             </div>
         </Wrapper>
     </Company>
