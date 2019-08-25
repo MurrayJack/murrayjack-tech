@@ -22,7 +22,7 @@ const WorkExperience = () => {
           workBlurb
         }
 
-        allSanityJobposition {
+        allSanityJobposition(sort: {order: DESC, fields: endDate})  {
             nodes {
                 companyName
                 startDate(formatString: "YYYY")
@@ -42,7 +42,6 @@ const WorkExperience = () => {
         <AboutMe>
             <Container>
                 <H2>Work Experience</H2>
-
 
                 <P>{data.sanityPersonalDetails.workBlurb}</P>
                 <div>

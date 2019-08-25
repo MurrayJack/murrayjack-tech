@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.Colour}
+  background-color: ${(props) => props.Color};
 `
 
 const Container = styled.div`

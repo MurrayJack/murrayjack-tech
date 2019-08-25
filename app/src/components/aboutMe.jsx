@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import {H2, P} from "./Styles";
 
 const AboutMe = styled.article`
-    background-color: #47a0b7;
     color: white;
 `
 
@@ -51,7 +50,7 @@ const aboutMe = () => {
 
     return (
         <AboutMe>
-            <Container>
+            <Container Color="#47a0b7">
                 <H2>About me</H2>
                 <P>{data.sanityPersonalDetails.personalBlurb}</P>
                 <Grid>
