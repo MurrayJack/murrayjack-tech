@@ -3,11 +3,7 @@ import styled from "styled-components";
 import Container from "./container";
 import Image from "../components/image";
 import { useStaticQuery, graphql } from "gatsby";
-import {H2, P} from "./Styles";
-
-const AboutMe = styled.article`
-    color: white;
-`
+import { H2, P } from "./Styles";
 
 const MyDetailsList = styled.ul`
     list-style: none;
@@ -49,25 +45,24 @@ const aboutMe = () => {
     `)
 
     return (
-        <AboutMe>
-            <Container Color="#47a0b7">
-                <H2>About me</H2>
-                <P>{data.sanityPersonalDetails.personalBlurb}</P>
-                <Grid>
-                    <div>
-                        <Image />
-                    </div>
-                    <MyDetailsList>
-                        <Item Name="Name" Value={data.sanityPersonalDetails.name} />
-                        <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
-                        <Item Name="Located" Value={data.sanityPersonalDetails.location} />
-                        <Item Name="Email" Value={data.sanityPersonalDetails.email} />
-                    </MyDetailsList>
-                </Grid>
-            </Container>
-        </AboutMe>)
+        <Container Color="white" BGColor="#47a0b7">
+            <H2>About me</H2>
+            <P>{data.sanityPersonalDetails.personalBlurb}</P>
+            <Grid>
+                <div>
+                    <Image />
+                </div>
+                <MyDetailsList>
+                    <Item Name="Name" Value={data.sanityPersonalDetails.name} />
+                    <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
+                    <Item Name="Located" Value={data.sanityPersonalDetails.location} />
+                    <Item Name="Email" Value={data.sanityPersonalDetails.email} />
+                </MyDetailsList>
+            </Grid>
+        </Container>
+    )
 }
 
-const Item = ({Name, Value}) => <MyDetailsListItem><span>{Name}</span>{Value}</MyDetailsListItem>
+const Item = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span>{Value}</MyDetailsListItem>
 
 export default aboutMe
