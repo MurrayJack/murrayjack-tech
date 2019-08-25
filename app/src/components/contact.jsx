@@ -52,7 +52,8 @@ const List = styled.ul`
 `
 
 export default () =>
-    <Container 
+    <Container
+        ID="contact"
         Color="white" 
         BGColor="#4a9f87"
         Header="Contact Me"

@@ -8,18 +8,26 @@ const Wrapper = styled.div`
 `
 
 const Article = styled.article`
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.45rem 0;
-  padding-bottom: 150px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.45rem 0;
+    padding-bottom: 150px;
 `
 
-export default ({ children, BGColor, Color, Header, Info }) =>
-    <Wrapper BGColor={BGColor} Color={Color}>
-        <Article>
-            <H2>{Header}</H2>
-            <P>{Info}</P>
+const IDOffset = styled.div`
+    position: relative;
+    top: -100px;
+`
 
-            {children}
-        </Article>
-    </Wrapper>
+export default ({ children, BGColor, Color, Header, Info, ID }) =>
+    <>
+        <IDOffset id={ID}></IDOffset>
+        <Wrapper id={ID + "1"} BGColor={BGColor} Color={Color}>
+            <Article>
+                <H2>{Header}</H2>
+                <P>{Info}</P>
+
+                {children}
+            </Article>
+        </Wrapper>
+    </>
