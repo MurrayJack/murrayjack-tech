@@ -22,6 +22,17 @@ const Input = styled.input`
     text-indent: 10px;
 `
 
+const TextArea = styled.textarea`
+    height: 200px;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    text-indent: 10px;
+`
+
+const Button = styled.button`
+`
+
 export default () =>
     <Container 
         Color="white" 
@@ -30,22 +41,22 @@ export default () =>
         Info="Drop me a line using the contact form below"
     >
         <Wrapper>
-            <form>
+            <form name="contact" method="POST" data-netlify="true">
                 <ul>
                     <li>
-                        <Label>Name</Label>
-                        <Input />
+                        <Label for="name" >Name</Label>
+                        <Input id="name" type="text" name="name" />
                     </li>
                     <li>
-                        <Label>EMail</Label>
-                        <Input />
+                        <Label for="email">Email</Label>
+                        <Input id="email" type="email" name="email" />
                     </li>
                     <li>
-                        <Label>Messge</Label>
-                        <textarea></textarea>
+                        <Label for="message">Messge</Label>
+                        <TextArea id="message" name="message"></TextArea>
                     </li>
                     <li>
-                        <button>Send</button>
+                        <Button type="submit">Send</Button>
                     </li>
                 </ul>
             </form>
