@@ -57,7 +57,9 @@ export default () =>
         Info="Drop me a line using the contact form below"
     >
         <Wrapper>
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="Contact Form" method="POST" data-netlify="true" action="/thank-you">
+                <input type="hidden" name="form-name" value="Contact Form" />
+
                 <List>
                     <li>
                         <Label for="name" >Name</Label>
