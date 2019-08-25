@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -26,7 +26,13 @@ export const query = graphql`
 
 const SecondPage = ({ data }) => (
     <Layout>
-        <SEO title="Job Positions" />
+        <SEO title="Resume" />
+
+        <div>
+    <Link to="/">Home</Link>
+      <Link to="/resume/">Resume</Link>
+      <Link to="/rollerderby/">Roller Derby</Link>
+    </div>
 
         {data.allSanityJobposition.nodes.map((e) => <Company data={e} />)}
 

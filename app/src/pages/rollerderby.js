@@ -3,20 +3,18 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AboutMe from "../components/aboutMe"
-import WorkExperience from "../components/workExperience"
-import Conect from "../components/contact"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <AboutMe />
+    <div>
+    <Link to="/">Home</Link>
+      <Link to="/resume/">Resume</Link>
+      <Link to="/rollerderby/">Roller Derby</Link>
+    </div>
 
-    <WorkExperience />
-
-    <Conect />
-
+    
   </Layout>
 )
 
