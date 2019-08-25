@@ -32,6 +32,7 @@ const SkillItem = styled.li`
     margin: 4px;
     background-color: #bbc0c0;
     border-radius: 3px;
+    line-height: 1.4em;
 `
 
 const CompanyDeets = styled.div`
@@ -57,11 +58,13 @@ const StyledDate = styled.div`
 `
 
 const JobPoints = styled.ul`
-    line-hight: 1.8em;
+    list-style: circle;
+    padding-left: 20px;
 
     > li {
-
+        list-style: circle;
         padding: 10px 0;
+        padding-left: 10px;
     }
 `
 
