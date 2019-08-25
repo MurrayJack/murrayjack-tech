@@ -29,8 +29,10 @@ const TextArea = styled.textarea`
     border-radius: 3px;
     border: none;
     width: 100%;
-    text-indent: 10px;
+    padding: 10px;
+    font-size: 16px;
     color: #2f3c4f
+    box-sizing: border-box;
 `
 
 const Button = styled.button`
@@ -63,15 +65,18 @@ export default () =>
                 <List>
                     <li>
                         <Label for="name" >Name</Label>
-                        <Input id="name" type="text" name="name" />
+                        <Input placeholder="Your Name" id="name" type="text" name="name" />
                     </li>
                     <li>
                         <Label for="email">Email</Label>
-                        <Input id="email" type="email" name="email" />
+                        <Input placeholder="me@example.com" id="email" type="email" name="email" />
                     </li>
                     <li>
-                        <Label for="message">Messge</Label>
+                        <Label for="message">Message</Label>
                         <TextArea id="message" name="message"></TextArea>
+                    </li>
+                    <li>
+                        <div data-netlify-recaptcha="true"></div>
                     </li>
                     <li>
                         <Button type="submit">Send</Button>
