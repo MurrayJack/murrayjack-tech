@@ -24,6 +24,16 @@ export default {
             type: 'string'
         },
         {
+            name: 'github',
+            title: 'GitHub',
+            type: 'string'
+        },
+        {
+            name: 'twitter',
+            title: 'Twitter',
+            type: 'string'
+        },
+        {
             name: 'workBlurb',
             title: 'Work Blurb',
             type: 'text'

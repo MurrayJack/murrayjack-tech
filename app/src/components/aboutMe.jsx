@@ -53,6 +53,8 @@ const aboutMe = () => {
           email
           location
           visa
+          github
+          twitter
         }
     }  
     `)
@@ -74,6 +76,8 @@ const aboutMe = () => {
                     <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
                     <Item Name="Located" Value={data.sanityPersonalDetails.location} />
                     <Item Name="Email" Value={data.sanityPersonalDetails.email} />
+                    <Item Name="Twitter" Value={data.sanityPersonalDetails.twitter} />
+                    <Item Name="GitHub" Value={data.sanityPersonalDetails.github} />
                 </MyDetailsList>
             </Grid>
         </Container>
