@@ -86,4 +86,6 @@ const aboutMe = () => {
 
 const Item = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span>{Value}</MyDetailsListItem>
 
+const ItemLink = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a href="">{Value}</a></MyDetailsListItem>
+
 export default aboutMe
