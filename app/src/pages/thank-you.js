@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
 import { Helmet } from "react-helmet";
-import { withPrefix } from 'gatsby'
-import SEO from "../components/seo"
+import { withPrefix } from 'gatsby';
+import SEO from "../components/seo";
+import styled from "styled-components";
 
 const Page = styled.div`
     background-color: #2f3c4f;
