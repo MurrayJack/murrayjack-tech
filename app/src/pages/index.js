@@ -6,12 +6,18 @@ import WorkExperience from "../components/workExperience"
 import Connect from "../components/contact"
 import Footer from "../components/footer";
 import * as Sentry from '@sentry/browser';
+import { Helmet } from "react-helmet";
+import { withPrefix } from 'gatsby'
 
-Sentry.init({dsn: "https://0d3f3a6c95694779ac5f7c87c7e961eb@sentry.io/1560759"});
+Sentry.init({ dsn: "https://0d3f3a6c95694779ac5f7c87c7e961eb@sentry.io/1560759" });
 
 export default () => (
   <Layout>
     <SEO title="Murray Jack" description="Murray Jack Resume" />
+
+    <Helmet>
+      <script src={withPrefix('hotjar.js')} type="text/javascript" />
+    </Helmet>
 
     <AboutMe />
 
