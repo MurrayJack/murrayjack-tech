@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
-import Scrollspy from 'react-scrollspy'
+import Scrollspy from 'react-scrollspy';
 
 const HeaderStyled = styled.header`
   background-color: #2f3c4f;

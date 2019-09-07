@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Container from "./container";
 import Image from "../components/image";
 import { useStaticQuery, graphql } from "gatsby";
+import { FiLink  } from 'react-icons/fi';
 
 const MyDetailsList = styled.ul`
     margin-top: 40px;
@@ -19,6 +20,9 @@ const MyDetailsListItem = styled.li`
     line-height: 30px;
     margin-bottom: 20px;
     font-weight: bold;
+    display: grid;
+    align-items: center;
+    align-content: center;
 
     >span {
         display: inline-block;
@@ -30,10 +34,17 @@ const MyDetailsListItem = styled.li`
         }
     }
 
+    >a {
+        color: white;
+        text-decoration: none;
+        line-height: 30px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
     @media (min-width: 960px) { 
-        > span {
-            width: 160px;
-        }   
+        grid-template-columns: 160px auto;
     }
 `
 
@@ -75,9 +86,9 @@ const aboutMe = () => {
                     <Item Name="Name" Value={data.sanityPersonalDetails.name} />
                     <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
                     <Item Name="Located" Value={data.sanityPersonalDetails.location} />
-                    <Item Name="Email" Value={data.sanityPersonalDetails.email} />
+                    <ItemMail Name="Email" Value={data.sanityPersonalDetails.email} />
                     <Item Name="Twitter" Value={data.sanityPersonalDetails.twitter} />
-                    <Item Name="GitHub" Value={data.sanityPersonalDetails.github} />
+                    <ItemLink Name="GitHub" Value={data.sanityPersonalDetails.github} />
                 </MyDetailsList>
             </Grid>
         </Container>
@@ -86,6 +97,8 @@ const aboutMe = () => {
 
 const Item = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span>{Value}</MyDetailsListItem>
 
-const ItemLink = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a href="">{Value}</a></MyDetailsListItem>
+const ItemLink = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a target="_blank" href={Value}>{Value} <FiLink /></a></MyDetailsListItem>
+
+const ItemMail = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a target="_blank" href={"mailto:" + Value}>{Value} <FiLink /></a></MyDetailsListItem>
 
 export default aboutMe

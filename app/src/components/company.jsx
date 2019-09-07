@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components";
+import { FiCalendar  } from 'react-icons/fi';
 
 const Wrapper = styled.div`
     display: grid;
@@ -55,6 +56,9 @@ const StyledDate = styled.div`
     background-color: #bbc0c0;
     border-radius: 3px;
     font-weight: bold;
+    display: grid;
+    grid-template-columns: 25px auto;
+    align-items: center;
 `
 
 const JobPoints = styled.ul`
@@ -68,7 +72,7 @@ const JobPoints = styled.ul`
     }
 `
 
-const DateRange = ({ Start, End }) => <StyledDate>{Start} - {End || "Present"}</StyledDate>
+const DateRange = ({ Start, End }) => <StyledDate><FiCalendar /> {Start} - {End || "Present"}</StyledDate>
 
 export default ({ data }) =>
     <Company>
