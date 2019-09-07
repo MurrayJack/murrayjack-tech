@@ -20,7 +20,7 @@ export default {
         },
         {
             name: 'locationUrl',
-            title: 'URL',
+            title: 'Location URL',
             type: 'url'
         },
         {
