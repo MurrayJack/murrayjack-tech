@@ -69,7 +69,12 @@ const ScrollSpy = styled(Scrollspy)`
     list-style: none;
     padding: 0;
     margin: 0;
-`
+    text-align: center;
+
+    @media (min-width: 960px) {
+        text-align: left;
+    }
+`;
 
 const Header = ({ siteTitle }) => (
     <HeaderStyled>
@@ -88,4 +93,4 @@ const Header = ({ siteTitle }) => (
     </HeaderStyled>
 )
 
-export default Header
+export default Header;

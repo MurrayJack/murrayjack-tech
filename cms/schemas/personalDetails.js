@@ -39,8 +39,18 @@ export default {
             type: 'text'
         },
         {
+            name: 'workBlurb2',
+            title: 'Work Blurb 2',
+            type: 'text'
+        },
+        {
             name: 'personalBlurb',
             title: 'Personal Blurb',
+            type: 'text'
+        },
+        {
+            name: 'personalBlurb2',
+            title: 'Personal Blurb 2',
             type: 'text'
         },
     ],

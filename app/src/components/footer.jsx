@@ -1,26 +1,31 @@
 import React from "react"
 import styled from "styled-components"
+import theme from "../theme";
 
 const Bar = styled.footer`
     color: white;
     background-color: #2f3c4f;
     padding-bottom: 120px;
+    font-size: ${theme.font.Small};
 `;
 
 const Section = styled.section`
     max-width: 100%;
     margin: 0 auto;
     padding: 1.45rem 20px;
+    text-align: center;
     display: grid;
-    grid-template-columns: 50% 50%;
 
     a {
         color: white;
     }
 
     @media (min-width: 960px) {
+        text-align: left;
         max-width: 960px;
         padding: 1.45rem 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
 `;
 

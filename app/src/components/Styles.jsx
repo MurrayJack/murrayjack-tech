@@ -11,7 +11,4 @@ export const P = styled.p`
     margin: 0;
     line-height: 1.8em;
     margin-bottom: 4em;
-    font-size: 16px;
 `
-
-

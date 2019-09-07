@@ -19,6 +19,11 @@ export default {
             type: 'url'
         },
         {
+            name: 'locationUrl',
+            title: 'URL',
+            type: 'url'
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string'

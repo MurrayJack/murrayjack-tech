@@ -49,9 +49,13 @@ const MyDetailsListItem = styled.li`
 `
 
 const Grid = styled.section`
-    @media (min-width: 960px) {
-        display: grid;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+
+    @media (min-width: 960px) {    
         grid-template-columns: 50% 50%;
+        justify-items: left;
     }
 `
 
@@ -97,8 +101,8 @@ const aboutMe = () => {
 
 const Item = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span>{Value}</MyDetailsListItem>
 
-const ItemLink = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a target="_blank" href={Value}>{Value} <FiLink /></a></MyDetailsListItem>
+const ItemLink = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a rel="noopener noreferrer" target="_blank" href={Value}>{Value} <FiLink /></a></MyDetailsListItem>
 
-const ItemMail = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a target="_blank" href={"mailto:" + Value}>{Value} <FiLink /></a></MyDetailsListItem>
+const ItemMail = ({ Name, Value }) => <MyDetailsListItem><span>{Name}</span><a href={"mailto:" + Value}>{Value} <FiLink /></a></MyDetailsListItem>
 
 export default aboutMe

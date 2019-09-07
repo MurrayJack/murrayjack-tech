@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 import { FiCalendar  } from 'react-icons/fi';
+import theme from "../theme";
 
 const Wrapper = styled.div`
     display: grid;
@@ -34,6 +35,7 @@ const SkillItem = styled.li`
     background-color: #bbc0c0;
     border-radius: 3px;
     line-height: 1.4em;
+    font-size: ${theme.font.Small};
 `
 
 const CompanyDeets = styled.div`
@@ -57,8 +59,9 @@ const StyledDate = styled.div`
     border-radius: 3px;
     font-weight: bold;
     display: grid;
-    grid-template-columns: 25px auto;
+    grid-template-columns: 20px auto;
     align-items: center;
+    font-size: ${theme.font.Small};
 `
 
 const JobPoints = styled.ul`
