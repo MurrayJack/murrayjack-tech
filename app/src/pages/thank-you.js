@@ -1,5 +1,7 @@
 import React from "react"
-import styled from "styled-components";
+import { Helmet } from "react-helmet";
+import { withPrefix } from 'gatsby'
+import SEO from "../components/seo"
 
 const Page = styled.div`
     background-color: #2f3c4f;
@@ -24,6 +26,12 @@ const Page = styled.div`
 
 const NotFoundPage = () => (
     <Page>
+        <SEO title="Thank You!" description="Murray Jack Resume" />
+
+        <Helmet>
+            <script src={withPrefix('hotjar.js')} type="text/javascript" />
+        </Helmet>
+
         <main>
             Thank you!
       </main>
