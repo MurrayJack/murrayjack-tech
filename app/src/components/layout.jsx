@@ -13,7 +13,7 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -23,16 +23,16 @@ const Layout = ({ children }) => {
     }
   `)
 
-    return (
-        <>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <main>{children}</main>
-        </>
-    )
+  return (
+    <>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main>{children}</main>
+    </>
+  )
 }
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

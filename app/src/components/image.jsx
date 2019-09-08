@@ -1,14 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Wrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   width: 300px;
-  
-`;
+`
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -23,7 +22,11 @@ const Image = () => {
     }
   `)
 
-  return <Wrapper><Img fluid={data.placeholderImage.childImageSharp.fluid} /></Wrapper>
+  return (
+    <Wrapper>
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+    </Wrapper>
+  )
 }
 
 export default Image
