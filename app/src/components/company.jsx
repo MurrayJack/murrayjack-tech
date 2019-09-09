@@ -5,8 +5,12 @@ import theme from "../theme"
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 70% 30%;
-  grid-gap: 80px;
+  
+  @media (min-width: 960px) {
+    grid-template-columns: 70% 30%;
+    grid-gap: 80px;
+  
+  }
 `
 
 const Company = styled.section`
