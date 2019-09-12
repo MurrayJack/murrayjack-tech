@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Container from "./container"
 import Image from "../components/image"
 import { useStaticQuery, graphql } from "gatsby"
-import { FiLink } from "react-icons/fi"
+import { FiLink, FiMail } from "react-icons/fi"
 
 const MyDetailsList = styled.ul`
   margin-top: 40px;
@@ -119,7 +119,7 @@ const ItemMail = ({ Name, Value }) => (
   <MyDetailsListItem>
     <span>{Name}</span>
     <a href={"mailto:" + Value}>
-      {Value} <FiLink />
+      {Value} <FiMail />
     </a>
   </MyDetailsListItem>
 )
