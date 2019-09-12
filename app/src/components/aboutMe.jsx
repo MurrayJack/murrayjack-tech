@@ -91,7 +91,7 @@ const aboutMe = () => {
           <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
           <Item Name="Located" Value={data.sanityPersonalDetails.location} />
           <ItemMail Name="Email" Value={data.sanityPersonalDetails.email} />
-          <Item Name="Twitter" Value={data.sanityPersonalDetails.twitter} />
+          <Item Name="LinkedIn" Value={data.sanityPersonalDetails.twitter} />
           <ItemLink Name="GitHub" Value={data.sanityPersonalDetails.github} />
         </MyDetailsList>
       </Grid>
