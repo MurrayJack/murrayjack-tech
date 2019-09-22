@@ -14,7 +14,7 @@ const MyDetailsList = styled.ul`
 `
 
 const MyDetailsListItem = styled.li`
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 1px;
   border-bottom: 1px solid #ccc;
   line-height: 30px;
