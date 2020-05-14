@@ -23,7 +23,7 @@ export default function PageTemplate({ data: { mdx } }) {
             <Container
                 ID="experience"
                 Color="#364859"
-                BGColor="#d8dbdb"
+                BGColor="#f2f2f2"
                 Header={mdx.frontmatter.title}
                 Info=""
             >
