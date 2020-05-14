@@ -1,0 +1,96 @@
+---
+title: Building the blogging application!
+path: /hello-world
+date: 2019-01-29
+---
+
+# Creating my blog site
+
+In my endless hint for a decent todo / project app, I thought I might just blog the creation of this blog site.. kind blog-ception really but hey it might be fun
+
+After listening the this syntax episode and for no bette plan I decided to use MDX, and as the rest of this tech site was in Gatsby it seemed a good combo
+
+so where to start...
+
+## Branch!
+
+Always start with a new branch, always always always, not this again, branch!
+
+https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/
+
+## Getting started
+
+https://www.gatsbyjs.org/docs/mdx/getting-started/
+
+In this link are the commands to get this started so lets go!
+
+```
+$ npm install gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react
+```
+
+then update tha gatsby-config.js with the new plugin
+
+```
+module.exports = {
+  plugins: [
+    // ....
+    `gatsby-plugin-mdx`,
+  ],
+}
+```
+
+The I added a MDX file to my /pages folder and ran
+
+```
+---
+title: Hello, world!
+path: /hello-world
+date: 2019-01-29
+---
+# Hello, world!
+```
+
+```
+$ npm run develop
+```
+
+and it didnt work
+
+so I had the change the config.js to
+
+```
+ `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mdx`,
+        path: `${__dirname}/src`,
+      },
+    }
+```
+
+this makes sense as the files are on the file syatem and hey I need to go look there...
+
+```
+$  npm run develop
+```
+
+now we can launch the graphIQL and have a allMdx section, so when I run this query
+
+```
+query {
+  allMdx {
+    edges {
+      node {
+        frontmatter {
+          title
+          path
+          date(formatString: "MMMM DD, YYYY")
+        }
+      }
+    }
+  }
+}
+```
+
+I get the document I want, thats awesome!

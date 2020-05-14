@@ -5,6 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import techStack from "./techStack"
 import jobPosition from './jobPosition'
 import socialMedia from './socialMedia'
 import personalDetails from "./personalDetails";
@@ -17,6 +18,7 @@ export default createSchema({
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
 
+        techStack,
         jobPosition,
         socialMedia,
         personalDetails

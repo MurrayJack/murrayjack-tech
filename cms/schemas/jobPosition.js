@@ -45,6 +45,12 @@ export default {
             of: [{ type: 'string' }]
         },
         {
+            name: 'techStack2',
+            title: 'Tech Stack',
+            type: 'array',
+            of: [{ type: 'techStack' }]
+        },
+        {
             name: 'tagLine',
             title: 'Tag Line',
             type: 'text'
