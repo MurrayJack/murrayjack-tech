@@ -9,6 +9,7 @@ import techStack from "./techStack"
 import jobPosition from './jobPosition'
 import socialMedia from './socialMedia'
 import personalDetails from "./personalDetails";
+import blogFeatureFlags from "./featureFlags";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,7 +22,7 @@ export default createSchema({
         techStack,
         jobPosition,
         socialMedia,
-        personalDetails
-
+        personalDetails,
+        blogFeatureFlags
     ])
 })
