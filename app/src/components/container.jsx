@@ -19,6 +19,7 @@ export default ({ children, BGColor, Color, Header, Info, ID }) => (
 const Wrapper = styled.div`
     background-color: ${props => props.BGColor};
     color: ${props => props.Color};
+    /* min-height: 100vh; */
 `
 
 const Article = styled.article`

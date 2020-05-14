@@ -3,6 +3,45 @@ import styled from "styled-components"
 import { FiCalendar } from "react-icons/fi"
 import theme from "../theme"
 
+const DateRange = ({ Start, End }) => (
+    <StyledDate>
+        <FiCalendar /> {Start} - {End || "Present"}
+    </StyledDate>
+)
+
+export default ({ data }) => (
+    <Company>
+        <Wrapper>
+            <div>
+                <Header>{data.title}</Header>
+                <CompanyDeets>
+                    <div>
+                        <a href={data.url}>{data.companyName}</a>:{" "}
+                        {data.location}
+                    </div>
+                    <DateRange Start={data.startDate} End={data.endDate} />
+                </CompanyDeets>
+
+                <p>{data.tagLine}</p>
+
+                <JobPoints>
+                    {data.jobPoints.map((e, i) => (
+                        <li key={i}>{e}</li>
+                    ))}
+                </JobPoints>
+            </div>
+            <div>
+                <h3>Key Skills</h3>
+                <SkillList>
+                    {data.techStack.map((e, i) => (
+                        <SkillItem key={i}>{e}</SkillItem>
+                    ))}
+                </SkillList>
+            </div>
+        </Wrapper>
+    </Company>
+)
+
 const Wrapper = styled.div`
     display: grid;
 
@@ -77,42 +116,3 @@ const JobPoints = styled.ul`
         padding-left: 10px;
     }
 `
-
-const DateRange = ({ Start, End }) => (
-    <StyledDate>
-        <FiCalendar /> {Start} - {End || "Present"}
-    </StyledDate>
-)
-
-export default ({ data }) => (
-    <Company>
-        <Wrapper>
-            <div>
-                <Header>{data.title}</Header>
-                <CompanyDeets>
-                    <div>
-                        <a href={data.url}>{data.companyName}</a>:{" "}
-                        {data.location}
-                    </div>
-                    <DateRange Start={data.startDate} End={data.endDate} />
-                </CompanyDeets>
-
-                <p>{data.tagLine}</p>
-
-                <JobPoints>
-                    {data.jobPoints.map((e, i) => (
-                        <li key={i}>{e}</li>
-                    ))}
-                </JobPoints>
-            </div>
-            <div>
-                <h3>Key Skills</h3>
-                <SkillList>
-                    {data.techStack.map((e, i) => (
-                        <SkillItem key={i}>{e}</SkillItem>
-                    ))}
-                </SkillList>
-            </div>
-        </Wrapper>
-    </Company>
-)
