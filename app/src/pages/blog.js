@@ -15,16 +15,16 @@ Sentry.init({
 export default () => {
     const data = useStaticQuery(graphql`
     {
-  allMdx {
-    nodes {
-      frontmatter {
-        title
-        path
-        active
-      }
+        allMdx {
+            nodes {
+            frontmatter {
+                title
+                path
+                active
+            }
+            }
+        }
     }
-  }
-}
     `)
 
     return (
