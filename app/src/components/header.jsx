@@ -88,11 +88,11 @@ const Header = ({ siteTitle }) => {
         }
     `)
 
-    // const {
-    //     allSanityFeatureFlags: {
-    //         nodes: [{ blogFeatureFlag }],
-    //     },
-    // } = data
+    const {
+        allSanityFeatureFlags: {
+            nodes: [{ blogFeatureFlag }],
+        },
+    } = data
 
     return (
         <HeaderStyled>
@@ -104,7 +104,7 @@ const Header = ({ siteTitle }) => {
                         items={["aboutme1", "experience1", "contact1"]}
                         currentClassName="is-current"
                     >
-                        {/* <li>{blogFeatureFlag && <a href="/blog">Blog</a>}</li> */}
+                        <li>{blogFeatureFlag && <a href="/blog">Blog</a>}</li>
                         <li>
                             <a href="#aboutme">About Me</a>
                         </li>
