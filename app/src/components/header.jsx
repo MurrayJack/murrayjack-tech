@@ -88,11 +88,11 @@ const Header = ({ siteTitle }) => {
         }
     `)
 
-    const {
-        allSanityFeatureFlags: {
-            nodes: [{ blogFeatureFlag }],
-        },
-    } = data
+    // const {
+    //     allSanityFeatureFlags: {
+    //         nodes: [{ blogFeatureFlag }],
+    //     },
+    // } = data
 
     return (
         <HeaderStyled>
