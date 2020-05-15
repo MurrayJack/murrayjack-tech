@@ -58,7 +58,7 @@ const Grid = styled.section`
     }
 `
 
-const aboutMe = () => {
+export default () => {
     const data = useStaticQuery(graphql`
         {
             sanityPersonalDetails {
