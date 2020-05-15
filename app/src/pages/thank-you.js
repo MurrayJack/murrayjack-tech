@@ -27,11 +27,11 @@ const Page = styled.div`
 
 const NotFoundPage = () => (
   <Page>
-    <SEO title="Thank You!" description="Murray Jack Resume" />
+    {/* <SEO title="Thank You!" description="Murray Jack Resume" />
 
     <Helmet>
       <script src={withPrefix("hotjar.js")} type="text/javascript" />
-    </Helmet>
+    </Helmet> */}
 
     <main>Thank you!</main>
   </Page>
