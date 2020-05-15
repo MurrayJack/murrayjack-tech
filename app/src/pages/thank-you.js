@@ -1,7 +1,7 @@
 import React from "react"
-// import { Helmet } from "react-helmet"
-// import { withPrefix } from "gatsby"
-// import SEO from "../components/seo"
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
+import SEO from "../components/seo"
 import styled from "styled-components"
 
 const Page = styled.div`
@@ -27,11 +27,11 @@ const Page = styled.div`
 
 const NotFoundPage = () => (
   <Page>
-    {/* <SEO title="Thank You!" description="Murray Jack Resume" />
+    <SEO title="Thank You!" description="Murray Jack Resume" />
 
     <Helmet>
-      <script src={withPrefix("hotjar.js")} type="text/javascript" />
-    </Helmet> */}
+      <script src={withPrefix("hotjar.js")} type="text/javascript"></script>
+    </Helmet>
 
     <main>Thank you!</main>
   </Page>
