@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AboutMe from "../components/aboutMe"
-// import WorkExperience from "../components/workExperience"
+// import AboutMe from "../components/aboutMe"
+import WorkExperience from "../components/workExperience"
 // import Connect from "../components/contact"
 import Footer from "../components/footer"
 import * as Sentry from "@sentry/browser"
@@ -18,7 +18,9 @@ export default () => (
   <Layout>
     <SEO title="Home" description="Murray Jack Resume" />
 
-    <AboutMe />
+    <WorkExperience />
+  
+    {/* <AboutMe /> */}
 
     {/* <Helmet>
       <script src={withPrefix("hotjar.js")} type="text/javascript"></script>
@@ -26,7 +28,7 @@ export default () => (
 
     
 
-    <WorkExperience />
+  
 
     <Connect /> */}
 
