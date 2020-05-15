@@ -1,5 +1,5 @@
 import React from "react"
-// import Container from "./container"
+import Container from "./container"
 import { useStaticQuery, graphql } from "gatsby"
 import Company from "./company"
 
@@ -27,19 +27,17 @@ const WorkExperience = () => {
     `)
 
     return (
-        // <Container
-        //     ID="experience"
-        //     Color="#364859"
-        //     BGColor="#f2f2f2"
-        //     Header="Work Experience"
-        //     Info={data.sanityPersonalDetails.workBlurb}
-        // >
-        <div>
+        <Container
+            ID="experience"
+            Color="#364859"
+            BGColor="#f2f2f2"
+            Header="Work Experience"
+            Info={data.sanityPersonalDetails.workBlurb}
+        >
             {data.allSanityJobposition.nodes.map((e, i) => (
                 <Company key={i} data={e} />
             ))}
-        </div>
-        // </Container>
+        </Container>
     )
 }
 
