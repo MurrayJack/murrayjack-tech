@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Container from "../components/container"
 import * as Sentry from "@sentry/browser"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 Sentry.init({
@@ -17,11 +16,12 @@ export default () => {
     {
         allMdx {
             nodes {
-            frontmatter {
-                title
-                path
-                active
-            }
+                frontmatter {
+                    title
+                    path
+                    active
+                    date
+                }
             }
         }
     }
@@ -29,20 +29,24 @@ export default () => {
 
     return (
         <Layout>
-            <SEO title="Home" description="Murray Jack Resume" />
-
-            <Helmet>
-                {/* <script src={withPrefix("hotjar.js")} type="text/javascript" /> */}
-            </Helmet>
+            <SEO title="Blog" description="Murray Jack List of Blogs" />
 
             <Container
                 Color="#364859"
                 BGColor="#f2f2f2"
                 Header="Blogs"
-                Info=""
+                Info="Im trying to blog a but more, should be fun!"
             >
-
-                {data.allMdx.nodes.map(e => e.frontmatter.active ? <p><a href={e.frontmatter.path}>{e.frontmatter.title} </a></p> : <></>)}
+                <table>
+                    {data.allMdx.nodes.map(e => e.frontmatter.active ? <tr>
+                        <td>
+                            <time>{e.frontmatter.date}</time>
+                        </td>
+                        <td>
+                            <a href={e.frontmatter.path}>{e.frontmatter.title} </a>
+                        </td>
+                    </tr> : <></>)}
+                </table>
 
             </Container>
 

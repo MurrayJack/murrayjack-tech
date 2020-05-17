@@ -8,8 +8,12 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import Footer from "../components/footer"
 import Container from "./container"
+import { withPrefix } from "gatsby"
+import { Tag } from "./tag"
+// import { FiCalendar } from "react-icons/fi"
+import { Javascript } from "./styling"
 
-const shortcodes = { Link } // Provide common components here
+const shortcodes = { Link, Javascript } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
     return (
@@ -17,7 +21,7 @@ export default function PageTemplate({ data: { mdx } }) {
             <SEO title="Home" description="Murray Jack Resume" />
 
             <Helmet>
-                {/* <script src={withPrefix("hotjar.js")} type="text/javascript" /> */}
+                <script src={withPrefix("hotjar.js")} type="text/javascript" />
             </Helmet>
 
             <Container
@@ -27,7 +31,17 @@ export default function PageTemplate({ data: { mdx } }) {
                 Header={mdx.frontmatter.title}
                 Info=""
             >
-                {/* <h1>{mdx.frontmatter.title}</h1> */}
+                <div style={{ textAlign: "right" }}>
+                    <Tag>
+                        {/* <FiCalendar /> */}
+                        {new Date(mdx.frontmatter.date).toLocaleDateString()}
+                    </Tag>
+                    
+                    {mdx.frontmatter.tags.map(e => (
+                        <Tag>{e}</Tag>
+                    ))}
+                </div>
+
                 <MDXProvider components={shortcodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
                 </MDXProvider>
@@ -44,6 +58,8 @@ export const pageQuery = graphql`
             body
             frontmatter {
                 title
+                tags
+                date
             }
         }
     }
