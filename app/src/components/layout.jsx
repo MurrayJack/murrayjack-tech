@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { push as Menu } from "react-burger-menu"
+// import { push as Menu } from "react-burger-menu"
 
 import Header from "./header"
 import "./layout.css"
@@ -28,14 +28,14 @@ const Layout = ({ children }) => {
     return (
         <div id="outer-container">
             <Header siteTitle={data.site.siteMetadata.title} />
-            <Menu  pageWrapId="page-wrap" outerContainerId={ "outer-container" }>
-                <div>
+            {/* <Menu  pageWrapId="page-wrap" outerContainerId={ "outer-container" }> */}
+                {/* <div>
                     <a href="/blog">Home</a>
-                </div>
+                </div> */}
                 {/* <div>
                     <a href="/blog">Blogs</a>
                 </div> */}
-            </Menu>
+            {/* </Menu> */}
             <main id="page-wrap">{children}</main>
         </div>
     )
