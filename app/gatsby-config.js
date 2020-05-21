@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://murrayjack.tech`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
