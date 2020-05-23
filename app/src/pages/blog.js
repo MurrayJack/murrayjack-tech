@@ -28,7 +28,7 @@ export default () => {
     `)
 
     return (
-        <Layout>
+        <main>
             <SEO title="Blog" description="Murray Jack List of Blogs" />
 
             <Container
@@ -49,8 +49,6 @@ export default () => {
                 </table>
 
             </Container>
-
-            <Footer />
-        </Layout>
+        </main>
     )
 }

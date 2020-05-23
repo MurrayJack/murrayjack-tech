@@ -3,16 +3,16 @@ import styled from "styled-components"
 
 import "../../static/normalize.css";
 
-export default () => <div>
+export default () => <main>
     <div style={{ display: "grid", alignItems: "center", justifyItems: "center", height: "100vh", gridGap: "24px", gridTemplateRows: "100px 1fr 1fr", background: "black", color: "white" }}>
-        <div style={{ color: "white", fontSize: "1.6em" }} >Murray Jack </div>
+        <h1 style={{ color: "white", fontSize: "1.6em" }} >Murray Jack </h1>
         <div>
             <Link href="./resume">Resume</Link>
             <Link href="./blog">Blog</Link>
         </div>
         <div></div>
     </div>
-</div>
+</main>
 
 const Link = styled.a`
     color: white;
