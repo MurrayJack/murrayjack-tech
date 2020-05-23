@@ -1,0 +1,7 @@
+:root {
+    /* root */
+    --main-bg-color: black;
+    --main-color: white;
+    --main-link-hover-bg-color: orangered;
+    --main-link-hover-color: black;
+}

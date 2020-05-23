@@ -92,6 +92,10 @@ const CompanyDeets = styled.div`
         text-decoration: none;
         border-bottom: 1px solid currentColor;
     }
+
+    a:hover {
+        color: orangered;
+    }
 `
 
 const StyledDate = styled.div`

@@ -42,6 +42,10 @@ const MyDetailsListItem = styled.li`
         align-items: center;
     }
 
+    > a:hover {
+        color: #2f3c4f
+    }
+
     @media (min-width: 960px) {
         grid-template-columns: 160px auto;
     }
