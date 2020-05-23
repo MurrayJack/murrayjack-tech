@@ -26,7 +26,8 @@ const Link = styled.a`
     text-align: center;
 
     &:hover {
+        border-color: transparent;
         color: black;
-        background: white;
+        background: orangered;
     }
 `
