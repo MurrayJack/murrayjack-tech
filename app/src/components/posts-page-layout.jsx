@@ -5,10 +5,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import Layout from "./layout"
 import SEO from "../components/seo"
-import { Helmet } from "react-helmet"
 import Footer from "../components/footer"
 import Container from "./container"
-import { withPrefix } from "gatsby"
 import { Tag } from "./tag"
 // import { FiCalendar } from "react-icons/fi"
 import { Javascript } from "./styling"
@@ -19,10 +17,6 @@ export default function PageTemplate({ data: { mdx } }) {
     return (
         <Layout>
             <SEO title="Home" description="Murray Jack Resume" />
-
-            <Helmet>
-                <script src={withPrefix("hotjar.js")} type="text/javascript" />
-            </Helmet>
 
             <Container
                 ID="experience"
