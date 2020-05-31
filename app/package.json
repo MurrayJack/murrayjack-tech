@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.6.1",
     "@sentry/browser": "^5.6.3",
     "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^2.21.33",
+    "gatsby": "^2.22.15",
     "gatsby-image": "^2.2.10",
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-mdx": "^1.2.7",
@@ -17,6 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.3",
     "gatsby-plugin-styled-components": "^3.3.1",
+    "gatsby-plugin-styled-jsx": "^3.3.2",
     "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-source-sanity": "^5.0.6",
@@ -31,7 +32,8 @@
     "react-icons": "^3.7.0",
     "react-scrollspy": "^3.4.0",
     "react-syntax-highlighter": "^12.2.1",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "styled-jsx": "^3.3.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

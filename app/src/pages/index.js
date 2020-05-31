@@ -12,6 +12,7 @@ export default () => (
         <article>
             <a href="./resume">Resume</a>
             <a href="./blog">Blog</a>
+            <a href="./rollerderby">Roller Derby</a>
         </article>
     </div>
 )

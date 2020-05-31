@@ -33,7 +33,7 @@ export default ({ data }) => (
             <div>
                 <h3>Key Skills</h3>
                 <SkillList>
-                    {data.techStack.map((e, i) => (
+                    {data.techStack.sort().map((e, i) => (
                         <SkillItem key={i}>{e}</SkillItem>
                     ))}
                 </SkillList>
