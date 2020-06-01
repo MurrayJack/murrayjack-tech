@@ -1,34 +1,89 @@
 import React from "react"
 import SEO from "../components/seo"
-import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Page = styled.div`
-  background-color: #2f3c4f;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+const NotFoundPage = () => {
+    const data = useStaticQuery(graphql`
+        {
+            allSanityTournament(sort: { fields: date, order: DESC }) {
+                nodes {
+                    name
+                    date
+                    location
 
-  > main {
-    display: inline-block;
-    background-color: white;
-    position: fixed;
-    top: 30%;
-    left: calc(50% - 200px);
-    width: 400px;
-    box-sizing: border-box;
-    padding: 20px;
-    border-radius: 5px;
-  }
-`
+                    game {
+                        homeTeam
+                        visitingTeam
+                        position
+                    }
+                }
+            }
+        }
+    `)
 
-const NotFoundPage = () => (
-  <Page>
-    <SEO title="Thank You!" description="Murray Jack Resume" />
+    return (
+        <div>
+            <SEO title="Refume" description="Skatespeare Roller Derby" />
 
-    <main>Roller Derby</main>
-  </Page>
-)
+            {/* <main>{JSON.stringify(data)}</main> */}
+
+            <main>
+                <h1>Flat Track Derby Game History Summary</h1>
+
+                {/* <table>
+                Official's Legal Name		Murray Jack						Today's Date	2020-06-01	
+Official's Derby Name		Skatespeare (Formerly William Skatespeare)						Officiating Since	2014-03-01	
+Affiliated League		Victorian Roller Derby League								
+Insurance #					Provider		Skate Vic			
+Ref Cert Level				Endorsement(s)						
+NSO Cert Level				Endorsement(s)						
+                </table> */}
+
+                <table></table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Tournament</th>
+                            <th>Host League</th>
+                            <th>Home Team</th>
+                            <th>Visiting Team</th>
+                            <th>Position</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {data.allSanityTournament.nodes.map(e =>
+                            e.game.map((g, i) => (
+                                <tr>
+                                    <td>{i === 0 && e.date}</td>
+                                    <td>{i === 0 && e.name}</td>
+                                    <td>{i === 0 && e.location}</td>
+                                    <td>{g.homeTeam}</td>
+                                    <td>{g.visitingTeam}</td>
+                                    <td>{g.position}</td>
+                                </tr>
+                            ))
+                        )}
+                    </tbody>
+                </table>
+            </main>
+
+            <style jsx>{`
+                td {
+                    padding: 8px 16px;
+                    border: 1px solid #ddd;
+                }
+
+                th {
+                    text-align: left;
+                    padding: 8px 16px;
+                    background: #ddd;
+                }
+            `}</style>
+        </div>
+    )
+}
 
 export default NotFoundPage

@@ -12,6 +12,10 @@ import personalDetails from "./personalDetails";
 import blogFeatureFlags from "./featureFlags";
 import projects from "./projects"
 
+import tournament from "./rollerDerby/tournaments"
+import game from "./rollerDerby/games";
+import league from "./rollerDerby/league";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
     // We name our schema
@@ -26,6 +30,10 @@ export default createSchema({
         personalDetails,
         blogFeatureFlags,
 
-        projects
+        projects,
+
+        tournament,
+        game,
+        league
     ])
 })
