@@ -21,6 +21,22 @@ const NotFoundPage = () => {
         }
     `)
 
+    const counts = {
+        CHR: 0,
+        HR: 0,
+        IPR: 0,
+        JR: 0,
+        OPR: 0,
+        total: 0
+    }
+
+    data.allSanityTournament.nodes.forEach(t => {
+        t.game.forEach(g => {
+            counts[g.position]++
+            counts["total"]++
+        })
+    })
+
     return (
         <div>
             <SEO title="Refume" description="Skatespeare Roller Derby" />
@@ -29,6 +45,33 @@ const NotFoundPage = () => {
 
             <main>
                 <h1>Flat Track Derby Game History Summary</h1>
+
+                <table>
+                    <tr>
+                        <th>CHR</th>
+                        <td>{counts.CHR}</td>
+                    </tr>
+                    <tr>
+                        <th>HR</th>
+                        <td>{counts.HR}</td>
+                    </tr>
+                    <tr>
+                        <th>IPR</th>
+                        <td>{counts.IPR}</td>
+                    </tr>
+                    <tr>
+                        <th>JR</th>
+                        <td>{counts.JR}</td>
+                    </tr>
+                    <tr>
+                        <th>OPR</th>
+                        <td>{counts.OPR}</td>
+                    </tr>
+                    <tr>
+                        <th>total</th>
+                        <td>{counts.total}</td>
+                    </tr>
+                </table>
 
                 {/* <table>
                 Official's Legal Name		Murray Jack						Today's Date	2020-06-01	
@@ -71,6 +114,11 @@ NSO Cert Level				Endorsement(s)
             </main>
 
             <style jsx>{`
+                table {
+                    /* width: 100%; */
+                    
+                }
+
                 td {
                     padding: 8px 16px;
                     border: 1px solid #ddd;
