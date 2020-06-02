@@ -10,6 +10,13 @@ const NotFoundPage = () => {
                     name
                     date
                     location
+                    image {
+                        asset {
+                            fluid(maxWidth: 60) {
+                                srcSet
+                            }
+                        }
+                    }
 
                     game {
                         homeTeam
@@ -27,7 +34,7 @@ const NotFoundPage = () => {
         IPR: 0,
         JR: 0,
         OPR: 0,
-        total: 0
+        total: 0,
     }
 
     data.allSanityTournament.nodes.forEach(t => {
@@ -87,6 +94,7 @@ NSO Cert Level				Endorsement(s)
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Date</th>
                             <th>Tournament</th>
                             <th>Host League</th>
@@ -100,6 +108,16 @@ NSO Cert Level				Endorsement(s)
                         {data.allSanityTournament.nodes.map(e =>
                             e.game.map((g, i) => (
                                 <tr>
+                                    <td>
+                                        {i === 0 && (
+                                            <img
+                                                srcSet={
+                                                    e.image?.asset?.fluid
+                                                        ?.srcSet
+                                                }
+                                            />
+                                        )}
+                                    </td>
                                     <td>{i === 0 && e.date}</td>
                                     <td>{i === 0 && e.name}</td>
                                     <td>{i === 0 && e.location}</td>
@@ -116,7 +134,6 @@ NSO Cert Level				Endorsement(s)
             <style jsx>{`
                 table {
                     /* width: 100%; */
-                    
                 }
 
                 td {
@@ -128,6 +145,10 @@ NSO Cert Level				Endorsement(s)
                     text-align: left;
                     padding: 8px 16px;
                     background: #ddd;
+                }
+
+                img {
+                    width: 60px;
                 }
             `}</style>
         </div>
