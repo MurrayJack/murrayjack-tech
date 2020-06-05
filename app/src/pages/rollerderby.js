@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
+import {DerbyDetails} from "../components/derbyDetails";
 
 const NotFoundPage = () => {
     const data = useStaticQuery(graphql`
@@ -51,7 +52,9 @@ const NotFoundPage = () => {
             {/* <main>{JSON.stringify(data)}</main> */}
 
             <main>
-                <h1>Flat Track Derby Game History Summary</h1>
+                <h1>Skatespeare - Game History</h1>
+
+                <DerbyDetails />
 
                 <table>
                     <tr>
@@ -132,19 +135,28 @@ NSO Cert Level				Endorsement(s)
             </main>
 
             <style jsx>{`
+                main {
+                    padding: 24px;
+                    display: grid;
+                    grid-gap: 16px;
+                }
+
+
                 table {
                     /* width: 100%; */
+                    width: 100%;
+                    border-collapse: collapse;
                 }
 
                 td {
-                    padding: 8px 16px;
+                    padding: 16px;
                     border: 1px solid #ddd;
                 }
 
                 th {
                     text-align: left;
-                    padding: 8px 16px;
-                    background: #ddd;
+                    padding: 16px;
+                    background: #f2f2f2;
                 }
 
                 img {

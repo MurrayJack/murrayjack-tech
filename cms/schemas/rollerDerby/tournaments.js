@@ -71,6 +71,13 @@ export default {
                 { field: 'date', direction: 'desc' }
             ]
         },
+        {
+            title: 'Name',
+            name: 'nameOrder',
+            by: [
+                { field: 'name', direction: 'asc' }
+            ]
+        },
     ],
     preview: {
         select: {
