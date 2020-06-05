@@ -65,14 +65,14 @@ export const DerbyDetails = () => (
 
             td {
                 padding: 16px;
-                border: 1px solid #999;
+                border: 1px solid #ccc;
             }
 
             th {
                 text-align: left;
                 padding: 16px;
                 background: #f7f7f7;
-                border: 1px solid #999;
+                border: 1px solid #ccc;
             }
 
             img {

@@ -225,7 +225,7 @@ const NotFoundPage = () => {
 
                 td {
                     padding: 16px;
-                    border: 1px solid #999;
+                    border: 1px solid #ccc;
                     line-height: 1.6em;
                 }
 
@@ -233,7 +233,7 @@ const NotFoundPage = () => {
                     text-align: left;
                     padding: 16px;
                     background: #f7f7f7;
-                    border: 1px solid #999;
+                    border: 1px solid #ccc;
                     line-height: 1.6em;
                 }
 
