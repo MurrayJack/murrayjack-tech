@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { DerbyDetails } from "../components/derbyDetails"
+import { DerbyCounts } from "../components/derbyCounts"
 
 const NotFoundPage = () => {
     const data = useStaticQuery(graphql`
@@ -61,83 +62,7 @@ const NotFoundPage = () => {
 
                 <DerbyDetails />
 
-                <h2>WFTDA ({counts.total} - Games)</h2>
-
-                <table>
-                    <tr>
-                        <th rowSpan={2}>Skating Positions</th>
-                        <th
-                            valign="bottom"
-                            width="40"
-                            align="center"
-                            rowSpan={2}
-                        >
-                            Code
-                        </th>
-                        <th colSpan={5}>Game Designation</th>
-                    </tr>
-
-                    <tr>
-                        <th>Champs</th>
-                        <th>Playoff</th>
-                        <th>Sanc</th>
-                        <th>Reg</th>
-                        <th>Other</th>
-                    </tr>
-
-                    <tr>
-                        <th>Head Referee</th>
-                        <td align="center">HR</td>
-                        <td></td>
-                        <td>{counts.Playoff_HR}</td>
-                        <td>{counts.Sanc_HR}</td>
-                        <td>{counts.Reg_HR}</td>
-                        <td>{counts.Other_HR}</td>
-                    </tr>
-                    <tr>
-                        <th>Jammer Referee</th>
-                        <td align="center">JR</td>
-                        <td></td>
-                        <td>{counts.Playoff_JR}</td>
-                        <td>{counts.Sanc_JR}</td>
-                        <td>{counts.Reg_JR}</td>
-                        <td>{counts.Other_JR}</td>
-                    </tr>
-
-                    <tr>
-                        <th>Inside Pack Referee</th>
-                        <td align="center">IPR</td>
-                        <td></td>
-                        <td>{counts.Playoff_IPR}</td>
-                        <td>{counts.Sanc_IPR}</td>
-                        <td>{counts.Reg_IPR}</td>
-                        <td>{counts.Other_IPR}</td>
-                    </tr>
-
-                    {/* <tr>
-                        <th>CHR</th>
-                        <td>{counts.CHR}</td>
-                    </tr> */}
-
-                    <tr>
-                        <th>Outside Pack Referee</th>
-                        <td align="center">OPR</td>
-                        <td></td>
-                        <td>{counts.Playoff_OPR}</td>
-                        <td>{counts.Sanc_OPR}</td>
-                        <td>{counts.Reg_OPR}</td>
-                        <td>{counts.Other_OPR}</td>
-                    </tr>
-
-                    <tr>
-                        <th colSpan={2}>total</th>
-                        <td></td>
-                        <td>{counts.Playoff_total}</td>
-                        <td>{counts.Sanc_total}</td>
-                        <td>{counts.Reg_total}</td>
-                        <td>{counts.Other_total}</td>
-                    </tr>
-                </table>
+                <DerbyCounts counts={counts} />
 
                 <h2>Game History</h2>
 
@@ -147,7 +72,7 @@ const NotFoundPage = () => {
                             <th></th>
                             <th width="130">Date</th>
                             <th>Tournament</th>
-                            <th>Host League</th>
+                            <th>Location</th>
                             <th>Home Team</th>
                             <th>Visiting Team</th>
                             <th>Type</th>
