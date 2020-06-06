@@ -39,8 +39,6 @@ const NotFoundPage = () => {
 
     data.allSanityTournament.nodes.forEach(t => {
         t.game.forEach(g => {
-            let item = counts[`${g.type}_${g.position}`]
-
             if (counts[`${g.type}_${g.position}`] === undefined) {
                 counts[`${g.type}_${g.position}`] = 0
             }

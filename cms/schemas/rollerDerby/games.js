@@ -21,7 +21,7 @@ export default {
     },
     {
       name: "headRef",
-      title: "Head Ref",
+      title: "Head Referee",
       type: "string",
     },
     {
@@ -114,18 +114,16 @@ export default {
       home: "homeTeam",
       away: "visitingTeam",
       position: "position",
-      type: "type",
       name: "name",
-      association: "association",
     },
 
     prepare(selection) {
-      const { name, home, away, position, type, association } = selection;
+      const { name, home, away, position } = selection;
 
       return {
         title: `${
           name ? name + ":" : ""
-        } ${position}, (${association} - ${type})`,
+          } ${position}`,
         subtitle: `${home} vs ${away}`,
       };
     },
