@@ -5,7 +5,7 @@ export default {
 
     fieldsets: [{
             name: "images",
-            title: "Images",
+            title: "Image",
             options: {
                 collapsible: true,
                 collapsed: true,
@@ -45,7 +45,13 @@ export default {
             fieldset: "details",
             to: {
                 type: 'league'
-            }
+            },
+        },
+        {
+            name: "isWasTHR",
+            title: "Was THR",
+            type: "boolean",
+            fieldset: "details",
         },
         {
             name: "image",

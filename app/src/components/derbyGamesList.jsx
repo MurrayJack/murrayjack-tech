@@ -65,6 +65,7 @@ export const DerbyGamesList = ({ data }) => {
                 }
 
                 table {
+                    width: 100%;
                     border-collapse: collapse;
                     font-size: 14px;
                 }
