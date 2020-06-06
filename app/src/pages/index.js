@@ -1,4 +1,5 @@
 import React from "react"
+import LargeLink from "../components/general/LargeLink";
 
 import "../styles/normalize.css";
 import "../styles/theme.css"
@@ -8,11 +9,21 @@ export default () => (
         <main>
             <header>
                 <h1>Murray Jack </h1>
+                <hr></hr>
             </header>
+
             <article>
-                <a href="./resume">Resume</a>
-                <a href="./blog">Blog</a>
-                <a href="./rollerderby">Roller Derby</a>
+                
+                <LargeLink href="./resume" caption="My Resume"></LargeLink>
+
+                <LargeLink href="./blog" caption="My Blog">
+                    Im trying to do some blogging, appologies i havent done a lot so far.
+                </LargeLink>
+
+                <LargeLink href="./rollerderby" caption="My Roller Derby">
+                    Information on my referee career within the Melbourne Roller Derby community.   
+                </LargeLink>
+
             </article>
         </main>
 
@@ -22,7 +33,8 @@ export default () => (
                 color: var(--main-color);
                 height: 100vh;
                 display: grid;
-                grid-template-rows: 80px 1fr 1fr;
+                grid-template-rows: 120px 1fr 1fr;
+                grid-gap: 40px;
                 align-items: center;
                 justify-items: center;
             }
@@ -36,31 +48,8 @@ export default () => (
 
             article {
                 display: grid;
-                grid-auto-flow: column;
+                grid-auto-flow: row;
                 grid-gap: var(--gaps-xxlarge);
-            }
-
-            a {
-                color: var(--main-color);
-                font-size: var(--font-xlarge);
-                text-decoration: none;
-                border: 1px solid var(--main-color);
-                padding: var(--gaps-xxlarge);
-                text-align: center;
-                transition: background ease-in-out 0.2s;
-                width: 8em;
-            }
-
-            a:hover {
-                border-color: transparent;
-                background: var(--main-link-hover-bg-color);
-                color: var(--main-link-hover-color);
-            }
-
-            @media (max-width: 900px) {
-                article {
-                    grid-auto-flow: row;
-                }
             }
 
         `}</style>
