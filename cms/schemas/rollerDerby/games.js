@@ -10,9 +10,25 @@ export default {
       type: "string",
     },
     {
+      name: "homeLeague",
+      title: "Home League",
+      type: "reference",
+      to: {
+        type: 'league'
+      },
+    },
+    {
       name: "homeTeam",
       title: "Home Team",
       type: "string",
+    },
+    {
+      name: "visitingLeague",
+      title: "Visiting League",
+      type: "reference",
+      to: {
+        type: 'league'
+      },
     },
     {
       name: "visitingTeam",
@@ -111,20 +127,22 @@ export default {
   ],
   preview: {
     select: {
+      homeLeague: "homeLeague.abb",
       home: "homeTeam",
+      visitingLeague: "visitingLeague.abb",
       away: "visitingTeam",
       position: "position",
       name: "name",
     },
 
     prepare(selection) {
-      const { name, home, away, position } = selection;
+      const { name, home, away, position, homeLeague, visitingLeague } = selection;
 
       return {
         title: `${
           name ? name + ":" : ""
           } ${position}`,
-        subtitle: `${home} vs ${away}`,
+        subtitle: `(${homeLeague}) ${home} vs (${visitingLeague}) ${away}`,
       };
     },
   },

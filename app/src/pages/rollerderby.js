@@ -23,7 +23,14 @@ const NotFoundPage = () => {
                     }
 
                     game {
+                        name
+                        homeLeague {
+                            abb
+                        }
                         homeTeam
+                        visitingLeague {
+                            abb
+                        }
                         visitingTeam
                         position
                         type

@@ -9,9 +9,8 @@ export const DerbyGamesList = ({ data }) => {
                         <th></th>
                         <th width="130">Date</th>
                         <th>Tournament</th>
-                        <th>Location</th>
-                        <th>Home Team</th>
-                        <th>Visiting Team</th>
+                        <th>Game</th>
+                        <th>Teams</th>
                         <th>Type</th>
                         <th>Position</th>
                     </tr>
@@ -34,21 +33,20 @@ export const DerbyGamesList = ({ data }) => {
 
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
-                                        {new Date(e.date).toDateString()}
+                                        {new Date(e.date).toLocaleDateString()}
                                     </td>
                                 )}
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
-                                        {e.name}
+                                        {e.name}<br />
+                                        <span style={{color: "#999"}}>{e.location}</span>
                                     </td>
                                 )}
-                                {i === 0 && (
-                                    <td valign="top" rowSpan={e.game.length}>
-                                        {e.location}
-                                    </td>
-                                )}
-                                <td>{g.homeTeam}</td>
-                                <td>{g.visitingTeam}</td>
+                                <td>{g.name}</td>
+                                <td>
+                                    (g.hostLeague.abb) {g.homeTeam}<br />
+                                    (g.visitingLeage.abb) {g.visitingTeam}
+                                </td>
                                 <td>{g.type}</td>
                                 <td>{g.position}</td>
                             </tr>
@@ -74,6 +72,7 @@ export const DerbyGamesList = ({ data }) => {
                     padding: 16px;
                     border: 1px solid #ccc;
                     line-height: 1.6em;
+                    vertical-align: top;
                 }
 
                 th {
