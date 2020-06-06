@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { DerbyDetails } from "../components/derbyDetails"
 import { DerbyCounts } from "../components/derbyCounts"
+import { SearchInput } from "../components/searchInput"
+import { DerbyGamesList } from "../components/derbyGamesList"
 
 const NotFoundPage = () => {
     const data = useStaticQuery(graphql`
@@ -53,6 +55,24 @@ const NotFoundPage = () => {
         })
     })
 
+    const [tournaments, setTournaments] = useState(
+        data.allSanityTournament.nodes
+    )
+
+    const handleOnSearch = search => {
+        const regex = new RegExp(search, "i")
+
+        setTournaments(
+            data.allSanityTournament.nodes.filter(
+                e =>
+                    regex.test(e.location) ||
+                    regex.test(e.name) ||
+                    regex.test(e.date)
+            )
+        )
+        return Promise.resolve()
+    }
+
     return (
         <div>
             <SEO title="Refume" description="Skatespeare Roller Derby" />
@@ -66,72 +86,9 @@ const NotFoundPage = () => {
 
                 <h2>Game History</h2>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th width="130">Date</th>
-                            <th>Tournament</th>
-                            <th>Location</th>
-                            <th>Home Team</th>
-                            <th>Visiting Team</th>
-                            <th>Type</th>
-                            <th>Position</th>
-                        </tr>
-                    </thead>
+                <SearchInput onSearch={handleOnSearch} />
 
-                    <tbody>
-                        {data.allSanityTournament.nodes.map(e =>
-                            e.game.map((g, i) => (
-                                <tr>
-                                    {i === 0 && (
-                                        <td
-                                            valign="top"
-                                            rowSpan={e.game.length}
-                                        >
-                                            <img
-                                                alt={e.game.name}
-                                                srcSet={
-                                                    e.image?.asset?.fluid
-                                                        ?.srcSet
-                                                }
-                                            />
-                                        </td>
-                                    )}
-
-                                    {i === 0 && (
-                                        <td
-                                            valign="top"
-                                            rowSpan={e.game.length}
-                                        >
-                                            {new Date(e.date).toDateString()}
-                                        </td>
-                                    )}
-                                    {i === 0 && (
-                                        <td
-                                            valign="top"
-                                            rowSpan={e.game.length}
-                                        >
-                                            {e.name}
-                                        </td>
-                                    )}
-                                    {i === 0 && (
-                                        <td
-                                            valign="top"
-                                            rowSpan={e.game.length}
-                                        >
-                                            {e.location}
-                                        </td>
-                                    )}
-                                    <td>{g.homeTeam}</td>
-                                    <td>{g.visitingTeam}</td>
-                                    <td>{g.type}</td>
-                                    <td>{g.position}</td>
-                                </tr>
-                            ))
-                        )}
-                    </tbody>
-                </table>
+                <DerbyGamesList data={tournaments} />
             </main>
 
             <style jsx>{`
@@ -139,31 +96,6 @@ const NotFoundPage = () => {
                     padding: 24px;
                     display: grid;
                     grid-gap: 16px;
-                }
-
-                table {
-                    /* width: 100%; */
-                    /* width: 100%; */
-                    border-collapse: collapse;
-                    font-size: 14px;
-                }
-
-                td {
-                    padding: 16px;
-                    border: 1px solid #ccc;
-                    line-height: 1.6em;
-                }
-
-                th {
-                    text-align: left;
-                    padding: 16px;
-                    background: #f7f7f7;
-                    border: 1px solid #ccc;
-                    line-height: 1.6em;
-                }
-
-                img {
-                    width: 60px;
                 }
             `}</style>
         </div>
