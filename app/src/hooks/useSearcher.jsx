@@ -1,7 +1,11 @@
 import * as React from "react"
 import * as keycode from "keycode"
 
-export const useSearcher = (OnSearch, OnCancel, options = {}) => {
+export const useSearcher = (
+    OnSearch,
+    OnCancel,
+    options = { TriggerCancelOnEmptyString: true }
+) => {
     const [value, setValue] = React.useState("")
     const [isSearching, setIsSearching] = React.useState(false)
     const ref = React.useRef(null)

@@ -2,7 +2,7 @@ import React from "react"
 import { useSearcher } from "../hooks/useSearcher"
 
 export const SearchInput = ({ onSearch }) => {
-    const { inputProps } = useSearcher(onSearch)
+    const { inputProps } = useSearcher(onSearch, onSearch)
 
     return (
         <>
