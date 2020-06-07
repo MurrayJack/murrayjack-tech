@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Highlighted } from "../components/text/highlight"
 
 export const DerbyGamesList = ({ data }) => {
     return (
@@ -38,13 +39,17 @@ export const DerbyGamesList = ({ data }) => {
                                 )}
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
-                                        {e.name}<br />
-                                        <span style={{color: "#999"}}>{e.location}</span>
+                                        <Highlighted text={e.name}  />
+                                        <br />
+                                        <span style={{ color: "#999" }}>
+                                            <Highlighted text={e.location} />
+                                        </span>
                                     </td>
                                 )}
                                 <td>{g.name}</td>
                                 <td>
-                                    {g.homeLeague?.name}: {g.homeTeam}<br />
+                                    {g.homeLeague?.name}: {g.homeTeam}
+                                    <br />
                                     {g.visitingLeague?.name}: {g.visitingTeam}
                                 </td>
                                 <td>{g.type}</td>
