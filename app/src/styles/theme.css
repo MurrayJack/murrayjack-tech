@@ -1,14 +1,4 @@
 :root {
-    /* root */
-    
-    --main-bg-color: #121723;
-    --main-color: #9ca8bd;
-
-    --main-header-color: white;
-
-    --main-link-hover-bg-color: #1a202e;
-    --main-link-hover-color: #9ca8bd;
-
     --font-small: 0.8em;
     --font-normal: 1em;
     --font-large: 1.4em;
@@ -21,16 +11,22 @@
     --gaps-xxlarge: 32px;
 }
 
+[data-theme="dark"] {
+    --main-bg-color: #121723;
+    --main-color: #9ca8bd;
 
+    --main-header-color: white;
 
-/* export default {
-    Green: "#4a9f87",
-    DarkBlue: "#2f3c4f",
-  
-    font: {
-      Small: "0.8em",
-      Normal: "1.2em",
-      Large: "1.4em",
-    },
-  }
-   */
+    --main-link-hover-bg-color: #1a202e;
+    --main-link-hover-color: #9ca8bd;
+}
+
+[data-theme="light"] {
+    --main-bg-color: #f2f2f2;
+    --main-color: #121723;
+
+    --main-header-color: #121723;
+
+    --main-link-hover-bg-color: #9ca8bd;
+    --main-link-hover-color: #1a202e;
+}

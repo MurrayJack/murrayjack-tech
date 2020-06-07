@@ -3,20 +3,19 @@ import { graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import Layout from "./layout"
-import SEO from "../components/seo"
-import Footer from "../components/footer"
-import Container from "./container"
-import { Tag } from "./tag"
-// import { FiCalendar } from "react-icons/fi"
-import { Javascript } from "./styling"
+import Layout from "../layout"
+import SEO from "../seo"
+import Footer from "../footer"
+import Container from "../container"
+import { Tag } from "../tag"
+import { Javascript } from "../styling"
 
-const shortcodes = { Link, Javascript } // Provide common components here
+const shortCodes = { Link, Javascript } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
     return (
         <Layout>
-            <SEO title="Home" description="Murray Jack Resume" />
+            <SEO title="Blogs" description="Murray Jack Blog" />
 
             <Container
                 ID="experience"
@@ -30,13 +29,13 @@ export default function PageTemplate({ data: { mdx } }) {
                         {/* <FiCalendar /> */}
                         {new Date(mdx.frontmatter.date).toLocaleDateString()}
                     </Tag>
-                    
+
                     {mdx.frontmatter.tags.map(e => (
                         <Tag>{e}</Tag>
                     ))}
                 </div>
 
-                <MDXProvider components={shortcodes}>
+                <MDXProvider components={shortCodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
                 </MDXProvider>
             </Container>
