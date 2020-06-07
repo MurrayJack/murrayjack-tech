@@ -45,7 +45,7 @@ export const DerbyGamesList = ({ data }) => {
                                 <td>{g.name}</td>
                                 <td>
                                     {g.homeLeague?.name}: {g.homeTeam}<br />
-                                    {g.visitingLeage?.name}: {g.visitingTeam}
+                                    {g.visitingLeague?.name}: {g.visitingTeam}
                                 </td>
                                 <td>{g.type}</td>
                                 <td>{g.position}</td>
