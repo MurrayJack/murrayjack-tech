@@ -24,6 +24,7 @@
     "gatsby-transformer-sharp": "^2.2.7",
     "gsap": "^3.2.6",
     "keycode": "^2.2.0",
+    "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
