@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import { DerbyDetails } from "../components/derbyDetails"
-import { DerbyCounts } from "../components/derbyCounts"
+import { DerbyDetails } from "../components/derby/derbyDetails"
+import { DerbyCounts } from "../components/derby/derbyCounts"
 import { SearchInput } from "../components/searchInput"
-import { DerbyGamesList } from "../components/derbyGamesList"
+import { DerbyGamesList } from "../components/derby/derbyGamesList"
 
 const NotFoundPage = () => {
     const data = useStaticQuery(graphql`
@@ -80,7 +80,7 @@ const NotFoundPage = () => {
 
     return (
         <div>
-            <SEO title="Refume" description="Skatespeare Roller Derby" />
+            <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
             <main>
                 <h1>Skatespeare - Game History</h1>

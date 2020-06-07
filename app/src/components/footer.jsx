@@ -6,7 +6,7 @@ export default () => (
     <Bar>
         <Section>
             <div>
-                Site Created Using:{" "}
+                Site Created Using:
                 <a href="https://www.gatsbyjs.org/">Gatsby</a> |{" "}
                 <a href="https://www.sanity.io/">Sanity.IO</a> |{" "}
                 <a href="https://app.netlify.com">Netflify</a>

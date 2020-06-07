@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Highlighted } from "../components/text/highlight"
+import { Highlighted } from "../text/highlight"
 
 export const DerbyGamesList = ({ data }) => {
     return (
