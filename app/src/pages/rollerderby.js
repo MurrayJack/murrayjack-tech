@@ -25,11 +25,11 @@ const NotFoundPage = () => {
                     game {
                         name
                         homeLeague {
-                            abb
+                            name
                         }
                         homeTeam
                         visitingLeague {
-                            abb
+                            name
                         }
                         visitingTeam
                         position

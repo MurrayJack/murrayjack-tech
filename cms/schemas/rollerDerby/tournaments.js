@@ -27,6 +27,11 @@ export default {
             type: "string",
         },
         {
+            name: "complete",
+            title: "Complete",
+            type: "boolean",
+        },
+        {
             name: "date",
             title: "Date",
             type: "date",
