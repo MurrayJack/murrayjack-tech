@@ -62,7 +62,9 @@ export const DerbyCounts = ({ counts }) => (
                 </tr>
 
                 <tr>
-                    <th colSpan={2}>total</th>
+                    <th style={{ textAlign: "right" }} colSpan={2}>
+                        Total:
+                    </th>
                     <td></td>
                     <td className="center">{counts.Playoff_total}</td>
                     <td className="center">{counts.Sanc_total}</td>
@@ -129,8 +131,9 @@ export const DerbyCounts = ({ counts }) => (
 
             td {
                 padding: 16px;
-                border: 1px solid #ccc;
+                border: 1px solid var(--table-header-border-color);
                 line-height: 1.6em;
+                color: var(--table-header-color);
             }
 
             td.center,
@@ -142,8 +145,10 @@ export const DerbyCounts = ({ counts }) => (
                 text-align: left;
                 padding: 16px;
                 background: var(--table-header-bgcolor);
-                border: 1px solid #ccc;
+
+                border: 1px solid var(--table-header-border-color);
                 line-height: 1.6em;
+                font-weight: var(--table-header-font-weight);
             }
 
             img {

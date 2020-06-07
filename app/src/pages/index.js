@@ -1,7 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import LargeLink from "../components/general/LargeLink"
-import "../styles/normalize.css"
-import "../styles/theme.css"
 import { useDarkMode } from "../hooks/useDarkMode"
 
 export default () => {
@@ -32,8 +30,6 @@ export default () => {
 
             <style jsx>{`
                 main {
-                    background-color: var(--main-bg-color);
-                    color: var(--main-color);
                     height: 100vh;
                     display: grid;
                     grid-template-rows: 120px 1fr 1fr;
@@ -45,8 +41,6 @@ export default () => {
                 h1 {
                     padding: 0;
                     margin: 0;
-                    color: var(--main-header-color);
-                    font-size: var(--font-xlarge);
                 }
 
                 article {

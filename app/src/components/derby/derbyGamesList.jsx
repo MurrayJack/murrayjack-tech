@@ -39,7 +39,7 @@ export const DerbyGamesList = ({ data }) => {
                                 )}
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
-                                        <Highlighted text={e.name}  />
+                                        <Highlighted text={e.name} />
                                         <br />
                                         <span style={{ color: "#999" }}>
                                             <Highlighted text={e.location} />
@@ -75,17 +75,19 @@ export const DerbyGamesList = ({ data }) => {
 
                 td {
                     padding: 16px;
-                    border: 1px solid #ccc;
+                    border: 1px solid var(--table-header-border-color);
                     line-height: 1.6em;
                     vertical-align: top;
+                    color: var(--table-header-color);
                 }
 
                 th {
                     text-align: left;
                     padding: 16px;
-                    background: #f7f7f7;
-                    border: 1px solid #ccc;
+                    background: var(--table-header-bgcolor);
+                    border: 1px solid var(--table-header-border-color);
                     line-height: 1.6em;
+                    font-weight: var(--table-header-font-weight);
                 }
 
                 img {

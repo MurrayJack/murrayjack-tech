@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 //import { push as Menu } from "react-burger-menu"
 
 import Header from "./header"
-import "./layout.css"
+// import "./layout.css"
 
 const Layout = ({ children }) => {
 
