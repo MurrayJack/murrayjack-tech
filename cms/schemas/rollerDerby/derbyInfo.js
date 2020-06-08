@@ -27,6 +27,11 @@ export default {
             },
         },
         {
+            name: "provider",
+            title: "Provider",
+            type: "string",
+        },
+        {
             name: "insurance",
             title: "Insurance #",
             type: "string",
