@@ -1,10 +1,7 @@
 import React from "react"
 import LargeLink from "../components/general/LargeLink"
-import { useDarkMode } from "../hooks/useDarkMode"
 
 export default () => {
-    useDarkMode()
-
     return (
         <>
             <main>

@@ -5,19 +5,8 @@ import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
 import { SearchInput } from "../components/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
-import { useDarkMode } from "../hooks/useDarkMode"
-
-// import "../styles/normalize.css"
-// import "../styles/theme.css"
-
-// Sentry.init({
-//     dsn: "https://0d3f3a6c95694779ac5f7c87c7e961eb@sentry.io/1560759",
-//     release: "murrayjack-tech@1.0.0",
-// })
 
 const RollerDerby = () => {
-    useDarkMode()
-
     const data = useStaticQuery(graphql`
         {
             allSanityTournament(sort: { fields: date, order: DESC }) {
