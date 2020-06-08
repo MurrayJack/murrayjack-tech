@@ -7,6 +7,8 @@ import { SearchInput } from "../components/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
 
 const RollerDerby = () => {
+    const [searchString, setSearchString] = useState("")
+
     const data = useStaticQuery(graphql`
         {
             allSanityTournament(sort: { fields: date, order: DESC }) {
@@ -67,12 +69,15 @@ const RollerDerby = () => {
     const handleOnSearch = search => {
         const regex = new RegExp(search, "i")
 
+        setSearchString(search)
+
         setTournaments(
             data.allSanityTournament.nodes.filter(
                 e =>
                     regex.test(e.location) ||
                     regex.test(e.name) ||
-                    regex.test(e.date)
+                    regex.test(e.date) ||
+                    (e.games && e.games.filter(g => regex.test(g.name)))
             )
         )
         return Promise.resolve()
@@ -93,7 +98,10 @@ const RollerDerby = () => {
 
                 <SearchInput onSearch={handleOnSearch} />
 
-                <DerbyGamesList data={tournaments} />
+                <DerbyGamesList
+                    data={tournaments}
+                    searchString={searchString}
+                />
             </main>
 
             <style jsx>{`

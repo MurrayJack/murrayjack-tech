@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Highlighted } from "../text/highlight"
 
-export const DerbyGamesList = ({ data }) => {
+export const DerbyGamesList = ({ data, searchString }) => {
     return (
         <>
             <table>
@@ -31,7 +31,6 @@ export const DerbyGamesList = ({ data }) => {
                                         />
                                     </td>
                                 )}
-
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
                                         {new Date(e.date).toLocaleDateString()}
@@ -39,21 +38,45 @@ export const DerbyGamesList = ({ data }) => {
                                 )}
                                 {i === 0 && (
                                     <td valign="top" rowSpan={e.game.length}>
-                                        <Highlighted text={e.name} />
+                                        <Highlighted
+                                            text={e.name}
+                                            highLight={searchString}
+                                        />
                                         <br />
                                         <span style={{ color: "#999" }}>
-                                            <Highlighted text={e.location} />
+                                            <Highlighted
+                                                text={e.location}
+                                                highLight={searchString}
+                                            />
                                         </span>
                                     </td>
                                 )}
                                 <td>{g.name}</td>
                                 <td>
-                                    {g.homeLeague?.name}: {g.homeTeam}
+                                    <Highlighted
+                                        text={`${g.homeLeague?.name}: ${g.homeTeam}`}
+                                        highLight={searchString}
+                                    />
+
                                     <br />
-                                    {g.visitingLeague?.name}: {g.visitingTeam}
+
+                                    <Highlighted
+                                        text={`${g.visitingLeague?.name}: ${g.visitingTeam}`}
+                                        highLight={searchString}
+                                    />
                                 </td>
-                                <td>{g.type}</td>
-                                <td>{g.position}</td>
+                                <td>
+                                    <Highlighted
+                                        text={g.type}
+                                        highLight={searchString}
+                                    />
+                                </td>
+                                <td>
+                                    <Highlighted
+                                        text={g.position}
+                                        highLight={searchString}
+                                    />
+                                </td>
                             </tr>
                         ))
                     )}
