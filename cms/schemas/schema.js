@@ -15,6 +15,7 @@ import projects from "./projects"
 import tournament from "./rollerDerby/tournaments"
 import game from "./rollerDerby/games";
 import league from "./rollerDerby/league";
+import derbyInfo from "./rollerDerby/derbyInfo";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,6 +35,7 @@ export default createSchema({
 
         tournament,
         game,
-        league
+        league,
+        derbyInfo
     ])
 })
