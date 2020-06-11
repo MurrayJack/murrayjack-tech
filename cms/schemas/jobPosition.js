@@ -9,6 +9,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'title',
+            title: 'Title',
+            type: 'string'
+        },
+        {
             name: 'location',
             title: 'Location',
             type: 'string'
@@ -22,11 +27,6 @@ export default {
             name: 'locationUrl',
             title: 'Location URL',
             type: 'url'
-        },
-        {
-            name: 'title',
-            title: 'Title',
-            type: 'string'
         },
         {
             name: 'startDate',

@@ -8,9 +8,10 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import techStack from "./techStack"
 import jobPosition from './jobPosition'
 import socialMedia from './socialMedia'
-import personalDetails from "./personalDetails";
-import blogFeatureFlags from "./featureFlags";
-import projects from "./projects"
+import personalDetails from "./personalDetails"
+import blogFeatureFlags from "./featureFlags"
+
+import projects from "./projects/projects"
 
 import tournament from "./rollerDerby/tournaments"
 import game from "./rollerDerby/games";
