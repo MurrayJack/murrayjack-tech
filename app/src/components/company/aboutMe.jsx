@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Container from "./container"
-import Image from "../components/image"
+import Image from "../image"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiLink, FiMail } from "react-icons/fi"
 

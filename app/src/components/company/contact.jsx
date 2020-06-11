@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "./container"
 import styled from "styled-components"
-import theme from "../theme"
+import theme from "../../theme"
 
 const Label = styled.label`
     display: block;

@@ -10,7 +10,7 @@ S.list()
             .title("My Details")
             .icon(TiUser)
             .child(
-                S.editor().schemaType("personalDetails").documentId("personalDetails")
+                S.editor().schemaType("personalDetails").documentId("ed82cfde-41fb-4841-b1ce-d65ebcc5561e")
             ),
 
         S.listItem()

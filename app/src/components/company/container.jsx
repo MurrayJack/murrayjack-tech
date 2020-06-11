@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H2, P } from "./Styles"
+import { H2, P } from "../Styles"
 
 export default ({ children, BGColor, Color, Header, Info, ID }) => (
     <>

@@ -1,12 +1,35 @@
 import React from "react"
 import styled from "styled-components"
 import { FiCalendar } from "react-icons/fi"
-import theme from "../theme"
+import theme from "../../theme"
 
 const DateRange = ({ Start, End }) => (
     <StyledDate>
         <FiCalendar /> {Start} - {End || "Present"}
     </StyledDate>
+)
+
+const JobPoints = ({ jobPoints }) => (
+    <>
+        <ul>
+            {jobPoints.map((e, i) => (
+                <li key={i}>{e}</li>
+            ))}
+        </ul>
+        <style jsx>{`
+            ul {
+                list-style: circle;
+                padding-left: var(--gaps-xlarge);
+                color: var(--main-color);
+            }
+
+            li {
+                list-style: circle;
+                padding: 10px 0;
+                padding-left: 10px;
+            }
+        `}</style>
+    </>
 )
 
 export default ({ data }) => (
@@ -24,11 +47,7 @@ export default ({ data }) => (
 
                 <p>{data.tagLine}</p>
 
-                <JobPoints>
-                    {data.jobPoints.map((e, i) => (
-                        <li key={i}>{e}</li>
-                    ))}
-                </JobPoints>
+                <JobPoints jobPoints={data.jobPoints} />
             </div>
             <div>
                 <h3>Key Skills</h3>
@@ -109,15 +128,4 @@ const StyledDate = styled.div`
     grid-template-columns: 20px auto;
     align-items: center;
     font-size: ${theme.font.Small};
-`
-
-const JobPoints = styled.ul`
-    list-style: circle;
-    padding-left: 20px;
-
-    > li {
-        list-style: circle;
-        padding: 10px 0;
-        padding-left: 10px;
-    }
 `

@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
-import { SearchInput } from "../components/searchInput"
+import { SearchInput } from "../components/derby/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
 
 const RollerDerby = () => {

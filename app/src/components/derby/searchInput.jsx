@@ -1,5 +1,5 @@
 import React from "react"
-import { useSearcher } from "../hooks/useSearcher"
+import { useSearcher } from "../..//hooks/useSearcher"
 
 export const SearchInput = ({ onSearch }) => {
     const { inputProps } = useSearcher(onSearch, onSearch)
