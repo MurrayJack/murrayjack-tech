@@ -18,6 +18,7 @@
         --main-bg-color: #121723;
         --main-color: #9ca8bd;
 
+        --main-color2: white;
         --main-bg-color2: #2f3c4f;
 
         --main-header-color: white;
@@ -114,6 +115,7 @@ li {
     color: var(--main-color);
     font-size: var(--font-normal);
     line-height: 1.6em;
+    letter-spacing: 0.01em;
 }
 
 main {

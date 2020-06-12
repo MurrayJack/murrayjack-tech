@@ -130,21 +130,3 @@ const Item = ({ name, value, icon }) => (
         `}</style>
     </>
 )
-
-// const ItemLink = ({ Name, Value }) => (
-//     <MyDetailsListItem>
-//         <span>{Name}</span>
-//         <a rel="noopener noreferrer" target="_blank" href={Value}>
-//             {Value} <FiLink />
-//         </a>
-//     </MyDetailsListItem>
-// )
-
-// const ItemMail = ({ Name, Value }) => (
-//     <MyDetailsListItem>
-//         <span>{Name}</span>
-//         <a href={"mailto:" + Value}>
-//             {Value} <FiMail />
-//         </a>
-//     </MyDetailsListItem>
-// )

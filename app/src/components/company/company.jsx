@@ -94,6 +94,7 @@ const SkillItem = styled.li`
     display: inline-block;
     padding: 8px 10px;
     margin: 4px;
+    color: var(--main-color2);
     background-color: var(--main-bg-color2);
     border-radius: 3px;
     font-size: var(--font-small);
@@ -115,6 +116,7 @@ const CompanyDeets = styled.div`
 const StyledDate = styled.div`
     padding: 8px 10px;
     margin: 4px;
+    color: var(--main-color2);
     background-color: var(--main-bg-color2);
     border-radius: 3px;
     font-weight: bold;
