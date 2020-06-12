@@ -18,7 +18,13 @@
         --main-bg-color: #121723;
         --main-color: #9ca8bd;
 
+        --main-bg-color2: #2f3c4f;
+
         --main-header-color: white;
+        --main-header-color2: #47a0b7;
+
+        --link-color: white;
+        --link-color-hover: #47a0b7;
 
         --main-link-hover-bg-color: #1a202e;
         --main-link-hover-color: #9ca8bd;
@@ -34,10 +40,16 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --main-bg-color: white;
+        --main-bg-color: #f2f2f2;
         --main-color: #121723;
 
+        --main-bg-color2: #ddd;
+
         --main-header-color: #121723;
+        --main-header-color2: #47a0b7;
+
+        --link-color: #121723;
+        --link-color-hover: #47a0b7;
 
         --main-link-hover-bg-color: #9ca8bd;
         --main-link-hover-color: #1a202e;
@@ -84,18 +96,37 @@ h2 {
     font-size: var(--font-large);
 }
 
+textarea,
 input {
     font-size: 1em;
-    color: white;
+    color: var(--main-color);
+    background-color: var(--main-bg-color2);
+}
+
+button {
+    background-color: var(--main-header-color2);
+    color: var(--main-color);
 }
 
 p,
 li {
     line-height: 1.8em;
+    color: var(--main-color);
+    font-size: var(--font-normal);
+    line-height: 1.6em;
 }
 
 main {
     padding: 24px;
     display: grid;
     grid-gap: 16px;
+}
+
+a {
+    color: var(--link-color);
+    font-size: var(--font-normal);
+}
+
+a:hover {
+    color: var(--link-color-hover);
 }

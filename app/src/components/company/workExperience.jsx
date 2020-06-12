@@ -29,8 +29,8 @@ const WorkExperience = () => {
     return (
         <Container
             ID="experience"
-            Color="#364859"
-            BGColor="#f2f2f2"
+            Color="white"
+            BGColor="transparent"
             Header="Work Experience"
             Info={data.sanityPersonalDetails.workBlurb}
         >

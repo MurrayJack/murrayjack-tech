@@ -32,7 +32,7 @@ export default () => {
             <table>
                 {data.allMdx.nodes.map(e =>
                     e.frontmatter.active ? (
-                        <LargeLink href={e.frontmatter.path} caption="??">
+                        <LargeLink href={e.frontmatter.path} caption={e.frontmatter.title}>
                             {e.frontmatter.title}
                         </LargeLink>
                     ) : (

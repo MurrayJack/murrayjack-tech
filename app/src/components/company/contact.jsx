@@ -15,7 +15,7 @@ const Input = styled.input`
     border: none;
     width: 100%;
     text-indent: 10px;
-    color: ${theme.DarkBlue};
+    /* color: ${theme.DarkBlue}; */
 `
 
 const TextArea = styled.textarea`
@@ -24,13 +24,13 @@ const TextArea = styled.textarea`
     border: none;
     width: 100%;
     padding: 10px;
-    color: ${theme.DarkBlue};
+    /* color: ${theme.DarkBlue}; */
     box-sizing: border-box;
     resize: none;
 `
 
 const Button = styled.button`
-    background-color: ${theme.DarkBlue};
+    /* background-color: ${theme.DarkBlue}; */
     border: 0;
     height: 40px;
     color: white;
@@ -44,16 +44,18 @@ const Button = styled.button`
 `
 
 const List = styled.ul`
+    padding: 0;
+    margin: 0;
+
     > li {
         margin-bottom: 10px;
+        list-style: none;
     }
 `
 
 export default () => (
     <Container
         ID="contact"
-        Color="white"
-        BGColor={theme.Green}
         Header="Contact Me"
         Info="Drop me a line using the contact form below"
     >

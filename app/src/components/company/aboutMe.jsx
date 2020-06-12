@@ -1,66 +1,8 @@
 import React from "react"
-import styled from "styled-components"
 import Container from "./container"
 import Image from "../image"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiLink, FiMail } from "react-icons/fi"
-
-const MyDetailsList = styled.ul`
-    margin-top: 40px;
-
-    @media (min-width: 960px) {
-        margin-top: 0;
-    }
-`
-
-const MyDetailsListItem = styled.li`
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #ccc;
-    line-height: 30px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    display: grid;
-    align-items: center;
-    align-content: center;
-
-    > span {
-        display: inline-block;
-        font-weight: normal;
-        margin-right: 5px;
-
-        &:after {
-            content: ":";
-        }
-    }
-
-    > a {
-        color: white;
-        text-decoration: none;
-        line-height: 30px;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-    }
-
-    > a:hover {
-        color: #2f3c4f
-    }
-
-    @media (min-width: 960px) {
-        grid-template-columns: 160px auto;
-    }
-`
-
-const Grid = styled.section`
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-items: center;
-
-    @media (min-width: 960px) {
-        grid-template-columns: 50% 50%;
-        justify-items: left;
-    }
-`
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -80,61 +22,129 @@ export default () => {
     return (
         <Container
             ID="aboutme"
-            Color="white"
-            BGColor="#47a0b7"
             Header="About Me"
             Info={data.sanityPersonalDetails.personalBlurb}
         >
-            <Grid>
+            <section>
                 <div>
                     <Image />
                 </div>
-                <MyDetailsList>
-                    <Item Name="Name" Value={data.sanityPersonalDetails.name} />
-                    <Item Name="Visa" Value={data.sanityPersonalDetails.visa} />
+                <ul>
                     <Item
-                        Name="Located"
-                        Value={data.sanityPersonalDetails.location}
+                        name="Name"
+                        value={() => data.sanityPersonalDetails.name}
                     />
-                    <ItemMail
-                        Name="Email"
-                        Value={data.sanityPersonalDetails.email}
+                    <Item
+                        name="Visa"
+                        value={() => data.sanityPersonalDetails.visa}
                     />
-                    <ItemLink
-                        Name="LinkedIn"
-                        Value={data.sanityPersonalDetails.twitter}
+
+                    <Item
+                        name="Located"
+                        value={() => data.sanityPersonalDetails.location}
                     />
-                    <ItemLink
-                        Name="GitHub"
-                        Value={data.sanityPersonalDetails.github}
+
+                    <Item
+                        name="Email"
+                        value={() => (
+                            <a
+                                href={
+                                    "mailto:" + data.sanityPersonalDetails.email
+                                }
+                            >
+                                {data.sanityPersonalDetails.email}
+                            </a>
+                        )}
+                        icon={() => <FiMail />}
                     />
-                </MyDetailsList>
-            </Grid>
+
+                    <Item
+                        name="Twitter"
+                        value={() => data.sanityPersonalDetails.twitter}
+                        icon={() => <FiLink />}
+                    />
+
+                    <Item
+                        name="GitHub"
+                        icon={() => <FiLink />}
+                        value={() => (
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.github}
+                            >
+                                {data.sanityPersonalDetails.github}
+                            </a>
+                        )}
+                    />
+                </ul>
+            </section>
+
+            <style jsx>{`
+                section {
+                    display: grid;
+                    grid-template-rows: auto auto;
+                    justify-items: center;
+            }
+
+                ul {
+                    width: 100%;
+                }
+
+                @media (min-width: 960px) {
+                    section {
+                        grid-template-columns: 50% 1fr;
+                        justify-items: left;
+                        align-items: center;
+                    }
+                }
+            `}</style>
         </Container>
     )
 }
 
-const Item = ({ Name, Value }) => (
-    <MyDetailsListItem>
-        <span>{Name}</span>
-        {Value}
-    </MyDetailsListItem>
+const Item = ({ name, value, icon }) => (
+    <>
+        <li>
+            <span>{name}:</span>
+            <span>{value()}</span>
+            <span>{icon && icon()}</span>
+        </li>
+
+        <style jsx>{`
+            li {
+                width: 100%;
+                text-transform: lowercase;
+                letter-spacing: 1px;
+                border-bottom: 1px solid #ccc;
+                line-height: 30px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                display: grid;
+                align-items: center;
+                align-content: center;
+                display: grid;
+                grid-template-columns: 150px 1fr auto;
+                grid-gap: 8px;
+            }
+        `}</style>
+    </>
 )
 
-const ItemLink = ({ Name, Value }) => (
-    <MyDetailsListItem>
-        <span>{Name}</span>
-        <a rel="noopener noreferrer" target="_blank" href={Value}>
-            {Value} <FiLink />
-        </a>
-    </MyDetailsListItem>
-)
+// const ItemLink = ({ Name, Value }) => (
+//     <MyDetailsListItem>
+//         <span>{Name}</span>
+//         <a rel="noopener noreferrer" target="_blank" href={Value}>
+//             {Value} <FiLink />
+//         </a>
+//     </MyDetailsListItem>
+// )
 
-const ItemMail = ({ Name, Value }) => (
-    <MyDetailsListItem>
-        <span>{Name}</span>
-        <a href={"mailto:" + Value}>
-            {Value} <FiMail />
-        </a>
-    </MyDetailsListItem>
-)
+// const ItemMail = ({ Name, Value }) => (
+//     <MyDetailsListItem>
+//         <span>{Name}</span>
+//         <a href={"mailto:" + Value}>
+//             {Value} <FiMail />
+//         </a>
+//     </MyDetailsListItem>
+// )

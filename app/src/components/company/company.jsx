@@ -77,7 +77,7 @@ const Company = styled.section`
 
 const Header = styled.header`
     text-transform: uppercase;
-    color: #47a0b7;
+    color: var(--main-header-color2);
     font-weight: bold;
     font-size: 20px;
     line-height: 1.6em;
@@ -92,12 +92,11 @@ const SkillList = styled.ul`
 
 const SkillItem = styled.li`
     display: inline-block;
-    padding: 4px 10px;
+    padding: 8px 10px;
     margin: 4px;
-    background-color: #d8dbdb;
+    background-color: var(--main-bg-color2);
     border-radius: 3px;
-    line-height: 1.4em;
-    font-size: ${theme.font.Small};
+    font-size: var(--font-small);
 `
 
 const CompanyDeets = styled.div`
@@ -108,20 +107,15 @@ const CompanyDeets = styled.div`
     align-items: center;
 
     a {
-        color: currentColor;
         text-decoration: none;
         border-bottom: 1px solid currentColor;
-    }
-
-    a:hover {
-        color: orangered;
     }
 `
 
 const StyledDate = styled.div`
-    padding: 4px 10px;
+    padding: 8px 10px;
     margin: 4px;
-    background-color: #d8dbdb;
+    background-color: var(--main-bg-color2);
     border-radius: 3px;
     font-weight: bold;
     display: grid;

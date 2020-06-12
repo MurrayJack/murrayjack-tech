@@ -6,7 +6,7 @@ export default () => (
     <Bar>
         <Section>
             <div>
-                Site Created Using:
+                Site Created Using:{" "}
                 <a href="https://www.gatsbyjs.org/">Gatsby</a> |{" "}
                 <a href="https://www.sanity.io/">Sanity.IO</a> |{" "}
                 <a href="https://app.netlify.com">Netflify</a>
@@ -24,10 +24,8 @@ export default () => (
 )
 
 const Bar = styled.footer`
-    color: white;
-    background-color: #2f3c4f;
     padding-bottom: 120px;
-    font-size: ${theme.font.Small};
+    font-size: var(--font-small);
 `
 
 const Section = styled.section`
@@ -36,10 +34,6 @@ const Section = styled.section`
     padding: 1.45rem 20px;
     text-align: center;
     display: grid;
-
-    a {
-        color: white;
-    }
 
     @media (min-width: 960px) {
         text-align: left;
