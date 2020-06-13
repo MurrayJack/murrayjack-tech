@@ -65,7 +65,7 @@ const Wrapper = styled.div`
     display: grid;
 
     @media (min-width: 960px) {
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 3fr 1fr;
         grid-gap: 80px;
     }
 `

@@ -29,8 +29,18 @@ export default {
             type: 'string'
         },
         {
+            name: 'twitterName',
+            title: 'Twitter Name',
+            type: 'string'
+        },
+        {
             name: 'twitter',
             title: 'Twitter',
+            type: 'string'
+        },
+        {
+            name: 'linkedIn',
+            title: 'Linked In',
             type: 'string'
         },
         {

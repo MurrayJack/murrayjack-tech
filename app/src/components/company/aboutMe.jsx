@@ -2,7 +2,7 @@ import React from "react"
 import Container from "./container"
 import Image from "../image"
 import { useStaticQuery, graphql } from "gatsby"
-import { FiLink, FiMail } from "react-icons/fi"
+import { FiLink, FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -15,6 +15,8 @@ export default () => {
                 visa
                 github
                 twitter
+                twitterName
+                linkedIn
             }
         }
     `)
@@ -60,13 +62,21 @@ export default () => {
 
                     <Item
                         name="Twitter"
-                        value={() => data.sanityPersonalDetails.twitter}
-                        icon={() => <FiLink />}
+                        value={() => (
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.twitter}
+                            >
+                                {data.sanityPersonalDetails.twitterName}
+                            </a>
+                        )}
+                        icon={() => <FiTwitter />}
                     />
 
                     <Item
                         name="GitHub"
-                        icon={() => <FiLink />}
+                        icon={() => <FiGithub />}
                         value={() => (
                             <a
                                 rel="noopener noreferrer"
@@ -74,6 +84,20 @@ export default () => {
                                 href={data.sanityPersonalDetails.github}
                             >
                                 {data.sanityPersonalDetails.github}
+                            </a>
+                        )}
+                    />
+
+                    <Item
+                        name="LinkedIn"
+                        icon={() => <FiLinkedin />}
+                        value={() => (
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.linkedIn}
+                            >
+                                {data.sanityPersonalDetails.linkedIn}
                             </a>
                         )}
                     />
@@ -85,17 +109,19 @@ export default () => {
                     display: grid;
                     grid-template-rows: auto auto;
                     justify-items: center;
-            }
+                    grid-gap: 40px;
+                }
 
                 ul {
-                    width: 100%;
+                    padding: 0;
+                    margin: 0;
                 }
 
                 @media (min-width: 960px) {
                     section {
-                        grid-template-columns: 50% 1fr;
+                        grid-template-columns: auto 1fr;
                         justify-items: left;
-                        align-items: center;
+                        align-items: top;
                     }
                 }
             `}</style>
@@ -113,12 +139,11 @@ const Item = ({ name, value, icon }) => (
 
         <style jsx>{`
             li {
-                width: 100%;
                 text-transform: lowercase;
                 letter-spacing: 1px;
-                border-bottom: 1px solid #ccc;
-                line-height: 30px;
-                margin-bottom: 20px;
+                border-bottom: 1px solid var(--text-border-color);
+                line-height: 32px;
+                margin-bottom: 16px;
                 font-weight: bold;
                 display: grid;
                 align-items: center;
