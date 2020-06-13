@@ -19,6 +19,7 @@ export default () => {
                         path
                         active
                         date
+                        fragment
                     }
                 }
             }
@@ -29,27 +30,27 @@ export default () => {
         <main>
             <SEO title="Blog" description="Murray Jack List of Blogs" />
 
-            <table>
-                {data.allMdx.nodes.map(e =>
-                    e.frontmatter.active ? (
-                        <LargeLink href={e.frontmatter.path} caption={e.frontmatter.title}>
-                            {e.frontmatter.title}
-                        </LargeLink>
-                    ) : (
-                        // <tr>
-                        //     <td>
-                        //         <time>{e.frontmatter.date}</time>
-                        //     </td>
-                        //     <td>
-                        //         <a href={e.frontmatter.path}>
-                        //             {e.frontmatter.title}{" "}
-                        //         </a>
-                        //     </td>
-                        // </tr>
-                        <></>
-                    )
+            <div>
+                {data.allMdx.nodes.map(
+                    e =>
+                        e.frontmatter.active && (
+                            <LargeLink
+                                href={e.frontmatter.path}
+                                caption={e.frontmatter.title}
+                            >
+                                {e.frontmatter.fragment}
+                            </LargeLink>
+                        )
                 )}
-            </table>
+            </div>
+
+            <style jsx>{`
+                div {
+                    display: grid;
+                    grid-gap: 30px;
+                }
+            
+            `}</style>
         </main>
     )
 }

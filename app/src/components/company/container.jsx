@@ -1,9 +1,9 @@
 import React from "react"
 import { H2, P } from "../Styles"
 
-export default ({ children, Header, Info, ID }) => (
+export default ({ children, Header, Info, ID, className }) => (
     <>
-        <div id={ID}>
+        <div id={ID} className={className}>
             <article>
                 <H2>{Header}</H2>
                 <P>{Info}</P>

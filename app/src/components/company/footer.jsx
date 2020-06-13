@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import theme from "../../theme"
 
 export default () => (
+    <>
     <Bar>
         <Section>
             <div>
@@ -21,6 +21,13 @@ export default () => (
             </div>
         </Section>
     </Bar>
+
+    <style jsx>{`
+    
+    
+    `}</style>
+
+    </>
 )
 
 const Bar = styled.footer`

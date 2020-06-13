@@ -16,20 +16,38 @@ export default function PageTemplate({ data: { mdx } }) {
                 <SEO title="Blogs" description="Murray Jack Blog" />
 
                 <div style={{ textAlign: "right" }}>
-                    <Tag>
-                        {/* <FiCalendar /> */}
-                        {new Date(mdx.frontmatter.date).toLocaleDateString()}
-                    </Tag>
+                    <ul>
+                        <li>
+                            <Tag>
+                                {/* <FiCalendar /> */}
+                                {new Date(
+                                    mdx.frontmatter.date
+                                ).toLocaleDateString()}
+                            </Tag>
+                        </li>
 
-                    {mdx.frontmatter.tags.map(e => (
-                        <Tag>{e}</Tag>
-                    ))}
+                        {mdx.frontmatter.tags.map(e => (
+                            <li>
+                                <Tag>{e}</Tag>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 <MDXProvider components={shortCodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
                 </MDXProvider>
             </main>
+
+            <style jsx>{`
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    // display: flex;
+                    // flex-direction: row-reverse;
+                }
+            `}</style>
         </>
     )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Container from "./container"
 import Image from "../image"
 import { useStaticQuery, graphql } from "gatsby"
-import { FiLink, FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
+import { FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -26,6 +26,7 @@ export default () => {
             ID="aboutme"
             Header="About Me"
             Info={data.sanityPersonalDetails.personalBlurb}
+            className="aboutMe"
         >
             <section>
                 <div>

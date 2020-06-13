@@ -21,6 +21,12 @@
         --main-color2: white;
         --main-bg-color2: #2f3c4f;
 
+        --main-bg-color3: #47a0b7;
+
+        /* 
+        --main-bg-color2: #2f3c4f;
+        --main-bg-color2: #2f3c4f; */
+
         --main-header-color: white;
         --main-header-color2: #47a0b7;
 
@@ -44,7 +50,10 @@
         --main-bg-color: #f2f2f2;
         --main-color: #121723;
 
+        --main-color2: #121723;
         --main-bg-color2: #ddd;
+
+        --main-bg-color3: #47a0b7;
 
         --main-header-color: #121723;
         --main-header-color2: #47a0b7;
