@@ -123,4 +123,5 @@ const StyledDate = styled.div`
     grid-template-columns: 20px auto;
     align-items: center;
     font-size: var(--font-small);
+    white-space: nowrap;
 `

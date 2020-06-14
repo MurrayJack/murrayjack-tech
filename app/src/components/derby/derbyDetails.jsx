@@ -1,4 +1,5 @@
 import React from "react"
+import Me from "../image";
 
 export const DerbyDetails = () => (
     <>
@@ -40,7 +41,9 @@ export const DerbyDetails = () => (
                 </tr>
             </table>
 
-            <div></div>
+            <div>
+                <Me circular={false}/>
+            </div>
         </section>
 
         <style jsx>{`
