@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "./container"
 import styled from "styled-components"
-import theme from "../../theme"
 
 const Label = styled.label`
     display: block;
@@ -15,7 +14,6 @@ const Input = styled.input`
     border: none;
     width: 100%;
     text-indent: 10px;
-    /* color: ${theme.DarkBlue}; */
 `
 
 const TextArea = styled.textarea`
@@ -24,13 +22,11 @@ const TextArea = styled.textarea`
     border: none;
     width: 100%;
     padding: 10px;
-    /* color: ${theme.DarkBlue}; */
     box-sizing: border-box;
     resize: none;
 `
 
 const Button = styled.button`
-    /* background-color: ${theme.DarkBlue}; */
     border: 0;
     height: 40px;
     color: white;

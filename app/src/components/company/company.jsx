@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { FiCalendar } from "react-icons/fi"
-import theme from "../../theme"
 
 const DateRange = ({ Start, End }) => (
     <StyledDate>
@@ -123,5 +122,5 @@ const StyledDate = styled.div`
     display: grid;
     grid-template-columns: 20px auto;
     align-items: center;
-    font-size: ${theme.font.Small};
+    font-size: var(--font-small);
 `
