@@ -1,0 +1,23 @@
+---
+title: Runner a different converage in the jest
+path: /HowToMeasureCoverageOfFoldersViaJest
+date: 2020-04-20
+tags: ["jest", "testing", "mocks"]
+active: true
+fragment: fragment
+---
+
+# How to change the coverage on the folders
+
+You can change the coverage of an i
+
+<Javascript>
+{`coverageThreshold: {
+    "./src/components/": {
+        branches: 90,
+        functions: 90,
+        lines: 90,
+        statements: 90
+    },
+},
+`}</Javascript>

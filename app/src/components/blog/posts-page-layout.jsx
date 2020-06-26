@@ -12,40 +12,79 @@ const shortCodes = { Link, Javascript } // Provide common components here
 export default function PageTemplate({ data: { mdx } }) {
     return (
         <>
+            <SEO title="Blogs" description="Murray Jack Blog" />
+
             <main>
-                <SEO title="Blogs" description="Murray Jack Blog" />
+                <header>
+                    <h4>murrayjack.tech</h4>
+                    <hr />
+                </header>
 
-                <div style={{ textAlign: "right" }}>
-                    <ul>
-                        <li>
-                            <Tag>
-                                {/* <FiCalendar /> */}
-                                {new Date(
-                                    mdx.frontmatter.date
-                                ).toLocaleDateString()}
-                            </Tag>
-                        </li>
+                <aside>
+                    <div>Blog</div>
+                    <div>Blog</div>
+                    <div>Blog</div>
+                </aside>
 
-                        {mdx.frontmatter.tags.map(e => (
+                <section>
+                    <MDXProvider components={shortCodes}>
+                        <MDXRenderer>{mdx.body}</MDXRenderer>
+                    </MDXProvider>
+
+                    <div>
+                        <hr />
+
+                        <ul>
                             <li>
-                                <Tag>{e}</Tag>
+                                <Tag>
+                                    {new Date(
+                                        mdx.frontmatter.date
+                                    ).toLocaleDateString()}
+                                </Tag>
                             </li>
-                        ))}
-                    </ul>
-                </div>
 
-                <MDXProvider components={shortCodes}>
-                    <MDXRenderer>{mdx.body}</MDXRenderer>
-                </MDXProvider>
+                            {mdx.frontmatter.tags.map(e => (
+                                <li>
+                                    <Tag>{e}</Tag>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
             </main>
 
             <style jsx>{`
+                main {
+                    display: grid;
+                    grid-template-columns: 200px 1fr;
+                    grid-template-rows: 50px 1fr;
+                    grid-template-areas: "aside header" "aside section" 
+                }
+
+                header {
+                    grid-area: header;
+                }
+
+                aside {
+                    grid-area: aside;
+                }
+
+                section {
+                    grid-area: section
+                }
+
                 ul {
                     padding: 0;
                     margin: 0;
                     list-style: none;
-                    // display: flex;
-                    // flex-direction: row-reverse;
+                }
+
+                li {
+                    display: inline-block;
+                }
+
+                hr {
+                    border-color: var(--main-bg-color2);
                 }
             `}</style>
         </>
