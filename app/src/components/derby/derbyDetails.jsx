@@ -1,5 +1,5 @@
 import React from "react"
-import Me from "../image";
+import Me from "../images/MurrayJack";
 
 export const DerbyDetails = () => (
     <>

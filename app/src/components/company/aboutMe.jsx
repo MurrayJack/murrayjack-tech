@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "./container"
-import MurrayJack from "../imagea/MurrayJack"
+import MurrayJack from "../images/MurrayJack"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
 
