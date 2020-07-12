@@ -4,7 +4,7 @@ export default () => (
     <>
         <footer>
             <section>
-                <span>Site Created Using:</span>
+                <span>Site Created Using</span>
                 <a href="https://www.gatsbyjs.org/">Gatsby</a>
                 <a href="https://www.sanity.io/">Sanity.IO</a>
                 <a href="https://app.netlify.com">Netflify</a>
