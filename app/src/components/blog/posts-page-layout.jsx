@@ -6,73 +6,39 @@ import { Link } from "gatsby"
 import SEO from "../seo"
 import { Tag } from "../tag"
 import { Javascript } from "../styling"
+import Layout from "./Layout";
 
 const shortCodes = { Link, Javascript } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
     return (
-        <>
-            <SEO title="Blogs" description="Murray Jack Blog" />
+        <Layout>
 
-            <main>
-                <header>
-                    <h4>murrayjack.tech</h4>
-                    <hr />
-                </header>
+            <MDXProvider components={shortCodes}>
+                <MDXRenderer>{mdx.body}</MDXRenderer>
+            </MDXProvider>
 
-                <aside>
-                    <div>Blog</div>
-                    <div>Blog</div>
-                    <div>Blog</div>
-                </aside>
+            <div>
+                <hr />
 
-                <section>
-                    <MDXProvider components={shortCodes}>
-                        <MDXRenderer>{mdx.body}</MDXRenderer>
-                    </MDXProvider>
+                <ul>
+                    <li>
+                        <Tag>
+                            {new Date(
+                                mdx.frontmatter.date
+                            ).toLocaleDateString()}
+                        </Tag>
+                    </li>
 
-                    <div>
-                        <hr />
-
-                        <ul>
-                            <li>
-                                <Tag>
-                                    {new Date(
-                                        mdx.frontmatter.date
-                                    ).toLocaleDateString()}
-                                </Tag>
-                            </li>
-
-                            {mdx.frontmatter.tags.map(e => (
-                                <li>
-                                    <Tag>{e}</Tag>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            </main>
+                    {mdx.frontmatter.tags.map(e => (
+                        <li>
+                            <Tag>{e}</Tag>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
             <style jsx>{`
-                main {
-                    display: grid;
-                    grid-template-columns: 200px 1fr;
-                    grid-template-rows: 50px 1fr;
-                    grid-template-areas: "aside header" "aside section" 
-                }
-
-                header {
-                    grid-area: header;
-                }
-
-                aside {
-                    grid-area: aside;
-                }
-
-                section {
-                    grid-area: section
-                }
-
                 ul {
                     padding: 0;
                     margin: 0;
@@ -87,7 +53,7 @@ export default function PageTemplate({ data: { mdx } }) {
                     border-color: var(--main-bg-color2);
                 }
             `}</style>
-        </>
+        </Layout>
     )
 }
 
