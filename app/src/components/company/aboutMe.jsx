@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "./container"
-import Image from "../image"
+import MurrayJack from "../imagea/MurrayJack"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
 
@@ -30,7 +30,7 @@ export default () => {
         >
             <section>
                 <div>
-                    <Image />
+                    <MurrayJack />
                 </div>
                 <ul>
                     <Item
