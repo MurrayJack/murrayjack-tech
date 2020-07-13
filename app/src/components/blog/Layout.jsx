@@ -9,7 +9,7 @@ export default function Layout({ children }) {
             <main>
                 <header>
                     <h4>murrayjack.tech</h4>
-                    <hr />
+                    {/* <hr /> */}
                 </header>
 
                 <aside>

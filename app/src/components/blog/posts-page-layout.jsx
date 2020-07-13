@@ -3,12 +3,23 @@ import { graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import SEO from "../seo"
 import { Tag } from "../tag"
 import { Javascript } from "../styling"
 import Layout from "./Layout";
 
-const shortCodes = { Link, Javascript } // Provide common components here
+const CodeSandbox = ({ src, title }) => (
+    <iframe
+        src={src}
+        style={{ width: "100%", height: "500px", border: 0, borderRadius: "4px", overflow: "hidden" }}
+        title={title}
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+)
+
+//"width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+
+const shortCodes = { Link, Javascript, CodeSandbox } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
     return (
@@ -19,20 +30,18 @@ export default function PageTemplate({ data: { mdx } }) {
             </MDXProvider>
 
             <div>
-                <hr />
+                {/* <hr /> */}
 
                 <ul>
                     <li>
-                        <Tag>
-                            {new Date(
-                                mdx.frontmatter.date
-                            ).toLocaleDateString()}
-                        </Tag>
+                        {new Date(
+                            mdx.frontmatter.date
+                        ).toLocaleDateString()}
                     </li>
 
                     {mdx.frontmatter.tags.map(e => (
                         <li>
-                            <Tag>{e}</Tag>
+                            {e}
                         </li>
                     ))}
                 </ul>
@@ -45,9 +54,9 @@ export default function PageTemplate({ data: { mdx } }) {
                     list-style: none;
                 }
 
-                li {
-                    display: inline-block;
-                }
+                {/* li {
+                    {/* display: inline-block; */}
+                } */}
 
                 hr {
                     border-color: var(--main-bg-color2);
