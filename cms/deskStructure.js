@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { TiUser, TiUserOutline, TiGroup, TiThList, TiTick, TiHome } from 'react-icons/ti';
+import { TiUser, TiUserOutline, TiGroup, TiThList, TiTick, TiHome, TiDocument } from 'react-icons/ti';
 
 export default () =>
 S.list()
@@ -53,7 +53,13 @@ S.list()
                 S.documentTypeList('tournament')
             ),
 
-
-        // ...S.documentTypeListItems().filter(listItem => !['derbyInfo'].includes(listItem.getId()))
+        S.divider(),
+        
+        S.listItem()
+            .title("Site Pages")
+            .icon(TiDocument)
+            .child(
+                S.documentTypeList('sitePages')
+            ),
 
     ]);

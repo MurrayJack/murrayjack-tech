@@ -18,6 +18,8 @@ import game from "./rollerDerby/games";
 import league from "./rollerDerby/league";
 import derbyInfo from "./rollerDerby/derbyInfo";
 
+import sitePages from "./site/pages";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
     // We name our schema
@@ -37,6 +39,8 @@ export default createSchema({
         tournament,
         game,
         league,
-        derbyInfo
+        derbyInfo,
+
+        sitePages
     ])
 })

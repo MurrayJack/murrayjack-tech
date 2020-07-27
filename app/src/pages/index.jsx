@@ -1,7 +1,20 @@
 import React from "react"
 import LargeLink from "../components/general/LargeLink"
+import { useStaticQuery, graphql } from "gatsby"
 
 export default () => {
+    const { allSanitySitePages } = useStaticQuery(graphql`
+        {
+            allSanitySitePages(sort: {order: ASC, fields: order}) {
+                nodes {
+                    name
+                    description
+                    url
+                }
+            }
+        }
+    `)
+
     return (
         <>
             <main>
@@ -11,17 +24,11 @@ export default () => {
                 </header>
 
                 <article>
-                    <LargeLink href="./resume" caption="My Resume"></LargeLink>
-
-                    <LargeLink href="./blog" caption="My Blog">
-                        Im trying to do some blogging, appologies i havent done
-                        a lot so far.
-                    </LargeLink>
-
-                    <LargeLink href="./rollerderby" caption="My Roller Derby">
-                        Information on my referee career within the Melbourne
-                        Roller Derby community.
-                    </LargeLink>
+                    {allSanitySitePages.nodes.map(e => (
+                        <LargeLink href={e.url} caption={e.name} key={e.name}>
+                            {e.description}
+                        </LargeLink>
+                    ))}
                 </article>
             </main>
 
