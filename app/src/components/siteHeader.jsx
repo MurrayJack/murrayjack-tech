@@ -6,7 +6,7 @@ import { SiteSection } from "./siteSection"
 export const SiteHeader = () => {
     const data = useStaticQuery(graphql`
         {
-            allSanitySitePages {
+            allSanitySitePages(sort: {fields: order, order: ASC}) {
                 nodes {
                     name
                     url

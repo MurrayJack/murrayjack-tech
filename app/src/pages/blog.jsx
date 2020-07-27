@@ -10,6 +10,10 @@ import { SiteGrid } from "../components/siteGrid"
 export default () => {
     const data = useStaticQuery(graphql`
         {
+            sanitySitePages(name: { eq: "Blogs" }) {
+                description
+            }
+
             allMdx {
                 nodes {
                     frontmatter {
@@ -30,7 +34,7 @@ export default () => {
 
             <SEO title="Blog" description="Murray Jack List of Blogs" />
 
-            <SiteMain title="Blogs">
+            <SiteMain title="Blogs" description={data.sanitySitePages.description}>
                 <SiteSection>
                     <SiteGrid>
                         {data.allMdx.nodes.map(

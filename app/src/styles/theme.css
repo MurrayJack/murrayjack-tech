@@ -126,7 +126,7 @@ li {
 }
 
 main {
-    padding: 24px;
+    padding: 40px;
     display: grid;
     grid-gap: 16px;
 }
