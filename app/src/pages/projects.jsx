@@ -2,6 +2,10 @@ import React from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { SanityImage } from "../components/sanityImage"
+import { SiteHeader } from "../components/siteHeader"
+import { SiteGrid } from "../components/siteGrid"
+import { SiteMain } from "../components/siteMain"
+import { SiteSection } from "../components/siteSection"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -25,48 +29,25 @@ export default () => {
 
     return (
         <>
-            <main>
-                <SEO
-                    title="Projects"
-                    description="Murray Jack List of Projects"
-                />
+            <SiteHeader />
 
-                <header>
-                    <div>Murray Jack</div>
-                    <div>Home | Resume | Projects | Roller Derby | Blog</div>
-                </header>
+            <SEO title="Projects" description="Murray Jack List of Projects" />
 
-                <h1>Projects</h1>
-
-                {data.allSanityProjects.nodes.map(e => (
-                    <article>
-                        <div>
-                            <h3>{e.projectName}</h3>
-                            <p>{e.description}</p>
-                        </div>
-                        <SanityImage image={e.image} />
-                    </article>
-                ))}
-            </main>
-            <style jsx>{`
-                main {
-                    width: 920px;
-                    margin: 0 auto;
-                }
-
-                article {
-                    border: 1px solid var(--main-bg-color2);
-                    display: grid;
-                    grid-auto-flow: column;
-                    padding: 8px;
-                    border-radius: 4px;
-                }
-
-                h3 {
-                    padding: 0;
-                    margin: 0;
-                }
-            `}</style>
+            <SiteMain title="Projects">
+                <SiteSection>
+                    <SiteGrid>
+                        {data.allSanityProjects.nodes.map(e => (
+                            <article>
+                                <div>
+                                    <h3>{e.projectName}</h3>
+                                    <p>{e.description}</p>
+                                </div>
+                                <SanityImage image={e.image} />
+                            </article>
+                        ))}
+                    </SiteGrid>
+                </SiteSection>
+            </SiteMain>
         </>
     )
 }

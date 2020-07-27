@@ -5,6 +5,10 @@ import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
 import { SearchInput } from "../components/derby/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
+import { SiteHeader } from "../components/siteHeader"
+import { SiteMain } from "../components/siteMain"
+import { SiteSection } from "../components/siteSection"
+import { SiteGrid } from "../components/siteGrid"
 
 const RollerDerby = () => {
     const [searchString, setSearchString] = useState("")
@@ -85,32 +89,28 @@ const RollerDerby = () => {
 
     return (
         <>
+            <SiteHeader />
+
             <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
-            <main>
-                <h1>Skatespeare - Game History</h1>
+            <SiteMain title="Skatespeare - Game History">
+                <SiteSection>
+                    <SiteGrid>
+                        <DerbyDetails />
 
-                <DerbyDetails />
+                        <DerbyCounts counts={counts} />
 
-                <DerbyCounts counts={counts} />
+                        <h2>Game History</h2>
 
-                <h2>Game History</h2>
+                        <SearchInput onSearch={handleOnSearch} />
 
-                <SearchInput onSearch={handleOnSearch} />
-
-                <DerbyGamesList
-                    data={tournaments}
-                    searchString={searchString}
-                />
-            </main>
-
-            <style jsx>{`
-                main {
-                    padding: 24px;
-                    display: grid;
-                    grid-gap: 16px;
-                }
-            `}</style>
+                        <DerbyGamesList
+                            data={tournaments}
+                            searchString={searchString}
+                        />
+                    </SiteGrid>
+                </SiteSection>
+            </SiteMain>
         </>
     )
 }

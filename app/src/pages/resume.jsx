@@ -5,17 +5,29 @@ import AboutMe from "../components/company/aboutMe"
 import WorkExperience from "../components/company/workExperience"
 import Contact from "../components/company/contact"
 import Footer from "../components/company/footer"
+import { SiteHeader } from "../components/siteHeader"
+import { SiteMain } from "../components/siteMain"
+import { SiteSection } from "../components/siteSection"
+import { SiteGrid } from "../components/siteGrid"
 
 export default () => (
-    <Layout>
+    <>
+        <SiteHeader />
+
         <SEO title="Home" description="Murray Jack Resume" />
 
-        <AboutMe />
+        <SiteMain>
+            <SiteSection>
+                <SiteGrid>
+                    <AboutMe />
 
-        <WorkExperience />
+                    <WorkExperience />
 
-        <Contact />
+                    <Contact />
 
-        <Footer />
-    </Layout>
+                    <Footer />
+                </SiteGrid>
+            </SiteSection>
+        </SiteMain>
+    </>
 )
