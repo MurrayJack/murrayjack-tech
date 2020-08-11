@@ -6,10 +6,10 @@ export const SearchInput = ({ onSearch }) => {
 
     return (
         <>
-            <input placeholder="filter games" {...inputProps} />
+            <input placeholder="search for games" {...inputProps} />
             <style jsx>{`
                 input {
-                    padding: 16px;
+                    padding: var(--gaps-large);
                 }
             `}</style>
         </>
