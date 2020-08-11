@@ -19,7 +19,6 @@ const JobPoints = ({ jobPoints }) => (
             ul {
                 list-style: circle;
                 padding-left: var(--gaps-xlarge);
-                color: var(--main-color);
             }
 
             li {
@@ -76,7 +75,7 @@ const Company = styled.section`
 
 const Header = styled.header`
     text-transform: uppercase;
-    color: var(--main-header-color2);
+    color: var(--main-accent-color);
     font-weight: bold;
     font-size: 20px;
     line-height: 1.6em;
@@ -93,8 +92,8 @@ const SkillItem = styled.li`
     display: inline-block;
     padding: 8px 10px;
     margin: 4px;
-    color: var(--main-color2);
-    background-color: var(--main-bg-color2);
+    color: var(--main-color-inv);
+    background-color: var(--main-color2);
     border-radius: 3px;
     font-size: var(--font-small);
 `
@@ -115,8 +114,8 @@ const CompanyDeets = styled.div`
 const StyledDate = styled.div`
     padding: 8px 10px;
     margin: 4px;
-    color: var(--main-color2);
-    background-color: var(--main-bg-color2);
+    color: var(--main-color-inv);
+    background-color: var(--main-color2);
     border-radius: 3px;
     font-weight: bold;
     display: grid;

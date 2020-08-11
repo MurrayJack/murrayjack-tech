@@ -10,16 +10,12 @@ const Label = styled.label`
 
 const Input = styled.input`
     height: 40px;
-    border-radius: 3px;
-    border: none;
     width: 100%;
     text-indent: 10px;
 `
 
 const TextArea = styled.textarea`
     height: 200px;
-    border-radius: 3px;
-    border: none;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -29,7 +25,6 @@ const TextArea = styled.textarea`
 const Button = styled.button`
     border: 0;
     height: 40px;
-    color: white;
     font-size: 16px;
     border-radius: 3px;
     width: 100%;

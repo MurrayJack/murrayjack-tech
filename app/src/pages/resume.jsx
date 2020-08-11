@@ -15,10 +15,12 @@ export default () => (
         <SiteHeader />
 
         <SEO title="Home" description="Murray Jack Resume" />
-
+        
         <SiteMain>
+
             <SiteSection>
                 <SiteGrid>
+
                     <AboutMe />
 
                     <WorkExperience />

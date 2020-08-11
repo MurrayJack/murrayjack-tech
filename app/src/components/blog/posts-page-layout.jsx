@@ -59,7 +59,7 @@ export default function PageTemplate({ data: { mdx } }) {
                 } */}
 
                 hr {
-                    border-color: var(--main-bg-color2);
+                    
                 }
             `}</style>
         </Layout>

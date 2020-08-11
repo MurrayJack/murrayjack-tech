@@ -10,8 +10,8 @@ export const Tag = ({ children }) => (
             span {
                 padding: 8px 10px;
                 margin: 4px;
-                color: var(--main-color2);
-                background-color: var(--main-bg-color2);
+                color: var(--main-color-inv);
+                background-color: var(--main-color2);
                 border-radius: 3px;
                 font-weight: bold;
                 display: grid;

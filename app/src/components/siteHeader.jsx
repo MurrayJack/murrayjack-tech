@@ -20,7 +20,7 @@ export const SiteHeader = () => {
             <header>
                 <div>
                     <SiteIcon />
-                    <div>MURRAY JACK</div>
+                    <a href="/">MURRAY JACK</a>
                     {data.allSanitySitePages.nodes.map(e => (
                         <a key={e.name} href={e.url}>
                             {e.name}
@@ -31,15 +31,19 @@ export const SiteHeader = () => {
 
             <style jsx>{`
                 header {
-                    background: var(--main-bg-color3);
-                    color: white;
-                    padding: 16px;
+                    background: var(--main-color2);
+                    padding: var(--gaps-large);
+                }
+
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
                 }
 
                 div {
                     display: grid;
                     grid-auto-flow: column;
-                    grid-gap: 24px;
+                    grid-gap: var(--gaps-xlarge);
                     grid-auto-columns: max-content;
                     align-items: center;
                 }

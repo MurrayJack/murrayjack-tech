@@ -54,7 +54,7 @@ export default function Layout({ children }) {
                 }
 
                 hr {
-                    border-color: var(--main-bg-color2);
+                    border-color: var(--main-color2);
                 }
             `}</style>
         </>

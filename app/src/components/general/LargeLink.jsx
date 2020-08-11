@@ -28,7 +28,6 @@ export default ({ href, caption, children }) => <>
             a span {
                 font-size: var(--font-small);
                 line-height: 1.6em;
-                color: var(--main-color);
             }
 
             a:hover {

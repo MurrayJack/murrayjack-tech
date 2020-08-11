@@ -98,7 +98,7 @@ export const DerbyGamesList = ({ data, searchString }) => {
 
                 td {
                     padding: 16px;
-                    border: 1px solid var(--table-header-border-color);
+                    border: 1px solid var(--main-color2);
                     line-height: 1.6em;
                     vertical-align: top;
                     color: var(--table-header-color);
@@ -107,8 +107,7 @@ export const DerbyGamesList = ({ data, searchString }) => {
                 th {
                     text-align: left;
                     padding: 16px;
-                    background: var(--table-header-bgcolor);
-                    border: 1px solid var(--table-header-border-color);
+                    border: 1px solid var(--main-color2);
                     line-height: 1.6em;
                     font-weight: var(--table-header-font-weight);
                 }

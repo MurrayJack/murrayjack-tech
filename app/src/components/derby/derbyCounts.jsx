@@ -118,7 +118,7 @@ export const DerbyCounts = ({ counts }) => (
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 16px;
             }
-            Î main {
+            main {
                 padding: 24px;
                 display: grid;
                 grid-gap: 16px;
@@ -131,9 +131,8 @@ export const DerbyCounts = ({ counts }) => (
 
             td {
                 padding: 16px;
-                border: 1px solid var(--table-header-border-color);
+                border: 1px solid var(--main-color2);
                 line-height: 1.6em;
-                color: var(--table-header-color);
             }
 
             td.center,
@@ -144,9 +143,7 @@ export const DerbyCounts = ({ counts }) => (
             th {
                 text-align: left;
                 padding: 16px;
-                background: var(--table-header-bgcolor);
-
-                border: 1px solid var(--table-header-border-color);
+                border: 1px solid var(--main-color2);
                 line-height: 1.6em;
                 font-weight: var(--table-header-font-weight);
             }

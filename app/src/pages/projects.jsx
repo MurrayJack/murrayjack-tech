@@ -1,11 +1,11 @@
 import React from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import { SanityImage } from "../components/sanityImage"
 import { SiteHeader } from "../components/siteHeader"
 import { SiteGrid } from "../components/siteGrid"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
+import { Card } from "../components/card"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -35,15 +35,13 @@ export default () => {
 
             <SiteMain title="Projects">
                 <SiteSection>
-                    <SiteGrid>
+                    <SiteGrid cols={2}>
                         {data.allSanityProjects.nodes.map(e => (
-                            <article>
-                                <div>
-                                    <h3>{e.projectName}</h3>
-                                    <p>{e.description}</p>
-                                </div>
-                                <SanityImage image={e.image} />
-                            </article>
+                            <Card
+                                title={e.projectName}
+                                image={e.image}
+                                description={e.description}   
+                            />
                         ))}
                     </SiteGrid>
                 </SiteSection>

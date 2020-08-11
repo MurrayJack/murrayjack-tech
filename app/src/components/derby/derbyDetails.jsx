@@ -57,7 +57,6 @@ export const DerbyDetails = () => (
             div {
                 width: 100%;
                 height: 100%;
-                background: var(--table-header-bgcolor);
                 border-radius: 4px;
             }
 
@@ -68,16 +67,13 @@ export const DerbyDetails = () => (
 
             td {
                 padding: 16px;
-                border: 1px solid var(--table-header-border-color);
-                color: var(--table-header-color);
-                
+                border: 1px solid var(--main-color2);
             }
 
             th {
                 text-align: left;
                 padding: 16px;
-                background: var(--table-header-bgcolor);
-                border: 1px solid var(--table-header-border-color);
+                border: 1px solid var(--main-color2);
                 font-weight: var(--table-header-font-weight);
             }
 
