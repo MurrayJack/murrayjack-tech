@@ -1,11 +1,11 @@
 import React from "react"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import { SiteHeader } from "../components/siteHeader"
 import { SiteGrid } from "../components/siteGrid"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { Card } from "../components/card"
+import SiteWrapper from "../components/siteWrapper"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -28,8 +28,7 @@ export default () => {
     `)
 
     return (
-        <>
-            <SiteHeader />
+        <SiteWrapper>
 
             <SEO title="Projects" description="Murray Jack List of Projects" />
 
@@ -46,6 +45,6 @@ export default () => {
                     </SiteGrid>
                 </SiteSection>
             </SiteMain>
-        </>
+        </SiteWrapper>
     )
 }

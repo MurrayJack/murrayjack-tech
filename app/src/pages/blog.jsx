@@ -6,6 +6,7 @@ import { SiteHeader } from "../components/siteHeader"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
+import SiteWrapper from "../components/siteWrapper"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -29,9 +30,7 @@ export default () => {
     `)
 
     return (
-        <>
-            <SiteHeader />
-
+        <SiteWrapper>
             <SEO title="Blog" description="Murray Jack List of Blogs" />
 
             <SiteMain title="Blogs" description={data.sanitySitePages.description}>
@@ -51,6 +50,6 @@ export default () => {
                     </SiteGrid>
                 </SiteSection>
             </SiteMain>
-        </>
+        </SiteWrapper>
     )
 }

@@ -1,11 +1,11 @@
 import React from "react"
 import LargeLink from "../components/general/LargeLink"
 import { useStaticQuery, graphql } from "gatsby"
-import { SiteHeader } from "../components/siteHeader"
 import SEO from "../components/seo"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
+import SiteWrapper from "../components/siteWrapper"
 
 export default () => {
     const { allSanitySitePages } = useStaticQuery(graphql`
@@ -21,12 +21,11 @@ export default () => {
     `)
 
     return (
-        <>
-            <SiteHeader />
+        <SiteWrapper>
+            <SiteMain title="Murray Jack">
 
             <SEO title="Blog" description="Murray Jack List of Blogs" />
 
-            <SiteMain title="Murray Jack">
                 <SiteSection>
                     <SiteGrid>
                         {allSanitySitePages.nodes.map(e => (
@@ -41,6 +40,6 @@ export default () => {
                     </SiteGrid>
                 </SiteSection>
             </SiteMain>
-        </>
+        </SiteWrapper>
     )
 }

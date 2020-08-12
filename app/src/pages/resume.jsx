@@ -4,31 +4,29 @@ import AboutMe from "../components/company/aboutMe"
 import WorkExperience from "../components/company/workExperience"
 import Contact from "../components/company/contact"
 import Footer from "../components/company/footer"
-import { SiteHeader } from "../components/siteHeader"
+import SiteWrapper from "../components/siteWrapper"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
 
-export default () => (
-    <>
-        <SiteHeader />
+export default () => {
+    return (
+        <SiteWrapper>
+            <SEO title="Home" description="Murray Jack Resume" />
 
-        <SEO title="Home" description="Murray Jack Resume" />
-        
-        <SiteMain>
+            <SiteMain>
+                <SiteSection>
+                    <SiteGrid>
+                        <AboutMe />
 
-            <SiteSection>
-                <SiteGrid>
+                        <WorkExperience />
 
-                    <AboutMe />
+                        <Contact />
 
-                    <WorkExperience />
-
-                    <Contact />
-
-                    <Footer />
-                </SiteGrid>
-            </SiteSection>
-        </SiteMain>
-    </>
-)
+                        <Footer />
+                    </SiteGrid>
+                </SiteSection>
+            </SiteMain>
+        </SiteWrapper>
+    )
+}

@@ -23,6 +23,7 @@
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.2.7",
     "gsap": "^3.2.6",
+    "hamburger-react": "^2.1.1",
     "keycode": "^2.2.0",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",

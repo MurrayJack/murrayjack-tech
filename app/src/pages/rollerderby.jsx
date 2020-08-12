@@ -5,10 +5,10 @@ import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
 import { SearchInput } from "../components/derby/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
-import { SiteHeader } from "../components/siteHeader"
 import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
+import SiteWrapper from "../components/siteWrapper"
 
 const RollerDerby = () => {
     const [searchString, setSearchString] = useState("")
@@ -88,8 +88,7 @@ const RollerDerby = () => {
     }
 
     return (
-        <>
-            <SiteHeader />
+        <SiteWrapper>
 
             <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
@@ -111,7 +110,7 @@ const RollerDerby = () => {
                     </SiteGrid>
                 </SiteSection>
             </SiteMain>
-        </>
+        </SiteWrapper>
     )
 }
 
