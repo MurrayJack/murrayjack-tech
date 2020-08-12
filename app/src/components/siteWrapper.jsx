@@ -79,10 +79,6 @@ export default ({ children }) => {
                     transform: translate3d(-300px, 0px, 0px);
                 }
 
-                #mover[data-visible="true"] #wrapper {
-                    // transform: scale(0.9);
-                }
-
                 aside {
                     position: absolute;
                     right: -300px;
@@ -117,6 +113,7 @@ export default ({ children }) => {
                     grid-auto-flow: column;
                     grid-auto-columns: max-content;
                     align-items: center;
+                    color: var(--main-color-inv);
                 }
             `}</style>
         </>
