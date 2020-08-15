@@ -1,12 +1,12 @@
 import * as React from "react"
 import { SiteIcon } from "./images/SiteIcon"
 import { useStaticQuery, graphql } from "gatsby"
-import Hamburger from 'hamburger-react'
+import Hamburger from "hamburger-react"
 
-export const SiteHeader = ({onClick, isOpen}) => {
+export const SiteHeader = ({ onClick, isOpen, name }) => {
     const data = useStaticQuery(graphql`
         {
-            allSanitySitePages(sort: {fields: order, order: ASC}) {
+            allSanitySitePages(sort: { fields: order, order: ASC }) {
                 nodes {
                     name
                     url
@@ -22,7 +22,7 @@ export const SiteHeader = ({onClick, isOpen}) => {
                     <SiteIcon />
                     <a href="/">MURRAY JACK</a>
                     {data.allSanitySitePages.nodes.map(e => (
-                        <a key={e.name} href={e.url}>
+                        <a aria-selected={name == e.name} key={e.name} href={e.url}>
                             {e.name}
                         </a>
                     ))}
@@ -47,6 +47,16 @@ export const SiteHeader = ({onClick, isOpen}) => {
                 a {
                     text-transform: uppercase;
                     text-decoration: none;
+                    border-bottom: 1px solid currentColor;
+                }
+
+                a:hover {
+                    border-bottom: 1px solid var(--main-color1);
+                }
+
+                a[aria-selected='true'] {
+                    border-bottom: 1px solid var(--main-color1);
+                    color: var(--main-accent-color);
                 }
 
                 div {

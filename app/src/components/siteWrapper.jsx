@@ -2,7 +2,7 @@ import React from "react"
 import { SiteHeader } from "./siteHeader"
 import { useState } from "react"
 
-export default ({ children }) => {
+export default ({ name, children }) => {
     const [visible, setVisibility] = useState(false)
     const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "dark")
 
@@ -19,6 +19,7 @@ export default ({ children }) => {
                     <SiteHeader
                         isOpen={visible}
                         onClick={() => setVisibility(!visible)}
+                        name={name}
                     />
 
                     {children}

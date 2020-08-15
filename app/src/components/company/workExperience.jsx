@@ -8,6 +8,7 @@ const WorkExperience = () => {
         {
             sanityPersonalDetails {
                 workBlurb
+                workBlurb2
             }
 
             allSanityJobposition(sort: { order: DESC, fields: endDate }) {
@@ -33,7 +34,9 @@ const WorkExperience = () => {
             BGColor="transparent"
             Header="Work Experience"
             Info={data.sanityPersonalDetails.workBlurb}
+            Info2={data.sanityPersonalDetails.workBlurb2}
         >
+            
             {data.allSanityJobposition.nodes.map((e, i) => (
                 <Company key={i} data={e} />
             ))}

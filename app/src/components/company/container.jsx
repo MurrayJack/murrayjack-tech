@@ -1,12 +1,14 @@
 import React from "react"
 import { H2, P } from "../Styles"
 
-export default ({ children, Header, Info, ID, className }) => (
+export default ({ children, Header, Info, Info2, ID, className }) => (
     <>
         <div id={ID} className={className}>
             <article>
                 <H2>{Header}</H2>
                 <P>{Info}</P>
+                {Info2 && <P>{Info2}</P>}
+                <p><hr /></p>
 
                 {children}
             </article>

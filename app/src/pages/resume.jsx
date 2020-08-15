@@ -11,7 +11,8 @@ import { SiteGrid } from "../components/siteGrid"
 
 export default () => {
     return (
-        <SiteWrapper>
+        <SiteWrapper name="Resume">
+            
             <SEO title="Home" description="Murray Jack Resume" />
 
             <SiteMain>
