@@ -6,6 +6,7 @@ import { SiteMain } from "../components/siteMain"
 import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
 import SiteWrapper from "../components/siteWrapper"
+import { Card } from "../components/card"
 
 export default () => {
     const { allSanitySitePages } = useStaticQuery(graphql`
@@ -23,19 +24,19 @@ export default () => {
     return (
         <SiteWrapper>
             <SiteMain title="Murray Jack">
-
-            <SEO title="Blog" description="Murray Jack List of Blogs" />
+                <SEO title="Blog" description="Murray Jack List of Blogs" />
 
                 <SiteSection>
                     <SiteGrid>
                         {allSanitySitePages.nodes.map(e => (
-                            <LargeLink
+                            <Card
                                 href={e.url}
-                                caption={e.name}
+                                title={e.name}
                                 key={e.name}
+                                description={e.description}
                             >
-                                {e.description}
-                            </LargeLink>
+                                
+                            </Card>
                         ))}
                     </SiteGrid>
                 </SiteSection>

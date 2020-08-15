@@ -4,10 +4,12 @@ import { useState } from "react"
 
 export default ({ children }) => {
     const [visible, setVisibility] = useState(false)
-    const [theme, setTheme] = useState("dark")
+    const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "dark")
 
     const handleRadioClick = e => {
-        setTheme(e.target.value)
+        window.localStorage.setItem("theme", e.target.value)
+        setTheme(e.target.value);
+        setVisibility(false)
     }
 
     return (
@@ -35,6 +37,7 @@ export default ({ children }) => {
                                     type="radio"
                                     name="theme"
                                     value="light"
+                                    checked={theme === "light"}
                                 ></input>
                                 <label htmlFor="light">Light</label>
                             </div>
@@ -45,6 +48,7 @@ export default ({ children }) => {
                                     type="radio"
                                     name="theme"
                                     value="dark"
+                                    checked={theme === "dark"}
                                 ></input>
                                 <label htmlFor="dark">Dark</label>
                             </div>
@@ -55,6 +59,7 @@ export default ({ children }) => {
                                     type="radio"
                                     name="theme"
                                     value="orange"
+                                    checked={theme === "orange"}
                                 ></input>
                                 <label htmlFor="orange">Orange</label>
                             </div>
@@ -104,12 +109,12 @@ export default ({ children }) => {
 
                 fieldset > div {
                     display: grid;
-                    grid-gap: 16px;
+                    grid-gap: 24px;
                 }
 
                 fieldset > div > div {
                     display: grid;
-                    grid-gap: 8px;
+                    grid-gap: 16px;
                     grid-auto-flow: column;
                     grid-auto-columns: max-content;
                     align-items: center;

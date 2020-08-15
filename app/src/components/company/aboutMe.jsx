@@ -46,7 +46,7 @@ export default () => {
                         name="Located"
                         value={() => data.sanityPersonalDetails.location}
                     />
-
+                    
                     <Item
                         name="Email"
                         value={() => (

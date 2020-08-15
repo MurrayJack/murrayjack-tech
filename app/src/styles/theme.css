@@ -131,8 +131,9 @@ main {
     grid-gap: 16px;
     color: var(--main-color-inv);
     background: var(--main-color1);
-    min-height: 100vw;
-    
+    min-height: calc(100vh - 80px);
+    align-content: flex-start;
+    box-sizing: border-box;
 }
 
 a:hover {
