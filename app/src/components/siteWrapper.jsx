@@ -64,6 +64,17 @@ export default ({ name, children }) => {
                                 ></input>
                                 <label htmlFor="orange">Orange</label>
                             </div>
+                            <div>
+                                <input
+                                    id="blue"
+                                    onClick={handleRadioClick}
+                                    type="radio"
+                                    name="theme"
+                                    value="blue"
+                                    checked={theme === "blue"}
+                                ></input>
+                                <label htmlFor="blue">Blue</label>
+                            </div>
                         </div>
                     </fieldset>
                 </aside>
