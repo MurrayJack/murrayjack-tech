@@ -2,7 +2,6 @@ import * as React from "react"
 import { SiteIcon } from "./images/SiteIcon"
 import { useStaticQuery, graphql } from "gatsby"
 import Hamburger from "hamburger-react"
-import TransitionLink from "gatsby-plugin-transition-link"
 
 export const SiteHeader = ({ onClick, isOpen, name }) => {
     const data = useStaticQuery(graphql`

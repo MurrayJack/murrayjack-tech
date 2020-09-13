@@ -4,10 +4,10 @@ import { useState } from "react"
 
 export default ({ name, children }) => {
     const [visible, setVisibility] = useState(false)
-    const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "dark")
+    const [theme, setTheme] = useState("dark")
 
     const handleRadioClick = e => {
-        window.localStorage.setItem("theme", e.target.value)
+        // window.localStorage.setItem("theme", e.target.value)
         setTheme(e.target.value);
         setVisibility(false)
     }
