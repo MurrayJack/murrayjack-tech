@@ -2,6 +2,8 @@ import * as React from "react"
 import { SiteIcon } from "./images/SiteIcon"
 import { useStaticQuery, graphql } from "gatsby"
 import Hamburger from "hamburger-react"
+import TransitionLink from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const SiteHeader = ({ onClick, isOpen, name }) => {
     const data = useStaticQuery(graphql`
@@ -22,9 +24,14 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                     <SiteIcon />
                     <a href="/">MURRAY JACK</a>
                     {data.allSanitySitePages.nodes.map(e => (
+                        <>
+                        <AniLink paintDrip to={e.url}>
+                        Go to Page 4
+                      </AniLink>
                         <a aria-selected={name == e.name} key={e.name} href={e.url}>
                             {e.name}
                         </a>
+                        </>
                     ))}
                 </div>
                 <div>
