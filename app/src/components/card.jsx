@@ -1,5 +1,5 @@
 import * as React from "react"
-import { SanityImage } from "../components/sanityImage"
+import {Image, CloudinaryContext, Transformation} from 'cloudinary-react';
 
 export const Card = ({ image, description, title }) => {
     return (
@@ -8,7 +8,11 @@ export const Card = ({ image, description, title }) => {
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <figure>
-                    <SanityImage image={image} />
+                    <CloudinaryContext cloudName="murrayjack">
+                        <Image publicId={image}>
+                            <Transformation width="200" crop="scale" />
+                        </Image>
+                    </CloudinaryContext>
                 </figure>
             </div>
             <style jsx>{`

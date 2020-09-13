@@ -15,20 +15,14 @@ export default () => {
                     published
                     projectName
                     description
-                    image {
-                        asset {
-                            fluid {
-                                srcSet
-                            }
-                        }
-                    }
+                    cloudinaryId
                 }
             }
         }
     `)
 
     return (
-        <SiteWrapper>
+        <SiteWrapper name="Projects">
 
             <SEO title="Projects" description="Murray Jack List of Projects" />
 
@@ -36,11 +30,13 @@ export default () => {
                 <SiteSection>
                     <SiteGrid cols={2}>
                         {data.allSanityProjects.nodes.map(e => (
-                            <Card
-                                title={e.projectName}
-                                image={e.image}
-                                description={e.description}   
-                            />
+                            <>
+                                <Card
+                                    title={e.projectName}
+                                    image={e.cloudinaryId}
+                                    description={e.description}
+                                />
+                            </>
                         ))}
                     </SiteGrid>
                 </SiteSection>
