@@ -9,7 +9,7 @@ export const Card = ({ image, description, title }) => {
                 <p>{description}</p>
                 <figure>
                     <CloudinaryContext cloudName="murrayjack">
-                        <Image publicId={image}>
+                        <Image secure="true" publicId={image}>
                             <Transformation width="200" crop="scale" />
                         </Image>
                     </CloudinaryContext>
