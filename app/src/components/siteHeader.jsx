@@ -34,7 +34,8 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
 
             <style jsx>{`
                 header {
-                    background: var(--main-color2);
+                    background: var(--main-accent-color);
+                    
                     padding: var(--gaps-large);
                     display: grid;
                     grid-auto-flow: column;
@@ -52,11 +53,13 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
 
                 a:hover {
                     border-bottom: 1px solid var(--main-color1);
+                    color: var(--main-color-2);
+                    
                 }
 
                 a[aria-selected='true'] {
                     border-bottom: 1px solid var(--main-color1);
-                    color: var(--main-accent-color);
+                    color: var(--main-color-1);
                 }
 
                 div {
