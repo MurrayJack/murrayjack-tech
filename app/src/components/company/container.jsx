@@ -8,7 +8,6 @@ export default ({ children, Header, Info, Info2, ID, className }) => (
                 <H2>{Header}</H2>
                 <P>{Info}</P>
                 {Info2 && <P>{Info2}</P>}
-                <p><hr /></p>
 
                 {children}
             </article>

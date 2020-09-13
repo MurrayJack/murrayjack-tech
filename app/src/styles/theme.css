@@ -16,7 +16,7 @@
         --main-color1: #222831;
         --main-color2: #30475e;
 
-        --main-accent-color: #cc5500;
+        --main-accent-color: #d65a31;
 
         --main-color-inv: #ececec;
     }
@@ -37,7 +37,7 @@
     --main-color1: #222831;
     --main-color2: #30475e;
 
-    --main-accent-color: #cc5500;
+    --main-accent-color: #d65a31;
 
     --main-color-inv: #ececec;
 }
@@ -51,14 +51,6 @@
     --main-color-inv: #2c3e50;
 }
 
-[data-theme="orange"] {
-    --main-color1: #d35400;
-    --main-color2: #e67e22;
-
-    --main-accent-color: #f4f4f4;
-
-    --main-color-inv: #f4f4f4;
-}
 
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
