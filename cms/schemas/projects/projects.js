@@ -19,6 +19,11 @@ export default {
             type: 'url'
         },
         {
+            name: 'cloudinaryId',
+            title: 'Cloudinary ID',
+            type: 'string'
+        },
+        {
             name: 'published',
             title: 'Published?',
             type: 'boolean'

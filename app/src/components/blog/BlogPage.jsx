@@ -9,7 +9,6 @@ import { MDXProvider } from "@mdx-js/react"
 import { Javascript } from "../styling"
 import { Link } from "gatsby"
 
-const shortCodes = { Link, Javascript, CodeSandbox } // Provide common components here
 
 const CodeSandbox = ({ src, title }) => (
     <iframe
@@ -20,6 +19,9 @@ const CodeSandbox = ({ src, title }) => (
         sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     ></iframe>
 )
+
+const shortCodes = { Link, Javascript, CodeSandbox } // Provide common components here
+
 
 export default function BlogPage({ data: { mdx } }) {
     return (

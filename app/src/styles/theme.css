@@ -51,14 +51,6 @@
     --main-color-inv: #2c3e50;
 }
 
-[data-theme="orange"] {
-    --main-color1: #d35400;
-    --main-color2: #e67e22;
-
-    --main-accent-color: #f4f4f4;
-
-    --main-color-inv: #f4f4f4;
-}
 
 [data-theme="blue"] {
     --main-color1: #2980b9 ;

@@ -4,10 +4,10 @@ import { useState } from "react"
 
 export default ({ name, children }) => {
     const [visible, setVisibility] = useState(false)
-    const [theme, setTheme] = useState(window.localStorage.getItem("theme") || "dark")
+    const [theme, setTheme] = useState("dark")
 
     const handleRadioClick = e => {
-        window.localStorage.setItem("theme", e.target.value)
+        // window.localStorage.setItem("theme", e.target.value)
         setTheme(e.target.value);
         setVisibility(false)
     }
@@ -52,28 +52,6 @@ export default ({ name, children }) => {
                                     checked={theme === "dark"}
                                 ></input>
                                 <label htmlFor="dark">Dark</label>
-                            </div>
-                            <div>
-                                <input
-                                    id="orange"
-                                    onClick={handleRadioClick}
-                                    type="radio"
-                                    name="theme"
-                                    value="orange"
-                                    checked={theme === "orange"}
-                                ></input>
-                                <label htmlFor="orange">Orange</label>
-                            </div>
-                            <div>
-                                <input
-                                    id="blue"
-                                    onClick={handleRadioClick}
-                                    type="radio"
-                                    name="theme"
-                                    value="blue"
-                                    checked={theme === "blue"}
-                                ></input>
-                                <label htmlFor="blue">Blue</label>
                             </div>
                         </div>
                     </fieldset>

@@ -45,6 +45,11 @@ export default {
             of: [{ type: 'string' }]
         },
         {
+            name: 'useNewTechStack',
+            title: 'New Tech-stack?',
+            type: 'boolean'
+        },
+        {
             name: 'techStack2',
             title: 'Tech Stack',
             type: 'array',
