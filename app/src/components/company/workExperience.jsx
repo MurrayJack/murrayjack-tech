@@ -19,6 +19,11 @@ const WorkExperience = () => {
                     url
                     location
                     techStack
+                    useNewTechStack
+                    techStack2 {
+                        name
+                        percent
+                    }
                     title
                     tagLine
                     jobPoints

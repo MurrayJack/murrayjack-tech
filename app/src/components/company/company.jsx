@@ -49,11 +49,22 @@ export default ({ data }) => (
             </div>
             <div>
                 <h3>Key Skills</h3>
-                <SkillList>
-                    {data.techStack.sort().map((e, i) => (
-                        <SkillItem key={i}>{e}</SkillItem>
-                    ))}
-                </SkillList>
+                {!data.useNewTechStack ? (
+                    <SkillList>
+                        {data.techStack.sort().map((e, i) => (
+                            <SkillItem key={i}>{e}</SkillItem>
+                        ))}
+                    </SkillList>
+                ) : (
+                    <SkillList>
+                        {data.techStack2.map((e, i) => (
+                            <SkillItem key={i}>
+                                <div>{e.name}</div>
+                                <SkillLine style={{width: `${e.percent}%`}} />
+                            </SkillItem>
+                        ))}
+                    </SkillList>
+                )}
             </div>
         </Wrapper>
     </Company>
@@ -96,6 +107,11 @@ const SkillItem = styled.li`
     background-color: var(--main-color2);
     border-radius: 3px;
     font-size: var(--font-small);
+`
+
+const SkillLine = styled.div`
+    height: 1px;
+    background: var(--main-accent-color);
 `
 
 const CompanyDeets = styled.div`
