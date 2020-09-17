@@ -29,8 +29,50 @@ export default () => {
             className="aboutMe"
         >
             <section>
-                <div>
+                <div className="me">
                     <MurrayJack />
+                    <div>
+                        <div>
+                            <a
+                                href={
+                                    "mailto:" + data.sanityPersonalDetails.email
+                                }
+                                aria-label="Email Me"
+                            >
+                                <FiMail />
+                            </a>
+                        </div>
+                        <div>
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.twitter}
+                                aria-label="Link to twitter"
+                            >
+                                <FiTwitter />
+                            </a>
+                        </div>
+                        <div>
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.github}
+                                aria-label="Link to GitHub"
+                            >
+                                <FiGithub />
+                            </a>
+                        </div>
+                        <div>
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href={data.sanityPersonalDetails.linkedIn}
+                                aria-label="Linked In"
+                            >
+                                <FiLinkedin />
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <ul>
                     <Item
@@ -46,62 +88,6 @@ export default () => {
                         name="Located"
                         value={() => data.sanityPersonalDetails.location}
                     />
-                    
-                    <Item
-                        name="Email"
-                        value={() => (
-                            <a
-                                href={
-                                    "mailto:" + data.sanityPersonalDetails.email
-                                }
-                            >
-                                {data.sanityPersonalDetails.email}
-                            </a>
-                        )}
-                        icon={() => <FiMail />}
-                    />
-
-                    <Item
-                        name="Twitter"
-                        value={() => (
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.twitter}
-                            >
-                                {data.sanityPersonalDetails.twitterName}
-                            </a>
-                        )}
-                        icon={() => <FiTwitter />}
-                    />
-
-                    <Item
-                        name="GitHub"
-                        icon={() => <FiGithub />}
-                        value={() => (
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.github}
-                            >
-                                {data.sanityPersonalDetails.github}
-                            </a>
-                        )}
-                    />
-
-                    <Item
-                        name="LinkedIn"
-                        icon={() => <FiLinkedin />}
-                        value={() => (
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.linkedIn}
-                            >
-                                {data.sanityPersonalDetails.linkedIn}
-                            </a>
-                        )}
-                    />
                 </ul>
             </section>
 
@@ -116,6 +102,34 @@ export default () => {
                 ul {
                     padding: 0;
                     margin: 0;
+                }
+
+                .me {
+                    display: grid;
+                }
+
+                .me > div {
+                    margin-top: -20px;
+                    z-index: 1;
+                    display: grid;
+                    grid-auto-flow: column;
+                    gap: 16px;
+                    justify-content: center;
+                }
+
+                .me > div > div > a {
+                    height: 40px;
+                    width: 40px;
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: var(--main-color2);
+                }
+
+                .me > div > div > a:hover {
+                    background: var(--main-accent-color);
+                    color: white;
                 }
 
                 @media (min-width: 960px) {

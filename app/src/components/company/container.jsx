@@ -24,7 +24,6 @@ export default ({ children, Header, Info, Info2, ID, className }) => (
                     margin: 0 auto;
                     padding: 1.45rem 0;
                     text-align: left;
-                    padding-bottom: 50px;
                 }
             }
         `}</style>
