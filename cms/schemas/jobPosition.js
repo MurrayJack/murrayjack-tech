@@ -2,6 +2,40 @@ export default {
     name: 'jobposition',
     title: 'Job Position',
     type: 'document',
+    fieldsets: [
+        {
+            name: "generalInfo",
+            title: "General Info",
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+        },
+        {
+            name: "technology",
+            title: "Technology",
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+        },
+        {
+            name: "positionDetails",
+            title: "Position Details",
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+        },
+        {
+            name: "obsolete",
+            title: "Obsolete",
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+        },
+    ],
     fields: [
         {
             name: 'companyName',
@@ -9,62 +43,73 @@ export default {
             type: 'string'
         },
         {
-            name: 'title',
-            title: 'Title',
-            type: 'string'
-        },
-        {
-            name: 'location',
-            title: 'Location',
-            type: 'string'
-        },
-        {
-            name: 'url',
-            title: 'URL',
-            type: 'url'
-        },
-        {
-            name: 'locationUrl',
-            title: 'Location URL',
-            type: 'url'
-        },
-        {
-            name: 'startDate',
-            title: 'Start Date',
-            type: 'date'
-        },
-        {
-            name: 'endDate',
-            title: 'End Date',
-            type: 'date'
-        },
-        {
-            name: 'techStack',
-            title: 'Tech Stack',
-            type: 'array',
-            of: [{ type: 'string' }]
-        },
-        {
-            name: 'useNewTechStack',
-            title: 'New Tech-stack?',
-            type: 'boolean'
-        },
-        {
-            name: 'techStack2',
-            title: 'Tech Stack',
-            type: 'array',
-            of: [{ type: 'techStack' }]
-        },
-        {
             name: 'tagLine',
             title: 'Tag Line',
             type: 'text'
         },
         {
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'location',
+            title: 'Location',
+            type: 'string',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'url',
+            title: 'URL',
+            type: 'url',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'locationUrl',
+            title: 'Location URL',
+            type: 'url',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'startDate',
+            title: 'Start Date',
+            type: 'date',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'endDate',
+            title: 'End Date',
+            type: 'date',
+            fieldset: "generalInfo",
+        },
+        {
+            name: 'techStack2',
+            title: 'Tech Stack',
+            type: 'array',
+            of: [{ type: 'techStack' }],
+            fieldset: "technology",
+        },
+        
+        {
             name: 'jobPoints',
             title: 'Job Points',
             type: 'array',
-            of: [{ type: 'text' }]
+            of: [{ type: 'text' }],
+            fieldset: "positionDetails"
+        },
+        {
+            name: 'techStack',
+            title: 'Tech Stack',
+            type: 'array',
+            of: [{ type: 'string' }],
+            fieldset: "obsolete",
+        },
+        {
+            name: 'useNewTechStack',
+            title: 'New Tech-stack?',
+            type: 'boolean',
+            fieldset: "obsolete",
         },
     ],
     orderings: [
