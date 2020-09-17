@@ -16,7 +16,7 @@
         --main-color1: #222831;
         --main-color2: #30475e;
 
-        --main-accent-color: #d65a31;
+        --main-accent-color: #cc5500;
 
         --main-color-inv: #ececec;
     }
@@ -27,7 +27,7 @@
         --main-color1: #222831;
         --main-color2: #30475e;
 
-        --main-accent-color: #f2a365;
+        --main-accent-color: #cc5500;
 
         --main-color-inv: #ececec;
     }
@@ -37,7 +37,7 @@
     --main-color1: #222831;
     --main-color2: #30475e;
 
-    --main-accent-color: #d65a31;
+    --main-accent-color: #cc5500;
 
     --main-color-inv: #ececec;
 }
@@ -46,7 +46,7 @@
     --main-color1: #f4f4f4;
     --main-color2: #bdc3c7;
 
-    --main-accent-color: #d35400;
+    --main-accent-color: #cc5500;
 
     --main-color-inv: #2c3e50;
 }
