@@ -88,7 +88,7 @@ const RollerDerby = () => {
     }
 
     return (
-        <SiteWrapper>
+        <SiteWrapper name="Roller Derby">
 
             <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
