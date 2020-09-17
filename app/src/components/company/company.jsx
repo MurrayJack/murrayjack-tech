@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FiCalendar } from "react-icons/fi"
+import { SkillList } from "../skills/SkillList"
 
 const DateRange = ({ Start, End }) => (
     <StyledDate>
@@ -48,23 +49,7 @@ export default ({ data }) => (
                 <JobPoints jobPoints={data.jobPoints} />
             </div>
             <div>
-                <h3>Key Skills</h3>
-                {!data.useNewTechStack ? (
-                    <SkillList>
-                        {data.techStack.sort().map((e, i) => (
-                            <SkillItem key={i}>{e}</SkillItem>
-                        ))}
-                    </SkillList>
-                ) : (
-                    <SkillList>
-                        {data.techStack2.map((e, i) => (
-                            <SkillItem key={i}>
-                                <div>{e.name}</div>
-                                <SkillLine style={{width: `${e.percent}%`}} />
-                            </SkillItem>
-                        ))}
-                    </SkillList>
-                )}
+                <SkillList useNewTechStack={data.useNewTechStack} data={data} />
             </div>
         </Wrapper>
     </Company>
@@ -90,28 +75,6 @@ const Header = styled.header`
     font-weight: bold;
     font-size: 20px;
     line-height: 1.6em;
-`
-
-const SkillList = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-`
-
-const SkillItem = styled.li`
-    display: inline-block;
-    padding: 8px 10px;
-    margin: 4px;
-    color: var(--main-color-inv);
-    background-color: var(--main-color2);
-    border-radius: 3px;
-    font-size: var(--font-small);
-`
-
-const SkillLine = styled.div`
-    height: 1px;
-    background: var(--main-accent-color);
 `
 
 const CompanyDeets = styled.div`

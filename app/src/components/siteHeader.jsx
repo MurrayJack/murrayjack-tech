@@ -22,7 +22,11 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                     <SiteIcon />
                     <a href="/">MURRAY JACK</a>
                     {data.allSanitySitePages.nodes.map(e => (
-                        <a aria-selected={name == e.name} key={e.name} href={e.url}>
+                        <a
+                            aria-selected={name == e.name}
+                            key={e.name}
+                            href={e.url}
+                        >
                             {e.name}
                         </a>
                     ))}
@@ -34,14 +38,11 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
 
             <style jsx>{`
                 header {
-                    background: var(--main-color2);
+                    background: var(--main-accent-color);
                     padding: var(--gaps-large);
                     display: grid;
                     grid-auto-flow: column;
                     grid-template-columns: 1fr auto;
-                    position: sticky;
-                    top: 0;
-                    z-index: 1;
                 }
 
                 a {
@@ -52,11 +53,12 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
 
                 a:hover {
                     border-bottom: 1px solid var(--main-color1);
+                    color: var(--main-color1);
                 }
 
-                a[aria-selected='true'] {
+                a[aria-selected="true"] {
                     border-bottom: 1px solid var(--main-color1);
-                    color: var(--main-accent-color);
+                    color: var(--main-color1);
                 }
 
                 div {
