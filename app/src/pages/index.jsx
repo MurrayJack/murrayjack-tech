@@ -7,8 +7,11 @@ import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
 import SiteWrapper from "../components/siteWrapper"
 import { Card } from "../components/card"
+import { navigate } from 'gatsby'
 
 export default () => {
+    navigate("/resume")
+
     const { allSanitySitePages } = useStaticQuery(graphql`
         {
             allSanitySitePages(sort: { order: ASC, fields: order }) {
