@@ -1,5 +1,4 @@
 import React from "react"
-import LargeLink from "../components/general/LargeLink"
 import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import { SiteMain } from "../components/siteMain"
@@ -7,10 +6,11 @@ import { SiteSection } from "../components/siteSection"
 import { SiteGrid } from "../components/siteGrid"
 import SiteWrapper from "../components/siteWrapper"
 import { Card } from "../components/card"
-import { navigate } from 'gatsby'
+import { useEffect } from "react"
+import { navigate } from "gatsby"
 
 export default () => {
-    navigate("/resume")
+    useEffect(() => navigate("/resume"))
 
     const { allSanitySitePages } = useStaticQuery(graphql`
         {
@@ -37,9 +37,7 @@ export default () => {
                                 title={e.name}
                                 key={e.name}
                                 description={e.description}
-                            >
-                                
-                            </Card>
+                            ></Card>
                         ))}
                     </SiteGrid>
                 </SiteSection>
