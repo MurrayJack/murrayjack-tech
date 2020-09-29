@@ -3,6 +3,8 @@ import Container from "./container"
 import MurrayJack from "../images/MurrayJack"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiMail, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"
+import { motion, AnimateSharedLayout } from "framer-motion"
+import { useState } from "react"
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -21,6 +23,15 @@ export default () => {
         }
     `)
 
+    const [socialItem, setSocialItem] = useState("")
+    let timeout;
+
+    const handleOnMouseDeBounce = () => {
+        timeout = setTimeout(() => {
+            setSocialItem("")
+        }, 10)
+    }
+
     return (
         <Container
             ID="aboutme"
@@ -28,68 +39,79 @@ export default () => {
             Info={data.sanityPersonalDetails.personalBlurb}
             className="aboutMe"
         >
-            <section>
-                <div className="me">
-                    <MurrayJack />
-                    <div>
+            <AnimateSharedLayout>
+                <section onPointerOver={() => clearTimeout(timeout)} onPointerOutCapture={handleOnMouseDeBounce}>
+                    <div className="me">
+                        <MurrayJack />
                         <div>
-                            <a
-                                href={
-                                    "mailto:" + data.sanityPersonalDetails.email
-                                }
-                                aria-label="Email Me"
-                            >
-                                <FiMail />
-                            </a>
-                        </div>
-                        <div>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.twitter}
-                                aria-label="Link to twitter"
-                            >
-                                <FiTwitter />
-                            </a>
-                        </div>
-                        <div>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.github}
-                                aria-label="Link to GitHub"
-                            >
-                                <FiGithub />
-                            </a>
-                        </div>
-                        <div>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href={data.sanityPersonalDetails.linkedIn}
-                                aria-label="Linked In"
-                            >
-                                <FiLinkedin />
-                            </a>
+                            <div>
+                                <SocialItem
+                                    href={
+                                        "mailto:" +
+                                        data.sanityPersonalDetails.email
+                                    }
+                                    label="Email Me"
+                                    onHover={() => setSocialItem("Email Me")}
+                                    selected={socialItem}
+                                    icon={() => <FiMail />}
+                                />
+                            </div>
+                            <div>
+                                <SocialItem
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={data.sanityPersonalDetails.twitter}
+                                    label="Link to twitter"
+                                    onHover={() =>
+                                        setSocialItem("Link to twitter")
+                                    }
+                                    selected={socialItem}
+                                    icon={() => <FiTwitter />}
+                                />
+                            </div>
+                            <div>
+                                <SocialItem
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={data.sanityPersonalDetails.github}
+                                    label="Link to GitHub"
+                                    onHover={() =>
+                                        setSocialItem("Link to GitHub")
+                                    }
+                                    selected={socialItem}
+                                    icon={() => <FiGithub />}
+                                />
+                            </div>
+                            <div>
+                                <SocialItem
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={data.sanityPersonalDetails.linkedIn}
+                                    label="Linked In"
+                                    onHover={() => setSocialItem("Linked In")}
+                                    selected={socialItem}
+                                    icon={() => <FiLinkedin />}
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <ul>
-                    <Item
-                        name="Name"
-                        value={() => data.sanityPersonalDetails.name}
-                    />
-                    <Item
-                        name="Visa"
-                        value={() => data.sanityPersonalDetails.visa}
-                    />
+                    <ul>
+                        <Item
+                            name="Name"
+                            value={() => data.sanityPersonalDetails.name}
+                        />
+                        <Item
+                            name="Visa"
+                            value={() => data.sanityPersonalDetails.visa}
+                        />
 
-                    <Item
-                        name="Located"
-                        value={() => data.sanityPersonalDetails.location}
-                    />
-                </ul>
-            </section>
+                        <Item
+                            name="Located"
+                            value={() => data.sanityPersonalDetails.location}
+                        />
+                    </ul>
+                </section>
+            </AnimateSharedLayout>
 
             <style jsx>{`
                 section {
@@ -117,21 +139,6 @@ export default () => {
                     justify-content: center;
                 }
 
-                .me > div > div > a {
-                    height: 40px;
-                    width: 40px;
-                    display: grid;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    background: var(--main-color2);
-                }
-
-                .me > div > div > a:hover {
-                    background: var(--main-accent-color);
-                    color: white;
-                }
-
                 @media (min-width: 960px) {
                     section {
                         grid-template-columns: auto 1fr;
@@ -143,6 +150,60 @@ export default () => {
         </Container>
     )
 }
+
+const spring = {
+    type: "spring",
+    stiffness: 500,
+    damping: 30,
+}
+
+const SocialItem = ({ href, label, icon, selected, onHover, ...rest }) => (
+    <>
+        <a {...rest} href={href} aria-label={label} onPointerOver={onHover}>
+            {icon()}
+            {selected === label && (
+                <motion.div
+                    layoutId="outline"
+                    className="outline"
+                    initial={false}
+                    transition={spring}
+                ></motion.div>
+            )}
+        </a>
+
+        <style global>{`
+            .outline {
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                border: 2px solid var(--main-accent-color);
+                border-radius: 50%;
+            }
+        `}</style>
+
+        <style jsx>{`
+            a {
+                height: 40px;
+                width: 40px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: var(--main-color2);
+                position: relative;
+                transition: background-color linear 0.4s;
+            }
+
+            a:hover {
+                background: var(--main-accent-color);
+                transition: background-color linear 0.2s;
+                color: white;
+            }
+        `}</style>
+    </>
+)
 
 const Item = ({ name, value }) => (
     <>
