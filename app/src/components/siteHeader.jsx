@@ -26,6 +26,7 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                             aria-selected={name == e.name}
                             key={e.name}
                             href={e.url}
+                            className="menu"
                         >
                             {e.name}
                         </a>
@@ -67,6 +68,16 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                     grid-gap: var(--gaps-xlarge);
                     grid-auto-columns: max-content;
                     align-items: center;
+                }
+
+                .menu {
+                    display: none;
+                }
+
+                @media (min-width: 960px) {
+                    .menu {
+                        display: grid;
+                    }
                 }
             `}</style>
         </>

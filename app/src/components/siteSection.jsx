@@ -8,7 +8,6 @@ export const SiteSection = ({ children }) => {
             </section>
             <style jsx>{`
                 div {
-                    // width: 960px;
                     margin: 0 auto;
                 }
             `}</style>
