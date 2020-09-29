@@ -24,7 +24,7 @@ export default () => {
     `)
 
     const [socialItem, setSocialItem] = useState("")
-    let timeout;
+    let timeout
 
     const handleOnMouseDeBounce = () => {
         timeout = setTimeout(() => {
@@ -40,10 +40,21 @@ export default () => {
             className="aboutMe"
         >
             <AnimateSharedLayout>
-                <section onPointerOver={() => clearTimeout(timeout)} onPointerOutCapture={handleOnMouseDeBounce}>
+                <section onPointerOutCapture={handleOnMouseDeBounce}>
                     <div className="me">
-                        <MurrayJack />
-                        <div>
+                        <div style={{ position: "relative" }}>
+                            <MurrayJack />
+                            {socialItem === "" && (
+                                <motion.div
+                                    layoutId="outline"
+                                    className="outline"
+                                    initial={false}
+                                    transition={spring}
+                                ></motion.div>
+                            )}
+                        </div>
+
+                        <div onPointerOver={() => clearTimeout(timeout)}>
                             <div>
                                 <SocialItem
                                     href={
@@ -113,6 +124,18 @@ export default () => {
                 </section>
             </AnimateSharedLayout>
 
+            <style global>{`
+                .outline {
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    border: 2px solid var(--main-accent-color);
+                    border-radius: 50%;
+                }
+            `}</style>
+
             <style jsx>{`
                 section {
                     display: grid;
@@ -170,18 +193,6 @@ const SocialItem = ({ href, label, icon, selected, onHover, ...rest }) => (
                 ></motion.div>
             )}
         </a>
-
-        <style global>{`
-            .outline {
-                position: absolute;
-                top: -5px;
-                left: -5px;
-                right: -5px;
-                bottom: -5px;
-                border: 2px solid var(--main-accent-color);
-                border-radius: 50%;
-            }
-        `}</style>
 
         <style jsx>{`
             a {
