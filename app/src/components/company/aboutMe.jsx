@@ -50,6 +50,7 @@ export default () => {
                                     className="outline"
                                     initial={false}
                                     transition={spring}
+                                    animate={{ borderColor: "#cc5500" }}
                                 ></motion.div>
                             )}
                         </div>
@@ -131,7 +132,7 @@ export default () => {
                     left: -5px;
                     right: -5px;
                     bottom: -5px;
-                    border: 2px solid var(--main-accent-color);
+                    border: 1px solid var(--main-accent-color);
                     border-radius: 50%;
                 }
             `}</style>
@@ -190,6 +191,7 @@ const SocialItem = ({ href, label, icon, selected, onHover, ...rest }) => (
                     className="outline"
                     initial={false}
                     transition={spring}
+                    animate={{ borderColor: "#fff" }}
                 ></motion.div>
             )}
         </a>
