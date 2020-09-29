@@ -144,12 +144,11 @@ export default () => {
     )
 }
 
-const Item = ({ name, value, icon }) => (
+const Item = ({ name, value }) => (
     <>
         <li>
             <span>{name}:</span>
             <span>{value()}</span>
-            <span>{icon && icon()}</span>
         </li>
 
         <style jsx>{`
@@ -162,10 +161,18 @@ const Item = ({ name, value, icon }) => (
                 font-weight: bold;
                 display: grid;
                 align-items: center;
-                align-content: center;
+                align-content: top;
                 display: grid;
-                grid-template-columns: 150px 1fr auto;
-                grid-gap: 8px;
+                grid-template-rows: 10px 50px;
+                grid-gap: 0px;
+            }
+
+            @media (min-width: 960px) {
+                li {
+                    align-content: center;
+                    grid-template-columns: 150px 1fr;
+                    grid-gap: 8px;
+                }
             }
         `}</style>
     </>
