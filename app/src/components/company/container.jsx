@@ -6,8 +6,8 @@ export default ({ children, Header, Info, Info2, ID, className }) => (
         <div id={ID} className={className}>
             <article>
                 <H2>{Header}</H2>
-                <P>{Info}</P>
-                {Info2 && <P>{Info2}</P>}
+                {Info && <p>{Info}</p>}
+                {Info2 && <p>{Info2}</p>}
 
                 {children}
             </article>
@@ -16,6 +16,17 @@ export default ({ children, Header, Info, Info2, ID, className }) => (
             article {
                 padding: 1.45rem 20px;
                 text-align: center;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                line-height: 1.8em;
+                margin-bottom: 2em;
+            }
+
+            p:last-of-type {
+                margin-bottom: 4em;
             }
 
             @media (min-width: 960px) {

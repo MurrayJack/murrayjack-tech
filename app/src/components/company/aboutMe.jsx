@@ -12,6 +12,7 @@ export default () => {
             sanityPersonalDetails {
                 name
                 personalBlurb
+                personalBlurb2
                 email
                 location
                 visa
@@ -37,6 +38,7 @@ export default () => {
             ID="aboutme"
             Header="About Me"
             Info={data.sanityPersonalDetails.personalBlurb}
+            Info2={data.sanityPersonalDetails.personalBlurb2}
             className="aboutMe"
         >
             <AnimateSharedLayout>
@@ -155,7 +157,6 @@ export default () => {
                 }
 
                 .me > div {
-                    margin-top: -20px;
                     z-index: 1;
                     display: grid;
                     grid-auto-flow: column;
@@ -244,6 +245,7 @@ const Item = ({ name, value }) => (
             @media (min-width: 960px) {
                 li {
                     align-content: center;
+                    grid-template-rows: inherit;
                     grid-template-columns: 150px 1fr;
                     grid-gap: 8px;
                 }
