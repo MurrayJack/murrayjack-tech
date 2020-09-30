@@ -11,6 +11,10 @@
     --gaps-xxlarge: 32px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --main-color1: #222831;
@@ -51,16 +55,14 @@
     --main-color-inv: #2c3e50;
 }
 
-
 [data-theme="blue"] {
-    --main-color1: #2980b9 ;
+    --main-color1: #2980b9;
     --main-color2: #3498db;
 
     --main-accent-color: #2c3e50;
 
     --main-color-inv: #ecf0f1;
 }
-
 
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -98,7 +100,7 @@ h2 {
 
 textarea,
 input[type="text"],
-input[type="email"]{
+input[type="email"] {
     font-size: 1em;
     color: var(--main-color-inv);
     background-color: var(--main-color2);
@@ -143,5 +145,5 @@ a:hover {
 }
 
 hr {
-    border-color: var(--main-color2);;
+    border-color: var(--main-color2);
 }

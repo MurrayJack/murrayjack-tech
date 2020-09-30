@@ -59,10 +59,11 @@ export const SkillItem = ({ name, percent }) => {
                     background-color: var(--main-color2);
                     border-radius: 3px;
                     font-size: var(--font-small);
+                    position: relative;
                 }
 
                 .line {
-                    height: 1px;
+                    height: 2px;
                     background: var(--main-accent-color);
                     transition: width ease-in-out 0.2s;
                 }
