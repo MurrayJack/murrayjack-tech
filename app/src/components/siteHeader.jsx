@@ -118,8 +118,6 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                 a {
                     text-transform: uppercase;
                     text-decoration: none;
-                    border-bottom: 2px solid transparent;
-
                     z-index: 1;
                 }
 
@@ -128,7 +126,6 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                 }
 
                 a[aria-selected="true"] {
-                    border-bottom: 2px solid var(--main-color1);
                     color: var(--main-color-inv);
                 }
 
