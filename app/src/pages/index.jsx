@@ -27,7 +27,7 @@ export default () => {
     `)
 
     return (
-        <SiteWrapper>
+        <SiteWrapper name="Home">
             <SEO title="Home" description="Murray Jack Home Page" />
 
             <Section center>

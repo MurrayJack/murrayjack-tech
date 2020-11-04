@@ -43,11 +43,11 @@ export const Header = ({ name }) => {
                         >
                             <a
                                 href="/"
-                                onPointerOver={() => setHoveredItem("me")}
+                                onPointerOver={() => setHoveredItem("Home")}
                             >
                                 Home
                             </a>
-                            {hoveredItem == "me" && (
+                            {hoveredItem == "Home" && (
                                 <motion.div
                                     layoutId="header"
                                     className="headerOutline"

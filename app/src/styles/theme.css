@@ -21,15 +21,22 @@
 }
 
 :root {
-    --main-color1: #ecf0f1;
+    --main-color1: #61045F;
+
+    --text-color1: #222831;
+
+    --main-accent-color: #cc5500;
+
+
+    /* --main-color1: #ecf0f1;
     --main-color2: #30475e;
 
     --main-header-bg-color: #cc5500;
     --main-header-color: #ffffff;
 
-    --main-accent-color: #cc5500;
+    
 
-    --main-color-inv: #ececec;
+    --main-color-inv: #ececec; */
 }
 
 html {
@@ -44,6 +51,8 @@ html {
 body {
     padding: 0;
     margin: 0;
+    color: var(--text-color1);
+
 }
 
 .headerOutline {

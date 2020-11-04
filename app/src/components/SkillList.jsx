@@ -5,7 +5,7 @@ import { VStack } from "./Stack"
 export const SkillList = ({ data }) => {
     return (
         <VStack gap="small">
-            <Text as="h3">Key Skills</Text>
+            <Text as="h4">Key Skills</Text>
 
             <VStack gap="small">
                 {data.techStack2.map((e, i) => (
