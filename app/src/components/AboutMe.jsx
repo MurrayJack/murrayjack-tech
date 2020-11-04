@@ -26,28 +26,35 @@ export const AboutMe = () => {
         <VStack gap="medium">
             <Text as="h2">About Me</Text>
 
-            <Text as="p">{data.sanityPersonalDetails.personalBlurb}</Text>
-            <Text as="p">{data.sanityPersonalDetails.personalBlurb2}</Text>
-
-            <HStack>
+            <HStack columns="300px 1fr" gap="large">
                 <div>
                     <MyImage data={data} />
                 </div>
-                <ul>
-                    <Item
-                        name="Name"
-                        value={() => data.sanityPersonalDetails.name}
-                    />
-                    <Item
-                        name="Visa"
-                        value={() => data.sanityPersonalDetails.visa}
-                    />
+                <div>
+                    <ul>
+                        <Item
+                            name="Name"
+                            value={() => data.sanityPersonalDetails.name}
+                        />
+                        <Item
+                            name="Visa"
+                            value={() => data.sanityPersonalDetails.visa}
+                        />
 
-                    <Item
-                        name="Located"
-                        value={() => data.sanityPersonalDetails.location}
-                    />
-                </ul>
+                        <Item
+                            name="Located"
+                            value={() => data.sanityPersonalDetails.location}
+                        />
+                    </ul>
+                    <VStack gap="medium">
+                        <Text as="p">
+                            {data.sanityPersonalDetails.personalBlurb}
+                        </Text>
+                        <Text as="p">
+                            {data.sanityPersonalDetails.personalBlurb2}
+                        </Text>
+                    </VStack>
+                </div>
             </HStack>
         </VStack>
     )
@@ -65,7 +72,7 @@ const Item = ({ name, value }) => (
                 text-transform: lowercase;
                 letter-spacing: 1px;
                 border-bottom: 1px solid var(--text-border-color);
-                line-height: 32px;
+                // line-height: 32px;
                 margin-bottom: 16px;
                 font-weight: bold;
                 display: grid;

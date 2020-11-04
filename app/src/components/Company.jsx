@@ -6,7 +6,7 @@ import { Text } from "./Text"
 
 export const Company = ({ data }) => (
     <HStack columns="3fr 1fr" gap="xLarge">
-        <VStack gap="small">
+        <VStack gap="small" align="start">
             <Text as="h3">{data.title}</Text>
 
             <HStack columns="1fr auto">

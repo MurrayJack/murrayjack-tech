@@ -7,6 +7,7 @@ export const Stack = ({
     pad,
     columns = "1fr",
     justify,
+    align,
 
     // Height,
     // Align = "center",
@@ -63,6 +64,7 @@ export const Stack = ({
                     padding: ${buildSize(pad)};
                     grid-auto-columns: ${columns};
                     justify-items: ${justify};
+                    align-items: ${align};
                 }
             `}</style>
         </>
