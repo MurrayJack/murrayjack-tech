@@ -1,9 +1,10 @@
 import React from "react"
-import Container from "./container"
 import { useStaticQuery, graphql } from "gatsby"
-import Company from "./company"
+import { Company } from "./Company"
+import { VStack } from "./Stack"
+import { Text } from "./Text"
 
-const WorkExperience = () => {
+export const WorkExperience = () => {
     const data = useStaticQuery(graphql`
         {
             sanityPersonalDetails {
@@ -33,20 +34,19 @@ const WorkExperience = () => {
     `)
 
     return (
-        <Container
-            ID="experience"
-            Color="white"
-            BGColor="transparent"
-            Header="Work Experience"
-            Info={data.sanityPersonalDetails.workBlurb}
-            Info2={data.sanityPersonalDetails.workBlurb2}
-        >
-            
-            {data.allSanityJobposition.nodes.map((e, i) => (
-                <Company key={i} data={e} />
-            ))}
-        </Container>
+        <VStack gap="medium">
+            <Text as="h2">Work Experience</Text>
+
+            <Text as="p">{data.sanityPersonalDetails.workBlurb}</Text>
+            <Text as="p">{data.sanityPersonalDetails.workBlurb2}</Text>
+
+            <VStack gap="xxxLarge"></VStack>
+
+            <VStack gap="xxxLarge">
+                {data.allSanityJobposition.nodes.map((e, i) => (
+                    <Company key={i} data={e} />
+                ))}
+            </VStack>
+        </VStack>
     )
 }
-
-export default WorkExperience

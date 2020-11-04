@@ -3,15 +3,14 @@ import { H2, P } from "../Styles"
 
 export default ({ children, Header, Info, Info2, ID, className }) => (
     <>
-        <div id={ID} className={className}>
-            <article>
-                <H2>{Header}</H2>
-                {Info && <p>{Info}</p>}
-                {Info2 && <p>{Info2}</p>}
+        <article>
+            <H2>{Header}</H2>
+            {Info && <p>{Info}</p>}
+            {Info2 && <p>{Info2}</p>}
 
-                {children}
-            </article>
-        </div>
+            {children}
+        </article>
+
         <style jsx>{`
             article {
                 padding: 1.45rem 20px;

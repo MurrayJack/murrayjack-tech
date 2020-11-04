@@ -1,47 +1,48 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { ProjectsList } from "../components/ProjectsList"
 import SEO from "../components/seo"
-import { SiteMain } from "../components/siteMain"
-import { SiteSection } from "../components/siteSection"
-import { SiteGrid } from "../components/siteGrid"
 import SiteWrapper from "../components/siteWrapper"
-import { Card } from "../components/card"
-import { useEffect } from "react"
-import { navigate } from "gatsby"
+import { VStack } from "../components/stack"
+import { Section } from "../components/Section"
+import { Text } from "../components/Text"
+import { useStaticQuery, graphql } from "gatsby"
+import { MyImage } from "../components/MyImage"
 
 export default () => {
-    useEffect(() => navigate("/resume"))
-
-    const { allSanitySitePages } = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         {
-            allSanitySitePages(sort: { order: ASC, fields: order }) {
-                nodes {
-                    name
-                    description
-                    url
-                }
+            sanityPersonalDetails {
+                name
+                personalBlurb
+                personalBlurb2
+                email
+                location
+                visa
+                github
+                twitter
+                twitterName
+                linkedIn
             }
         }
     `)
 
     return (
         <SiteWrapper>
-            <SiteMain title="Murray Jack">
-                <SEO title="Blog" description="Murray Jack List of Blogs" />
+            <SEO title="Home" description="Murray Jack Home Page" />
 
-                <SiteSection>
-                    <SiteGrid>
-                        {allSanitySitePages.nodes.map(e => (
-                            <Card
-                                href={e.url}
-                                title={e.name}
-                                key={e.name}
-                                description={e.description}
-                            ></Card>
-                        ))}
-                    </SiteGrid>
-                </SiteSection>
-            </SiteMain>
+            <Section center>
+                <VStack pad="xLarge" gap="xLarge" justify="center">
+                    <Text as="h1">Murray Jack</Text>
+                    <MyImage data={data} />
+                </VStack>
+            </Section>
+
+            <Section center>
+                <VStack pad="xLarge" gap="xLarge" justify="center">
+                    <Text as="h1">Projects</Text>
+                    <ProjectsList />
+                </VStack>
+            </Section>
         </SiteWrapper>
     )
 }

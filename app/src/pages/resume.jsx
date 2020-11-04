@@ -1,33 +1,25 @@
 import React from "react"
 import SEO from "../components/seo"
-import AboutMe from "../components/company/aboutMe"
-import WorkExperience from "../components/company/workExperience"
-import Contact from "../components/company/contact"
-import Footer from "../components/company/footer"
+import { AboutMe } from "../components/AboutMe"
+import { WorkExperience } from "../components/WorkExperience"
 import SiteWrapper from "../components/siteWrapper"
-import { SiteMain } from "../components/siteMain"
-import { SiteSection } from "../components/siteSection"
-import { SiteGrid } from "../components/siteGrid"
+import { VStack } from "../components/Stack"
+import { Section } from "../components/Section"
 
 export default () => {
     return (
         <SiteWrapper name="Resume">
-            
-            <SEO title="Home" description="Murray Jack Resume" />
+            <SEO title="Resume" description="Murray Jack Resume" />
 
-            <SiteMain>
-                <SiteSection>
-                    <SiteGrid>
-                        <AboutMe />
+            <VStack gap="xLarge" pad="xLarge">
+                <Section center>
+                    <AboutMe />
+                </Section>
 
-                        <WorkExperience />
-
-                        <Contact />
-
-                        <Footer />
-                    </SiteGrid>
-                </SiteSection>
-            </SiteMain>
+                <Section center>
+                    <WorkExperience />
+                </Section>
+            </VStack>
         </SiteWrapper>
     )
 }

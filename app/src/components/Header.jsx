@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { SiteIcon } from "./images/SiteIcon"
 import { useStaticQuery, graphql } from "gatsby"
-import Hamburger from "hamburger-react"
 import { motion, AnimateSharedLayout } from "framer-motion"
 
 const spring = {
@@ -10,7 +9,7 @@ const spring = {
     damping: 50,
 }
 
-export const SiteHeader = ({ onClick, isOpen, name }) => {
+export const Header = ({ name }) => {
     const data = useStaticQuery(graphql`
         {
             allSanitySitePages(sort: { fields: order, order: ASC }) {
@@ -46,7 +45,7 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                                 href="/"
                                 onPointerOver={() => setHoveredItem("me")}
                             >
-                                MURRAY JACK
+                                Home
                             </a>
                             {hoveredItem == "me" && (
                                 <motion.div
@@ -85,30 +84,23 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                     </AnimateSharedLayout>
                 </div>
                 <div>
-                    <Hamburger size={20} toggled={isOpen} toggle={onClick} />
+                    {/* <Hamburger size={20} toggled={isOpen} toggle={onClick} /> */}
                 </div>
             </header>
 
-            <style global>{`
-                .headerOutline {
-                    position: absolute;
-                    top: -10px;
-                    left: -10px;
-                    right: -10px;
-                    bottom: -10px;
-                    // border: 1px solid var(--main-accent-color);
-                    border-radius: 5px;
-                    background: rgba(0, 0, 0, 0.2);
-                }
-            `}</style>
-
             <style jsx>{`
                 header {
-                    background: var(--main-accent-color);
-                    padding: var(--gaps-large);
+                    background: var(--main-header-bg-color);
+                    padding: var(--gaps-small);
                     display: grid;
                     grid-auto-flow: column;
                     grid-template-columns: 1fr auto;
+
+                    background: #AA076B;  /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    
+                
                 }
 
                 .thingame {
@@ -119,14 +111,15 @@ export const SiteHeader = ({ onClick, isOpen, name }) => {
                     text-transform: uppercase;
                     text-decoration: none;
                     z-index: 1;
+                    color: white;
                 }
 
                 a:hover {
-                    color: var(--main-color-inv);
+                    color: white;
                 }
 
                 a[aria-selected="true"] {
-                    color: var(--main-color-inv);
+                    color: white;
                 }
 
                 div {

@@ -1,15 +1,19 @@
-import * as React from "react"
+import React from "react"
 
-export const SiteSection = ({ children }) => {
+export const Section = ({ children, center, color }) => {
     return (
         <>
             <section>
                 <div>{children}</div>
             </section>
             <style jsx>{`
+                section {
+                    background: ${color}
+                }
+
                 div {
                     margin: 0 auto;
-                    border: 1px solid deeppink;
+                    max-width: ${center ? "1100px": "inherit"};
                 }
             `}</style>
         </>
