@@ -67,13 +67,13 @@ export const DerbyDetails = () => (
 
             td {
                 padding: 16px;
-                border: 1px solid var(--main-color2);
+                border: 1px solid #ddd;
             }
 
             th {
                 text-align: left;
                 padding: 16px;
-                border: 1px solid var(--main-color2);
+                border: 1px solid  #ddd;
                 font-weight: var(--table-header-font-weight);
             }
 

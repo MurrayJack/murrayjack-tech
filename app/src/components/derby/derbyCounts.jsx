@@ -2,7 +2,7 @@ import React from "react"
 
 export const DerbyCounts = ({ counts }) => (
     <>
-        <h2>WFTDA ({counts.total} - Games)</h2>
+        {/* <h2>WFTDA ({counts.total} - Games)</h2> */}
 
         <section>
             <table>
@@ -131,7 +131,7 @@ export const DerbyCounts = ({ counts }) => (
 
             td {
                 padding: 16px;
-                border: 1px solid var(--main-color2);
+                border: 1px solid  #ddd;
                 line-height: 1.6em;
             }
 
@@ -143,7 +143,7 @@ export const DerbyCounts = ({ counts }) => (
             th {
                 text-align: left;
                 padding: 16px;
-                border: 1px solid var(--main-color2);
+                border: 1px solid  #ddd;
                 line-height: 1.6em;
                 font-weight: var(--table-header-font-weight);
             }

@@ -3,12 +3,11 @@ import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
-import { SearchInput } from "../components/derby/searchInput"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
-import { SiteMain } from "../components/siteMain"
-import { SiteSection } from "../components/siteSection"
-import { SiteGrid } from "../components/siteGrid"
 import SiteWrapper from "../components/siteWrapper"
+import { VStack } from "../components/Stack"
+import { Section } from "../components/Section"
+import { Text } from "../components/text"
 
 const RollerDerby = () => {
     const [searchString, setSearchString] = useState("")
@@ -89,15 +88,35 @@ const RollerDerby = () => {
 
     return (
         <SiteWrapper name="Roller Derby">
-
             <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
-            <SiteMain title="Skatespeare - Game History">
-                <SiteSection>
-                    <SiteGrid>
+            <VStack pad="xLarge">
+                <Section center>
+                    <VStack gap="xLarge">
+                        <Text as="h1">Roller Derby</Text>
+
                         <DerbyDetails />
 
+                        <Text as="h2">WFTDA ({counts.total} - Games)</Text>
+
                         <DerbyCounts counts={counts} />
+
+                        <Text as="h2">Game History</Text>
+
+                        <DerbyGamesList
+                            data={tournaments}
+                            searchString={searchString}
+                        />
+                    </VStack>
+                </Section>
+            </VStack>
+
+            {/* <SiteMain title="Skatespeare - Game History">
+                <SiteSection>
+                    <SiteGrid>
+                        
+
+                        
 
                         <h2>Game History</h2>
 
@@ -109,7 +128,7 @@ const RollerDerby = () => {
                         />
                     </SiteGrid>
                 </SiteSection>
-            </SiteMain>
+            </SiteMain> */}
         </SiteWrapper>
     )
 }

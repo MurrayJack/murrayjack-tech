@@ -30,7 +30,8 @@ export const Text = ({ as, children }) => {
                     letter-spacing: 0.3px;
                     font-size: var(--font-xlarge);
                     font-weight: normal;
-                    
+                    padding: 0;
+                    margin: 0;
                 }
 
                 h2 {
@@ -39,6 +40,8 @@ export const Text = ({ as, children }) => {
                     font-weight: normal;
                     text-transform: uppercase;
                     color: var(--main-color1);
+                    padding: 0;
+                    margin: 0;
                 }
 
                 h3 {
@@ -47,12 +50,16 @@ export const Text = ({ as, children }) => {
                     font-weight: normal;
                     text-transform: uppercase;
                     color: var(--main-color1);
+                    padding: 0;
+                    margin: 0;
                 }
 
                 h4 {
                     letter-spacing: 0.3px;
                     font-size: var(--font-large);
                     font-weight: normal;
+                    padding: 0;
+                    margin: 0;
                 }
                 
 
