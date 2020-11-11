@@ -2,7 +2,7 @@ import React from "react"
 import { Header } from "./Header"
 import { VStack } from "./Stack"
 import { Section } from "./Section"
-import { Text } from "./text"
+import { Text } from "./Text"
 
 export default ({ name, children, title }) => {
     return (
