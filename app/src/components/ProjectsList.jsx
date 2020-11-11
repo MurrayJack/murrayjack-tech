@@ -1,9 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Image, CloudinaryContext, Transformation } from "cloudinary-react"
-import { Text } from "./Text"
-import { Section } from "./Section"
-import { VStack } from "./Stack"
 
 export const ProjectsList = () => {
     const { allSanityProjects } = useStaticQuery(graphql`
@@ -46,7 +43,7 @@ export const ProjectsList = () => {
                     display: grid;
                     column-gap: 30px;
                     row-gap: 30px;
-                    grid-template-columns: 300px 300px 300px;
+                    grid-template-columns: 33% 33% 33%;
                     grid-template-rows: auto auto auto;
                 }
             `}</style>

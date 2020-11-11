@@ -1,8 +1,8 @@
 import React from "react"
 import { Header } from "./Header"
-import { VStack } from "../components/Stack"
-import { Section } from "../components/Section"
-import { Text } from "../components/text"
+import { VStack } from "./Stack"
+import { Section } from "./Section"
+import { Text } from "./text"
 
 export default ({ name, children, title }) => {
     return (

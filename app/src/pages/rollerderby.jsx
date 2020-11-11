@@ -5,8 +5,6 @@ import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
 import SiteWrapper from "../components/siteWrapper"
-import { VStack } from "../components/Stack"
-import { Section } from "../components/Section"
 import { Text } from "../components/text"
 
 const RollerDerby = () => {
