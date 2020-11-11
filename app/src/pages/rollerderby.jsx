@@ -5,7 +5,7 @@ import { DerbyDetails } from "../components/derby/derbyDetails"
 import { DerbyCounts } from "../components/derby/derbyCounts"
 import { DerbyGamesList } from "../components/derby/derbyGamesList"
 import SiteWrapper from "../components/siteWrapper"
-import { Text } from "../components/text"
+import { Text } from "../components/Text"
 
 const RollerDerby = () => {
     const [searchString, setSearchString] = useState("")
