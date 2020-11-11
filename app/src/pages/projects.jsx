@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import SiteWrapper from "../components/siteWrapper"
 import { ProjectsList } from "../components/ProjectsList"
 import { useStaticQuery, graphql } from "gatsby"
-import { Text } from "../components/text"
+import { Text } from "../components/Text"
 
 export default () => {
     const { sanitySitePages } = useStaticQuery(graphql`
