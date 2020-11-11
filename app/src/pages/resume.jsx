@@ -5,21 +5,16 @@ import { WorkExperience } from "../components/WorkExperience"
 import SiteWrapper from "../components/siteWrapper"
 import { VStack } from "../components/Stack"
 import { Section } from "../components/Section"
+import { Text } from "../components/text"
 
 export default () => {
     return (
-        <SiteWrapper name="Resume">
+        <SiteWrapper name="Resume" title="About Me">
             <SEO title="Resume" description="Murray Jack Resume" />
 
-            <VStack gap="xLarge" pad="xLarge">
-                <Section center>
-                    <AboutMe />
-                </Section>
+            <AboutMe />
 
-                <Section center>
-                    <WorkExperience />
-                </Section>
-            </VStack>
+            <WorkExperience />
         </SiteWrapper>
     )
 }

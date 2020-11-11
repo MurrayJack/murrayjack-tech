@@ -23,40 +23,36 @@ export const AboutMe = () => {
     `)
 
     return (
-        <VStack gap="medium">
-            <Text as="h2">About Me</Text>
+        <HStack columns="300px 1fr" gap="large">
+            <div>
+                <MyImage data={data} />
+            </div>
+            <div>
+                <ul>
+                    <Item
+                        name="Name"
+                        value={() => data.sanityPersonalDetails.name}
+                    />
+                    <Item
+                        name="Visa"
+                        value={() => data.sanityPersonalDetails.visa}
+                    />
 
-            <HStack columns="300px 1fr" gap="large">
-                <div>
-                    <MyImage data={data} />
-                </div>
-                <div>
-                    <ul>
-                        <Item
-                            name="Name"
-                            value={() => data.sanityPersonalDetails.name}
-                        />
-                        <Item
-                            name="Visa"
-                            value={() => data.sanityPersonalDetails.visa}
-                        />
-
-                        <Item
-                            name="Located"
-                            value={() => data.sanityPersonalDetails.location}
-                        />
-                    </ul>
-                    <VStack gap="medium">
-                        <Text as="p">
-                            {data.sanityPersonalDetails.personalBlurb}
-                        </Text>
-                        <Text as="p">
-                            {data.sanityPersonalDetails.personalBlurb2}
-                        </Text>
-                    </VStack>
-                </div>
-            </HStack>
-        </VStack>
+                    <Item
+                        name="Located"
+                        value={() => data.sanityPersonalDetails.location}
+                    />
+                </ul>
+                <VStack gap="medium">
+                    <Text as="p">
+                        {data.sanityPersonalDetails.personalBlurb}
+                    </Text>
+                    <Text as="p">
+                        {data.sanityPersonalDetails.personalBlurb2}
+                    </Text>
+                </VStack>
+            </div>
+        </HStack>
     )
 }
 

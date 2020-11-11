@@ -87,48 +87,18 @@ const RollerDerby = () => {
     }
 
     return (
-        <SiteWrapper name="Roller Derby">
+        <SiteWrapper name="Roller Derby" title="Roller Derby">
             <SEO title="Roller Derby" description="Skatespeare Roller Derby" />
 
-            <VStack pad="xLarge">
-                <Section center>
-                    <VStack gap="xLarge">
-                        <Text as="h1">Roller Derby</Text>
+            <DerbyDetails />
 
-                        <DerbyDetails />
+            <Text as="h2">WFTDA ({counts.total} - Games)</Text>
 
-                        <Text as="h2">WFTDA ({counts.total} - Games)</Text>
+            <DerbyCounts counts={counts} />
 
-                        <DerbyCounts counts={counts} />
+            <Text as="h2">Game History</Text>
 
-                        <Text as="h2">Game History</Text>
-
-                        <DerbyGamesList
-                            data={tournaments}
-                            searchString={searchString}
-                        />
-                    </VStack>
-                </Section>
-            </VStack>
-
-            {/* <SiteMain title="Skatespeare - Game History">
-                <SiteSection>
-                    <SiteGrid>
-                        
-
-                        
-
-                        <h2>Game History</h2>
-
-                        <SearchInput onSearch={handleOnSearch} />
-
-                        <DerbyGamesList
-                            data={tournaments}
-                            searchString={searchString}
-                        />
-                    </SiteGrid>
-                </SiteSection>
-            </SiteMain> */}
+            <DerbyGamesList data={tournaments} searchString={searchString} />
         </SiteWrapper>
     )
 }
