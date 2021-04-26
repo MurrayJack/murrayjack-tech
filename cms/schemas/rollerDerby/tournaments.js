@@ -59,6 +59,24 @@ export default {
             fieldset: "details",
         },
         {
+            name: "THR",
+            title: "THR",
+            type: "string",
+            fieldset: "details",
+        },
+        {
+            name: "THNSO",
+            title: "THNSO",
+            type: "string",
+            fieldset: "details",
+        },
+        {
+            name: "LineupLink",
+            title: "Lineup URL",
+            type: "url",
+            fieldset: "details",
+        },
+        {
             name: "image",
             title: "Image",
             type: "image",

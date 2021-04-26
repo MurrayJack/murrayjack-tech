@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "murrayjack.tech"
-  },
   "api": {
     "projectId": "bdj4frfl",
     "dataset": "production"
+  },
+  "project": {
+    "name": "murrayjack.tech"
   },
   "plugins": [
     "@sanity/base",
