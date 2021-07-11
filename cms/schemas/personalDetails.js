@@ -44,6 +44,11 @@ export default {
       type: "string",
     },
     {
+      name: "mobileNo",
+      title: "Mobile Number",
+      type: "string",
+    },
+    {
       name: "github",
       title: "GitHub",
       type: "string",

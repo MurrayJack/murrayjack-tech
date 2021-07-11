@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 const Company = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allSanityJobposition {
+      allSanityJobposition(sort: { fields: startDate, order: DESC }) {
         nodes {
           url
           title
@@ -47,11 +47,9 @@ const Detail = ({
 
     <blockquote>{tagLine}</blockquote>
 
-    <ul>
-      {jobPoints.map((e) => (
-        <li>{e}</li>
-      ))}
-    </ul>
+    {jobPoints.map((e) => (
+      <p>{e}</p>
+    ))}
   </article>
 );
 

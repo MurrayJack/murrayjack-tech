@@ -1,11 +1,12 @@
 import * as React from "react";
 import Intro from "../components/me/intro";
 import Company from "../components/co/company";
-import murray from "../images/murrayjack.png";
 import Contact from "../components/me/contact";
+import Skills from "../components/me/skills";
+import Projects from "../components/me/projects";
 import { Helmet } from "react-helmet";
-
 import "../components/styles.css";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
   return (
@@ -16,7 +17,14 @@ const IndexPage = () => {
       </Helmet>
 
       <header>
-        <img alt="Murray Jack" src={murray} />
+        <div>
+          <StaticImage
+            width="75px"
+            height="75px"
+            src="../images/murrayjack.png"
+            alt="Betties by Post"
+          />
+        </div>
         <h1>Murray Jack: CV</h1>
       </header>
 
@@ -26,17 +34,12 @@ const IndexPage = () => {
         <h2>Work Experience</h2>
 
         <Company />
-        {/* <RedBox />
-        <HN />
-        <Performa />
-        <MDJ />
-        <PAS /> */}
       </section>
 
       <aside>
         <Contact />
-        {/* <Skills />
-        <Projects /> */}
+        <Skills />
+        <Projects />
       </aside>
     </main>
   );

@@ -1,8 +1,10 @@
+import * as React from "react";
+
 const Skills = () => (
   <>
     <article>
       <h4>Key Skills</h4>
-      <ul>
+      <ul className="list">
         <li>React.js.</li>
         <li>HTML, CSS, LESS.</li>
         <li>Javascript, Typescript.</li>
@@ -16,7 +18,7 @@ const Skills = () => (
 
     <article>
       <h4>Other Skills</h4>
-      <ul>
+      <ul className="list">
         <li>Accessibility (WCAG 2.1).</li>
         <li>App Center. TestFlight, App Store Connect.</li>
         <li>Azure.</li>

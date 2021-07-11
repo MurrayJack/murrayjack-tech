@@ -12,11 +12,11 @@ const Intro = () => {
   `);
 
   return (
-    <div>
+    <article>
       {data.sanityPersonalDetails.blurb.map((e) => (
         <p>{e}</p>
       ))}
-    </div>
+    </article>
   );
 };
 
