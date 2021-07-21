@@ -95,6 +95,11 @@ ul {
   gap: 8px;
 }
 
+ul > li > p {
+  font-size: 10px;
+  text-align: center;
+}
+
 ul.list {
   padding-left: 18px;
   margin: 0;
