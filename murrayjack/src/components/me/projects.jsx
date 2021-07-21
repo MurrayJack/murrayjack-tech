@@ -1,10 +1,11 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { H4 } from "../h4";
 
 const Projects = () => {
   return (
     <article>
-      <h4>Previous Projects</h4>
+      <H4 caption="Previous Projects" type="projects" />
       <ul>
         <li>
           <StaticImage src="../../images/Betties.png" alt="Betties by Post" />

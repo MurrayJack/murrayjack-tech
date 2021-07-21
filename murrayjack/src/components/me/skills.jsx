@@ -1,9 +1,11 @@
 import * as React from "react";
+import { H4 } from "../h4";
 
 const Skills = () => (
   <>
     <article>
-      <h4>Key Skills</h4>
+      <H4 caption="Key Skills" type="kskills" />
+
       <ul className="list">
         <li>React.js.</li>
         <li>HTML, CSS, LESS.</li>
@@ -17,7 +19,7 @@ const Skills = () => (
     </article>
 
     <article>
-      <h4>Other Skills</h4>
+      <H4 caption="Other Skills" type="oskills" />
       <ul className="list">
         <li>Accessibility (WCAG 2.1).</li>
         <li>App Center. TestFlight, App Store Connect.</li>

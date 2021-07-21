@@ -13,13 +13,21 @@ export default {
       },
     },
     {
-        name: "social-media",
-        title: "Social Media",
-        options: {
-          collapsible: true,
-          collapsed: true,
-        },
-      }
+      name: "social-media",
+      title: "Social Media",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: "skills",
+      title: "Skills",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
   ],
 
   fields: [
@@ -72,14 +80,40 @@ export default {
       type: "string",
       fieldset: "social-media",
     },
-    
+
     {
-        name: "blurb",
-        title: "Blurb",
-        type: "array",
-        of: [{
-            type: "text"
-        }]
+      name: "blurb",
+      title: "Blurb",
+      type: "array",
+      of: [
+        {
+          type: "text",
+        },
+      ],
+    },
+
+    {
+      name: "keySkills",
+      title: "Key Skills",
+      type: "array",
+      fieldset: "skills",
+      of: [
+        {
+          type: "text",
+        },
+      ],
+    },
+
+    {
+      name: "otherSkills",
+      title: "Other Skills",
+      type: "array",
+      fieldset: "skills",
+      of: [
+        {
+          type: "text",
+        },
+      ],
     },
 
     {
