@@ -6,7 +6,10 @@ const Skills = () => {
     const data = useStaticQuery(graphql`
         {
             sanityPersonalDetails {
-                keySkills
+                keySkills {
+                    name
+                    detail
+                }
             }
         }
     `);
@@ -18,20 +21,32 @@ const Skills = () => {
             <article>
                 <H4 caption="Key Skills" type="kskills" />
 
-                <ul className="list">
-                    {/* {keySkills.map(skill => (<li>{skill}</li>))} */}
-                    <li>React.js.</li>
+                {keySkills.map((skill) => (
+                    <ul>
+                        <li>{skill.name}</li>
+                        <li>
+                            <ul className="list">
+                                {skill.detail.map((detail) => (
+                                    <li>{detail}</li>
+                                ))}
+                            </ul>
+                        </li>
+                    </ul>
+                ))}
+
+                {/* <ul className="list"> */}
+                    {/* <li>React.js.</li>
                     <li>HTML, CSS, LESS.</li>
                     <li>Javascript, Typescript.</li>
                     <li>Figma.</li>
                     <li>Jest, React Testing Library, Enzyme.</li>
                     <li>GraphQL, Apollo.</li>
                     <li>Team Leadership.</li>
-                    <li>Docker.</li> 
-                </ul>
+                    <li>Docker.</li>  */}
+                {/* </ul> */}
             </article>
 
-            <article>
+            {/* <article>
                 <H4 caption="Other Skills" type="oskills" />
                 <ul className="list">
                     <li>Accessibility (WCAG 2.1).</li>
@@ -51,7 +66,7 @@ const Skills = () => {
                     <li>SQL Server.</li>
                     <li>Styled Components.</li>
                 </ul>
-            </article>
+            </article> */}
         </>
     );
 };

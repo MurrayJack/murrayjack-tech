@@ -101,11 +101,15 @@ ul > li > p {
 }
 
 ul.list {
-  padding-left: 18px;
+  padding-left: 28px;
   margin: 0;
   list-style: circle;
   display: grid;
   gap: 8px;
+}
+
+ul.list > li  {
+  font-size: 14px;
 }
 
 aside {
