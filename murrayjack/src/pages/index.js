@@ -22,7 +22,7 @@ const IndexPage = () => {
             width="75px"
             height="75px"
             src="../images/murrayjack.png"
-            alt="Betties by Post"
+            alt="Picture of Murray Jack3"
           />
         </div>
         <h1>Murray Jack: CV</h1>
@@ -34,6 +34,8 @@ const IndexPage = () => {
         <h2>Work Experience</h2>
 
         <Company />
+
+        <h2>Education</h2>
       </section>
 
       <aside>

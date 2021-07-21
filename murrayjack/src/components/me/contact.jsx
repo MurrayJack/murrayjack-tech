@@ -20,6 +20,7 @@ const Contact = () => {
       <h4>Personal Info</h4>
       <ul>
         <li><a href={`mailto:${email}`}>{email}</a></li>
+        <li><a href={`https://murrayjack.me`}>https://murrayjack.me</a></li>
         <li>{mobileNo}</li>
         <li>{visa}</li>
         <li>{location}</li>
