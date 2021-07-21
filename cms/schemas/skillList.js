@@ -11,7 +11,6 @@ export default {
         {
             name: 'detail',
             type: 'array',
-            fieldset: 'skills',
             of: [
                 {
                     type: 'string',

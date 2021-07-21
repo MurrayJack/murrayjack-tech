@@ -19,15 +19,15 @@ const Skills = () => {
                 <H4 caption="Key Skills" type="kskills" />
 
                 <ul className="list">
-                    {keySkills.map(skill => (<li>{skill}</li>))}
-                    {/* <li>React.js.</li>
+                    {/* {keySkills.map(skill => (<li>{skill}</li>))} */}
+                    <li>React.js.</li>
                     <li>HTML, CSS, LESS.</li>
                     <li>Javascript, Typescript.</li>
                     <li>Figma.</li>
                     <li>Jest, React Testing Library, Enzyme.</li>
                     <li>GraphQL, Apollo.</li>
                     <li>Team Leadership.</li>
-                    <li>Docker.</li> */}
+                    <li>Docker.</li> 
                 </ul>
             </article>
 
