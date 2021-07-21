@@ -26,6 +26,7 @@ const IndexPage = () => {
           />
         </div>
         <h1>Murray Jack: CV</h1>
+        
       </header>
 
       <section>
