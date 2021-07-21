@@ -122,8 +122,11 @@ article {
 }
 
 header {
-  background-color: var(--header-background-color);
-  color: white;
+  /*  */
+  /* color: white; */
+  background-color: white;
+  border-bottom: 2px solid var(--header-background-color);
+  
   grid-area: header;
   padding: 16px 24px;
   display: grid;
@@ -137,8 +140,8 @@ header {
 }
 
 header>div {
-  height: 75px;
-  width: 75px;
+  height: 85px;
+  width: 85px;
   border-radius: 50%;
   overflow: hidden;
 }

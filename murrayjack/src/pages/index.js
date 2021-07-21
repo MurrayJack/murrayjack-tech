@@ -19,10 +19,10 @@ const IndexPage = () => {
       <header>
         <div>
           <StaticImage
-            width="75px"
-            height="75px"
+            width="85px"
+            height="85px"
             src="../images/murrayjack.png"
-            alt="Picture of Murray Jack3"
+            alt="Picture of Murray Jack"
           />
         </div>
         <h1>Murray Jack: CV</h1>
@@ -35,7 +35,7 @@ const IndexPage = () => {
 
         <Company />
 
-        <h2>Education</h2>
+        {/* <h2>Education</h2> */}
       </section>
 
       <aside>
