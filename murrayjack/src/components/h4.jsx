@@ -1,6 +1,5 @@
 import * as React from "react";
 import { AiOutlineSmile, AiOutlineHeart, AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
-import { SiSkillshare } from "react-icons/si";
 
 export const H4 = ({ caption, type }) => {
   return (

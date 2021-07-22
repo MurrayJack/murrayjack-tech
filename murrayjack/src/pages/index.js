@@ -25,7 +25,7 @@ const IndexPage = () => {
             alt="Picture of Murray Jack"
           />
         </div>
-        <h1>Murray Jack: CV</h1>
+        <h1>Murray Jack<span>(he/him)</span></h1>
         
       </header>
 

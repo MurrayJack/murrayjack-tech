@@ -69,7 +69,10 @@ h3>span {
   color: var(--header-background-color)
 }
 
-
+h1 > span {
+  padding-left: 8px;
+  font-size: 0.6em;
+}
 
 a,
 li,
