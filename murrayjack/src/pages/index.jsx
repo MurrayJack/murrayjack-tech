@@ -4,6 +4,7 @@ import Company from '../components/co/company';
 import Contact from '../components/me/contact';
 import Skills from '../components/me/skills';
 import Projects from '../components/me/projects';
+import Education from '../components/co/education';
 import { Helmet } from 'react-helmet';
 import '../components/styles.css';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -42,7 +43,9 @@ const IndexPage = () => {
 
                 <Company />
 
-                {/* <h2>Education</h2> */}
+                <h2>Education and Qualifications</h2>
+
+                <Education />
             </section>
 
             <aside>

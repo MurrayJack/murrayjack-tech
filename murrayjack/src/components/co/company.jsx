@@ -1,56 +1,48 @@
-import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Company = () => {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allSanityJobposition(sort: { fields: startDate, order: DESC }) {
-        nodes {
-          url
-          title
-          companyName
-          location
-          startDate(formatString: "yyyy")
-          endDate(formatString: "yyyy")
-          tagLine
-          jobPoints
+    const data = useStaticQuery(graphql`
+        query MyQuery {
+            allSanityJobposition(sort: { fields: startDate, order: DESC }) {
+                nodes {
+                    url
+                    title
+                    companyName
+                    location
+                    startDate(formatString: "yyyy")
+                    endDate(formatString: "yyyy")
+                    tagLine
+                    jobPoints
+                }
+            }
         }
-      }
-    }
-  `);
+    `);
 
-  return (
-    <>
-      {data.allSanityJobposition.nodes.map((e) => (
-        <Detail {...e} />
-      ))}
-    </>
-  );
+    return (
+        <>
+            {data.allSanityJobposition.nodes.map((e) => (
+                <Detail {...e} />
+            ))}
+        </>
+    );
 };
 
-const Detail = ({
-  companyName,
-  title,
-  location,
-  tagLine,
-  startDate,
-  endDate,
-  jobPoints,
-}) => (
-  <article>
-    <h3>
-      <span>{companyName}:</span> {title}
-    </h3>
-    <h4>
-      {location}. {startDate} - {endDate || "Present"}.
-    </h4>
+const Detail = ({ companyName, title, location, tagLine, startDate, endDate, jobPoints }) => (
+    <article>
+        <h3>
+            <span>{companyName}:</span> {title}
+        </h3>
+        <h4>
+            {location}. {startDate} - {endDate || 'Present'}.
+        </h4>
 
-    <blockquote>{tagLine}</blockquote>
+        <blockquote>{tagLine}</blockquote>
 
-    {jobPoints.map((e) => (
-      <p>{e}</p>
-    ))}
-  </article>
+        {jobPoints.map((e) => (
+            <p>{e}</p>
+        ))}
+    </article>
 );
 
 export default Company;

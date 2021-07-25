@@ -11,7 +11,8 @@ import jobPosition from './jobPosition'
 import socialMedia from './socialMedia'
 import personalDetails from "./personalDetails"
 import blogFeatureFlags from "./featureFlags"
-
+import education from "./education"
+import educationItem from './educationItem'
 import projects from "./projects/projects"
 
 import tournament from "./rollerDerby/tournaments"
@@ -28,13 +29,14 @@ export default createSchema({
     // Then proceed to concatenate our document type
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
+        educationItem,
         skillList,
         techStack,
         jobPosition,
         socialMedia,
         personalDetails,
         blogFeatureFlags,
-
+        education,
         projects,
 
         tournament,
