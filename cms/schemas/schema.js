@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import skillList from "./skillList"
 import techStack from "./techStack"
 import jobPosition from './jobPosition'
+import positionDetails from "./positionDetails"
 import socialMedia from './socialMedia'
 import personalDetails from "./personalDetails"
 import blogFeatureFlags from "./featureFlags"
@@ -32,6 +33,7 @@ export default createSchema({
         educationItem,
         skillList,
         techStack,
+        positionDetails,
         jobPosition,
         socialMedia,
         personalDetails,

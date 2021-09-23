@@ -2,8 +2,7 @@ export default {
     name: 'jobposition',
     title: 'Job Position',
     type: 'document',
-    fieldsets: [
-        {
+    fieldsets: [{
             name: "generalInfo",
             title: "General Info",
             options: {
@@ -36,8 +35,7 @@ export default {
             },
         },
     ],
-    fields: [
-        {
+    fields: [{
             name: 'companyName',
             title: 'Company Name',
             type: 'string'
@@ -46,6 +44,14 @@ export default {
             name: 'tagLine',
             title: 'Tag Line',
             type: 'text'
+        },
+        {
+            name: 'positions',
+            title: 'Positions',
+            type: 'array',
+            of: [{
+                type: 'positionDetails'
+            }],
         },
         {
             name: 'title',
@@ -87,22 +93,29 @@ export default {
             name: 'techStack2',
             title: 'Tech Stack',
             type: 'array',
-            of: [{ type: 'techStack' }],
+            of: [{
+                type: 'techStack'
+            }],
             fieldset: "technology",
         },
-        
+
         {
             name: 'jobPoints',
             title: 'Job Points',
             type: 'array',
-            of: [{ type: 'text' }],
+            of: [{
+                type: 'text'
+            }],
             fieldset: "positionDetails"
         },
+
         {
             name: 'techStack',
             title: 'Tech Stack',
             type: 'array',
-            of: [{ type: 'string' }],
+            of: [{
+                type: 'string'
+            }],
             fieldset: "obsolete",
         },
         {
@@ -112,19 +125,17 @@ export default {
             fieldset: "obsolete",
         },
     ],
-    orderings: [
-        {
-            title: 'Start Date',
-            name: 'startDateDesc',
-            by: [
-                { field: 'startDate.utc', direction: 'desc' }
-            ]
-        },
-    ],
+    orderings: [{
+        title: 'Start Date',
+        name: 'startDateDesc',
+        by: [{
+            field: 'startDate.utc',
+            direction: 'desc'
+        }]
+    }, ],
     preview: {
         select: {
             title: 'companyName'
         }
     }
 }
-
