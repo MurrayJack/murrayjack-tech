@@ -27,16 +27,13 @@ const IndexPage = () => {
                 <meta name="description" content={data.sanityPersonalDetails.blurb[0]} />
             </Helmet>
 
-            <header>
-                <div>
-                    <StaticImage width="85px" height="85px" src="../images/murrayjack.png" alt="Picture of Murray Jack" />
-                </div>
-                <h1>
-                    Murray Jack<span>(he/him)</span>
-                </h1>
-            </header>
+            {/* <header>
+                <div></div>
+            </header> */}
 
             <section>
+                <h2>Overview</h2>
+
                 <Intro />
 
                 <h2>Work Experience</h2>
@@ -49,9 +46,21 @@ const IndexPage = () => {
             </section>
 
             <aside>
-                <Contact />
-                <Skills />
-                <Projects />
+                <div style={{ width: '275px' }}>
+                    <StaticImage width="275px" height="400px" src="../images/murrayjack.png" alt="Picture of Murray Jack" />
+                </div>
+
+                <div>
+                    <h1>
+                        Murray Jack<span>(he/him)</span>
+                    </h1>
+                </div>
+
+                <div>
+                    <Contact />
+                    <Skills />
+                    <Projects />
+                </div>
             </aside>
         </main>
     );
