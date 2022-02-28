@@ -7,9 +7,10 @@
   "author": "Murray Jack <murrayjack@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "sanity start",
     "test": "sanity check",
-    "deploy": "sanity deploy && sanity graphql deploy"
+    "deploy": "sanity deploy && sanity graphql deploy --generation gen2"
   },
   "keywords": [
     "sanity"
@@ -30,5 +31,7 @@
     "react-dom": "^16.2",
     "react-icons": "^3.10.0"
   },
-  "devDependencies": {}
+  "resolutions": {
+    "@babel/types": "7.15.x"
+  }
 }
