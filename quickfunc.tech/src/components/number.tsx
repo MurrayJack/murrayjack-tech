@@ -1,13 +1,13 @@
-import * as React from "react"
+import * as React from 'react';
 
-type NumberProps = {}
+type NumberProps = {};
 
 export const Number = ({}: NumberProps) => (
-  <input
-    type="number"
-    readOnly
-    placeholder="EM Value"
-    style={{ resize: "none" }}
-    // ref={result}
-  ></input>
-)
+    <input
+        type="number"
+        readOnly
+        placeholder="EM Value"
+        style={{ resize: 'none' }}
+        // ref={result}
+    ></input>
+);

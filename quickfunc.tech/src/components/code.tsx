@@ -1,10 +1,10 @@
-import * as React from "react"
+import * as React from 'react';
 
-export const Code = ({ children }) => {
-  return (
-    <pre>
-      {`// code`}
-      {children}
-    </pre>
-  )
-}
+export const Code: React.FC = ({ children }) => {
+    return (
+        <pre>
+            {`// code`}
+            {children}
+        </pre>
+    );
+};

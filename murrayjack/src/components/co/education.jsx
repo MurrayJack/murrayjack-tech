@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import * as React from 'react';
 
-export default () => {
+const Page = () => {
     const data = useStaticQuery(graphql`
         query Education {
             allSanityEducation(filter: { visible: { eq: true } }) {
@@ -36,3 +36,5 @@ export default () => {
         </>
     );
 };
+
+export default Page

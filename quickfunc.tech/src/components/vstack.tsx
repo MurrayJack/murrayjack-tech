@@ -1,10 +1,10 @@
-import * as React from "react"
+import * as React from 'react';
 
-export const VStack = ({ children }) => {
-  return (
-    <>
-      <div className="vstack">{children}</div>
-      <style>{`
+export const VStack: React.FC = ({ children }) => {
+    return (
+        <>
+            <div className="vstack">{children}</div>
+            <style>{`
         .vstack {
           display: grid;
           gap: 20px;
@@ -12,6 +12,6 @@ export const VStack = ({ children }) => {
           width: 100%;
         }
       `}</style>
-    </>
-  )
-}
+        </>
+    );
+};
