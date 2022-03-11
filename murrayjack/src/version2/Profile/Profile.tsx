@@ -1,22 +1,17 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useData } from '../_DataContext/DataContext';
 
 export const Profile = () => {
-    const data = useStaticQuery(graphql`
-        {
-            sanityPersonalDetails {
-                name
-                blurb
-            }
-        }
-    `);
+    const data = useData();
 
     return (
-        <article>
+        <section>
             <h2>Profile</h2>
-            {data.sanityPersonalDetails.blurb.map((e) => (
+            <hr />
+            <p>useData</p>
+            {/* {data.sanityPersonalDetails.blurb.map((e) => (
                 <p>{e}</p>
-            ))}
-        </article>
+            ))} */}
+        </section>
     );
 };
