@@ -27,7 +27,7 @@
     "gsap": "^3.5.1",
     "hamburger-react": "^2.1.1",
     "keycode": "^2.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
