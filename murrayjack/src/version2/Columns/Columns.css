@@ -1,0 +1,12 @@
+.columns {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.columns > div:first-of-type {
+    background: #F0F0F0
+}
+
+.columns > div:nth-of-type(2) {
+    padding: 0 32px;
+}
