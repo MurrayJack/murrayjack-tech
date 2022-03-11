@@ -1,17 +1,18 @@
-import { Header } from '../version2/Header/Header';
+import { Header } from './_Components/Header';
 import * as React from 'react';
 import './index.css';
-import { Contact } from '../version2/Contact/Contact';
-import { Profile } from '../version2/Profile/Profile';
-import { Skills } from '../version2/Skills/Skills';
-import { Columns } from '../version2/Columns/Columns';
-import { WorkExperience } from '../version2/WorkExperience/WorkExperience';
+import { Contact } from './_Components/Contact';
+import { Profile } from './_Components/Profile';
+import { Skills } from './_Components/Skills';
+import { Columns } from './_Components/Columns';
+import { WorkExperience } from './_Components/WorkExperience';
 import { DataProvider } from './_DataContext/DataContext';
+import { Image } from './_Components/Image';
 
 export const Version2 = () => (
     <DataProvider>
         <header>
-            <Columns col1={<div />} col2={<Header />} />
+            <Columns col1={<Image />} col2={<Header />} />
         </header>
 
         <Contact />

@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { useData } from '../_DataContext/DataContext';
+import { Section } from './Section';
 
 export const Skills = () => {
     const { keySkills } = useData().allSanityPersonalDetails.nodes[0];
     return (
-        <article>
-            <h2>Skills</h2>
-
+        <Section caption="Skills">
             {keySkills.map((skill) => (
                 <ul>
                     <li>{skill.name}</li>
@@ -19,6 +18,6 @@ export const Skills = () => {
                     </li>
                 </ul>
             ))}
-        </article>
+        </Section>
     );
 };
