@@ -15,7 +15,7 @@ export const Section = ({ children, caption }: any) => {
                 }
 
                 h2 {
-                    font-size: 22px;
+                    font-size: 20px;
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     padding-bottom: 8px;

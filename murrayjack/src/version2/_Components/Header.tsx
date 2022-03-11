@@ -4,7 +4,7 @@ export const Header = () => (
     <>
         <div>
             <h1>
-                <div>Murray</div>
+                Murray
                 <div>Jack</div>
             </h1>
             <div>Principle Front End Developer</div>
@@ -15,6 +15,16 @@ export const Header = () => (
                 height: 100%;
                 display: grid;
                 align-items: center;
+            }
+
+            h1 {
+                font-size: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            h1 > div {
+                color: var(--accent-color);
             }
         `}</style>
     </>
