@@ -22,6 +22,7 @@ export const Columns = ({ col1, col2 }: any) => {
                     padding: 32px;
                     display: grid;
                     gap: 24px;
+                    grid-auto-rows: max-content;
                 }
             `}</style>
         </>

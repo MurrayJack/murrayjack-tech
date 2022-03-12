@@ -13,13 +13,14 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
                     name
                     github
                     twitterName
+                    blurb
                     keySkills {
                         name
                         detail
                     }
                 }
             }
-            allSanityJobposition {
+            allSanityJobposition(sort: { fields: startDate, order: DESC }) {
                 nodes {
                     companyName
                     tagLine

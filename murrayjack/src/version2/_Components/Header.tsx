@@ -7,7 +7,7 @@ export const Header = () => (
                 Murray
                 <div>Jack</div>
             </h1>
-            <div>Principle Front End Developer</div>
+            <div>Principle Engineer: Front End Practice</div>
         </div>
         <style jsx>{`
             div {

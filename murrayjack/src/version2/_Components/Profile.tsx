@@ -7,10 +7,7 @@ export const Profile = () => {
 
     return (
         <Section caption="Profile">
-            <p>useData</p>
-            {/* {data.sanityPersonalDetails.blurb.map((e) => (
-                <p>{e}</p>
-            ))} */}
+            <p>{data.allSanityPersonalDetails.nodes[0].blurb[0]}</p>
         </Section>
     );
 };

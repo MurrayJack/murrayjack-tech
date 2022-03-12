@@ -6,7 +6,7 @@ export const Skills = () => {
     const { keySkills } = useData().allSanityPersonalDetails.nodes[0];
     return (
         <>
-            <Section caption="Skills">
+            <Section caption="Key Skills">
                 {keySkills.map((skill) => (
                     <ul>
                         <li>{skill.name}</li>
