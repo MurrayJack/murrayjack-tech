@@ -22,7 +22,7 @@ export const Image = () => {
                     height: 150px;
                     width: 150px;
                     border-radius: 50%;
-                    border: 1px solid #d8d8d8;
+                    border: 1px solid var(--border-color);
                     background: palegoldenrod;
                     overflow: hidden;
                 }

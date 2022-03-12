@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --col1: #F0F0F0;
     --background-color: #F7F7F7;
 
-    --accent-color: #2980b9;
+    --accent-color: #c23616; 
+    --border-color: #f0f0f0;
+    --font-color:#565656;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333;
+    --accent-color: #c23616; 
+    --border-color: #111;
+    --font-color:#fff;
+  }
+} 
+
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: #565656;
+    color: var(--font-color);
 }
 
 body {
@@ -27,5 +38,4 @@ body {
 main {
     max-width: 920px;
     margin: 0 auto;
-    
 }

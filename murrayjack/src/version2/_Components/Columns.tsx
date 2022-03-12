@@ -14,7 +14,7 @@ export const Columns = ({ col1, col2 }: any) => {
                 }
 
                 .columns > div:first-of-type {
-                    background: #f0f0f0;
+                    background: var(--border-color);
                     padding: 32px;
                 }
 
