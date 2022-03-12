@@ -11,14 +11,16 @@ export const WorkExperience = () => {
                 <div className="work-experience">
                     {data.map((e) => (
                         <article>
-                            {/* <p>{e.tagLine}</p> */}
-                            {/* <div>{e.startDate}</div> */}
-
                             <ul>
                                 {e.positions.map((x) => (
                                     <li>
                                         <h3>{x.jobTitle}</h3>
                                         <div>{e.companyName} | ... to ...</div>
+                                        <ul>
+                                            {x.jobPoints.map((o) => (
+                                                <li>{o}</li>
+                                            ))}
+                                        </ul>
                                     </li>
                                 ))}
                             </ul>
