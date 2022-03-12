@@ -15,7 +15,7 @@ export const Contact = () => (
             </ItemWrapper>
 
             <ItemWrapper icon={<IoCallSharp />}>
-                <a href="mailto:cv@murrayjack.me">cv@murrayjack.me</a>
+                <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
             </ItemWrapper>
         </div>
         <style jsx>{`
