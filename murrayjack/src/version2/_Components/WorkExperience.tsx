@@ -8,28 +8,30 @@ export const WorkExperience = () => {
     return (
         <>
             <Section caption="Work Experience">
-                <div className="work-experience">
-                    {data.map((e) => (
-                        <article>
-                            <ul>
-                                {e.positions.map((x) => (
-                                    <li>
-                                        <h3>{x.jobTitle}</h3>
-                                        <div>{e.companyName} | ... to ...</div>
-                                        <ul>
-                                            {x.jobPoints.map((o) => (
-                                                <li>{o}</li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
-                </div>
+                <article>
+                    {data.map((e) =>
+                        e.positions.map((x) => (
+                            <div>
+                                <h3>{x.jobTitle}</h3>
+                                <div>
+                                    {e.companyName} | {x.startDate} to {x.endDate}
+                                </div>
+                                <ul>
+                                    {x.jobPoints.map((o) => (
+                                        <li>{o}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))
+                    )}
+                </article>
             </Section>
             <style jsx>{`
-                .work-experience {
+                ul {
+                    /* list-style: none; */
+                    padding-left: 24px;
+                }
+                article {
                     display: grid;
                     gap: 24px;
                 }

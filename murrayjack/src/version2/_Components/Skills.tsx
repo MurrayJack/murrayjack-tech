@@ -9,7 +9,9 @@ export const Skills = () => {
             <Section caption="Key Skills">
                 {keySkills.map((skill) => (
                     <ul>
-                        <li>{skill.name}</li>
+                        <li>
+                            <b>{skill.name}</b>
+                        </li>
                         <li>
                             <ul className="list">
                                 {skill.detail.map((detail) => (
