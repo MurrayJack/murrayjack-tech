@@ -10,7 +10,7 @@ type Data = {
             blurb: string[];
             keySkills: {
                 name: string;
-                detail: string;
+                detail: string[];
             }[];
         }[];
     };
