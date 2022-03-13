@@ -15,10 +15,13 @@ export const Version2 = () => (
             <Columns col1={<Image />} col2={<Header />} />
         </header>
 
-        <Contact />
-
         <Columns
-            col1={<Skills />}
+            col1={
+                <>
+                    <Contact />
+                    <Skills />
+                </>
+            }
             col2={
                 <>
                     <Profile />

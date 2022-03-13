@@ -1,33 +1,33 @@
 import * as React from 'react';
 import { IoLocationSharp, IoMailSharp, IoLogoLinkedin, IoCallSharp } from 'react-icons/io5';
+import { Section } from './Section';
 
 export const Contact = () => (
     <>
-        <div className="wrapper">
-            <ItemWrapper icon={<IoLocationSharp />}>Melbourne Australia</ItemWrapper>
+        <Section caption="Contact">
+            <div className="wrapper">
+                <ItemWrapper icon={<IoLocationSharp />}>Melbourne Australia</ItemWrapper>
 
-            <ItemWrapper icon={<IoMailSharp />}>
-                <a href="mailto:cv@murrayjack.me">cv@murrayjack.me</a>
-            </ItemWrapper>
+                <ItemWrapper icon={<IoMailSharp />}>
+                    <a href="mailto:cv@murrayjack.me">cv@murrayjack.me</a>
+                </ItemWrapper>
 
-            <ItemWrapper icon={<IoLogoLinkedin />}>
-                <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">LinkedIn</a>
-            </ItemWrapper>
+                <ItemWrapper icon={<IoLogoLinkedin />}>
+                    <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">LinkedIn</a>
+                </ItemWrapper>
 
-            <ItemWrapper icon={<IoCallSharp />}>
-                <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
-            </ItemWrapper>
-        </div>
-        <style jsx>{`
-            .wrapper {
-                display: grid;
-                grid-auto-flow: column;
-                border-top: 2px solid var(--border-color);
-                border-bottom: 2px solid var(--border-color);
-                height: 50px;
-                align-items: center;
-            }
-        `}</style>
+                <ItemWrapper icon={<IoCallSharp />}>
+                    <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
+                </ItemWrapper>
+            </div>
+            <style jsx>{`
+                .wrapper {
+                    display: grid;
+                    grid-auto-flow: row;
+                    gap: 8px;
+                }
+            `}</style>
+        </Section>
     </>
 );
 
@@ -43,7 +43,8 @@ const ItemWrapper = ({ children, icon }: any) => {
                     display: grid;
                     grid-auto-flow: column;
                     gap: 8px;
-                    justify-content: center;
+                    text-align: left;
+                    grid-auto-columns: max-content;
                 }
 
                 .icon {

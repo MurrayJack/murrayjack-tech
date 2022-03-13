@@ -1,6 +1,11 @@
 import * as React from 'react';
+import { FC } from 'react';
 
-export const Section = ({ children, caption }: any) => {
+type SectionProp = {
+    caption: string;
+};
+
+export const Section: FC<SectionProp> = ({ children, caption }) => {
     return (
         <>
             <section>
