@@ -28,12 +28,15 @@ export const WorkExperience = () => {
             </Section>
             <style jsx>{`
                 ul {
-                    /* list-style: none; */
                     padding-left: 24px;
                 }
                 article {
                     display: grid;
                     gap: 24px;
+                }
+                h3 {
+                    font-size: 16px;
+                    letter-spacing: 1px;
                 }
             `}</style>
         </>

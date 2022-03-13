@@ -54,8 +54,8 @@ export const DataProvider: FC = ({ children }) => {
                     tagLine
                     positions {
                         jobTitle
-                        startDate
-                        endDate
+                        startDate(formatString: "YYYY")
+                        endDate(formatString: "YYYY")
                         jobPoints
                     }
                 }
