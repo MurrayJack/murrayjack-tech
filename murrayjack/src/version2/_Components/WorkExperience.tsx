@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Section } from './Section';
 import { useData } from '../_DataContext/DataContext';
 
@@ -8,30 +8,35 @@ export const WorkExperience = () => {
     return (
         <>
             <Section caption="Work Experience">
-                <div className="work-experience">
-                    {data.map((e) => (
-                        <article>
-                            <ul>
-                                {e.positions.map((x) => (
-                                    <li>
-                                        <h3>{x.jobTitle}</h3>
-                                        <div>{e.companyName} | ... to ...</div>
-                                        <ul>
-                                            {x.jobPoints.map((o) => (
-                                                <li>{o}</li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
-                </div>
+                <article>
+                    {data.map((e) =>
+                        e.positions.map((x) => (
+                            <div>
+                                <h3>{x.jobTitle}</h3>
+                                <div>
+                                    {e.companyName} | {x.startDate} to {x.endDate || 'Current'}
+                                </div>
+                                <ul>
+                                    {x.jobPoints.map((o) => (
+                                        <li>{o}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))
+                    )}
+                </article>
             </Section>
             <style jsx>{`
-                .work-experience {
+                ul {
+                    padding-left: 16px;
+                }
+                article {
                     display: grid;
                     gap: 24px;
+                }
+                h3 {
+                    font-size: 16px;
+                    letter-spacing: 1px;
                 }
             `}</style>
         </>

@@ -1,35 +1,45 @@
-import * as React from 'react';
+import React from 'react';
 import { IoLocationSharp, IoMailSharp, IoLogoLinkedin, IoCallSharp } from 'react-icons/io5';
+import { useData } from '../_DataContext/DataContext';
 import { Section } from './Section';
 
-export const Contact = () => (
-    <>
-        <Section caption="Contact">
-            <div className="wrapper">
-                <ItemWrapper icon={<IoLocationSharp />}>Melbourne Australia</ItemWrapper>
+export const Contact = () => {
+    const { allSanityPersonalDetails } = useData();
+    const data = allSanityPersonalDetails.nodes[0];
 
-                <ItemWrapper icon={<IoMailSharp />}>
-                    <a href="mailto:cv@murrayjack.me">cv@murrayjack.me</a>
-                </ItemWrapper>
+    return (
+        <>
+            <Section caption="Contact">
+                <div className="wrapper">
+                    <ItemWrapper icon={<IoLocationSharp />}>{data.location}</ItemWrapper>
 
-                <ItemWrapper icon={<IoLogoLinkedin />}>
-                    <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">LinkedIn</a>
-                </ItemWrapper>
+                    <ItemWrapper icon={<IoMailSharp />}>
+                        <a href={data.email}>{data.email}</a>
+                    </ItemWrapper>
 
-                <ItemWrapper icon={<IoCallSharp />}>
-                    <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
-                </ItemWrapper>
-            </div>
-            <style jsx>{`
-                .wrapper {
-                    display: grid;
-                    grid-auto-flow: row;
-                    gap: 8px;
-                }
-            `}</style>
-        </Section>
-    </>
-);
+                    <ItemWrapper icon={<IoCallSharp />}>
+                        <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
+                    </ItemWrapper>
+
+                    <ItemWrapper icon={<IoLogoLinkedin />}>
+                        <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">LinkedIn</a>
+                    </ItemWrapper>
+
+                    <ItemWrapper icon={<IoLogoLinkedin />}>
+                        <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">GitHub</a>
+                    </ItemWrapper>
+                </div>
+                <style jsx>{`
+                    .wrapper {
+                        display: grid;
+                        grid-auto-flow: row;
+                        gap: 8px;
+                    }
+                `}</style>
+            </Section>
+        </>
+    );
+};
 
 const ItemWrapper = ({ children, icon }: any) => {
     return (
@@ -48,11 +58,11 @@ const ItemWrapper = ({ children, icon }: any) => {
                 }
 
                 .icon {
-                    height: 24px;
-                    width: 24px;
-                    background: var(--accent-color);
-                    color: white;
-                    border-radius: 50%;
+                    /* height: 24px; */
+                    /* width: 24px; */
+                    /* color: var(--accent-color); */
+                    /* color: white; */
+                    /* border-radius: 50%; */
                     display: grid;
                     align-items: center;
                     justify-content: center;

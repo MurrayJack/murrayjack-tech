@@ -22,13 +22,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: var(--font-color);
+   
 }
 
-svg {
+/* svg {
     color: white;
     fill: white;
-}
+} */
 
 body {
     background: var(--background-color);
@@ -37,7 +37,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+    color: var(--font-color);
 }
 
 main {
