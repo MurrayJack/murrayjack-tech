@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoLocationSharp, IoMailSharp, IoLogoLinkedin, IoCallSharp } from 'react-icons/io5';
+import { IoLocationSharp, IoMailSharp, IoLogoLinkedin, IoCallSharp, IoGitBranch } from 'react-icons/io5';
 import { useData } from '../_DataContext/DataContext';
 import { Section } from './Section';
 
@@ -14,19 +14,23 @@ export const Contact = () => {
                     <ItemWrapper icon={<IoLocationSharp />}>{data.location}</ItemWrapper>
 
                     <ItemWrapper icon={<IoMailSharp />}>
-                        <a href={data.email}>{data.email}</a>
+                        <a href={`mailto:${data.email}`}>{data.email}</a>
                     </ItemWrapper>
 
                     <ItemWrapper icon={<IoCallSharp />}>
-                        <a href="phone:+61 (0)420 795 708">+61 (0)420 795 708</a>
+                        <a href="tel:+610420795708">+61 (0)420 795 708</a>
                     </ItemWrapper>
 
                     <ItemWrapper icon={<IoLogoLinkedin />}>
-                        <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">LinkedIn</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/murray-jack-a249b72b/">
+                            LinkedIn
+                        </a>
                     </ItemWrapper>
 
-                    <ItemWrapper icon={<IoLogoLinkedin />}>
-                        <a href="https://www.linkedin.com/in/murray-jack-a249b72b/">GitHub</a>
+                    <ItemWrapper icon={<IoGitBranch />}>
+                        <a target="_blank" href="http://github.com/MurrayJack/">
+                            GitHub
+                        </a>
                     </ItemWrapper>
                 </div>
                 <style jsx>{`
