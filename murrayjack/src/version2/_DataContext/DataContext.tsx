@@ -8,6 +8,8 @@ type Data = {
             github: string;
             twitterName: string;
             blurb: string[];
+            location: string;
+            email: string;
             keySkills: {
                 name: string;
                 detail: string[];
@@ -41,7 +43,9 @@ export const DataProvider: FC = ({ children }) => {
                     name
                     github
                     twitterName
+                    location
                     blurb
+                    email
                     keySkills {
                         name
                         detail

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Section } from './Section';
 import { useData } from '../_DataContext/DataContext';
 
@@ -14,7 +14,7 @@ export const WorkExperience = () => {
                             <div>
                                 <h3>{x.jobTitle}</h3>
                                 <div>
-                                    {e.companyName} | {x.startDate} to {x.endDate}
+                                    {e.companyName} | {x.startDate} to {x.endDate || 'Current'}
                                 </div>
                                 <ul>
                                     {x.jobPoints.map((o) => (
@@ -28,7 +28,7 @@ export const WorkExperience = () => {
             </Section>
             <style jsx>{`
                 ul {
-                    padding-left: 24px;
+                    padding-left: 16px;
                 }
                 article {
                     display: grid;
