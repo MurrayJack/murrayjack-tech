@@ -14,7 +14,7 @@ export const Skills = () => {
                             <b>{skill.name}</b>
                         </li>
                         <li>
-                            <ul className="list">
+                            <ul>
                                 {skill.detail.map((detail) => (
                                     <li>{detail}</li>
                                 ))}

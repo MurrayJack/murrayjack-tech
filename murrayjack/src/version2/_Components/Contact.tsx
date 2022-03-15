@@ -62,11 +62,6 @@ const ItemWrapper = ({ children, icon }: any) => {
                 }
 
                 .icon {
-                    /* height: 24px; */
-                    /* width: 24px; */
-                    /* color: var(--accent-color); */
-                    /* color: white; */
-                    /* border-radius: 50%; */
                     display: grid;
                     align-items: center;
                     justify-content: center;
